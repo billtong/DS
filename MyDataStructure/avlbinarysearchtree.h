@@ -23,6 +23,7 @@ binarytreenode *rotateLeft(binarytreenode *root);
 binarytreenode *rotateRight(binarytreenode *root);
 
 
+//need change to all rebanlance,this one only change the leafs
 binarytreenode * rebalance(binarytreenode * root, int key);
 
 //这里是如何使用到binarysearch tree的函数来完成呢？？

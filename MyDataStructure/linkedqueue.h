@@ -1,10 +1,10 @@
 #ifndef LINKEDQUEUE_H
 #define LINKEDQUEUE__H
-#include "linkedlist.h"
+#include "SingleLinkedList.h"
 
 typedef struct _LinkedQueue
 {
-	linkedlist *ll;
+	singlelinkedlist *ll;
 	int count;
 }linkedqueue;
 

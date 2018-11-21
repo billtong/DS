@@ -1,4 +1,4 @@
-#include "linkedlist.h"
+#include "SingleLinkedList.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -10,21 +10,21 @@ llnode * initLinkedNode(int value)
 	return node;
 }
 
-linkedlist * initLinkedList()
+singlelinkedlist * initLinkedList()
 {
-	linkedlist *ll = (linkedlist *)malloc(sizeof(linkedlist));
+	singlelinkedlist *ll = (singlelinkedlist *)malloc(sizeof(singlelinkedlist));
 	ll->head = NULL;
 	ll->size = 0;
 	return ll;
 }
 
-void insertIndexOf(linkedlist * ll, int index, int value)
+void insertIndexOf(singlelinkedlist * ll, int index, int value)
 {
 
 	llnode *addNode = initLinkedNode(value) ,*temp;
 
 	if (ll == NULL) {
-		printf("linkedlist insertIndexOf error: linkedlist null error\n");
+		printf("singlelinkedlist insertIndexOf error: singlelinkedlist null error\n");
 	}
 	else if (index ==1) {
 		temp = ll->head;
@@ -34,7 +34,7 @@ void insertIndexOf(linkedlist * ll, int index, int value)
 	}
 	else if (index<1 || index>ll->size+1)
 	{
-		printf("linkedlist insertIndexOf error: index out of bound\n");
+		printf("singlelinkedlist insertIndexOf error: index out of bound\n");
 	}
 	else {
 		
@@ -47,29 +47,29 @@ void insertIndexOf(linkedlist * ll, int index, int value)
 	}
 }
 
-void append(linkedlist * ll, int value)
+void append(singlelinkedlist * ll, int value)
 {
 	llnode *addNode = (llnode *)malloc(sizeof(llnode)), *temp = NULL;
 	addNode->data = value;
 	addNode->next = NULL;
 	if (ll == NULL) {
-		printf("linkedlist append error: linkedlist null error\n");
+		printf("singlelinkedlist append error: singlelinkedlist null error\n");
 	}
 	else {
 		insertIndexOf(ll, ll->size+1, value);
 	}
 }
 
-llnode * findIndexOf(linkedlist * ll, int index)
+llnode * findIndexOf(singlelinkedlist * ll, int index)
 {
 	llnode *node = ll->head;
 	if (ll == NULL) {
-		printf("linkedlist find error: linkedlist null error\n");
+		printf("singlelinkedlist find error: singlelinkedlist null error\n");
 		return NULL;
 	}
 	else if (index<1 || index>ll->size)
 	{
-		printf("linkedlist find error: index out of bound\n");
+		printf("singlelinkedlist find error: index out of bound\n");
 	}
 	else if (index == 1) {
 		return node;
@@ -83,7 +83,7 @@ llnode * findIndexOf(linkedlist * ll, int index)
 	}
 }
 
-void freeLinkedList(linkedlist *ll)
+void freeLinkedList(singlelinkedlist *ll)
 {
 	if (ll == NULL) {
 
@@ -98,18 +98,18 @@ void freeLinkedList(linkedlist *ll)
 		}
 		free(ll);
 	}
-	printf("cleaned the whole linkedlist.\n");
+	printf("cleaned the whole singlelinkedlist.\n");
 }
 
-int removeIndexOf(linkedlist * ll, int index)
+int removeIndexOf(singlelinkedlist * ll, int index)
 {
 	int rslt = 0;
 	llnode *temp = NULL;
 	if (ll == NULL || ll->head == NULL) {
-		printf("linkedlist removeIndexOf error: linkedlist null\n");
+		printf("singlelinkedlist removeIndexOf error: singlelinkedlist null\n");
 	}
 	else if (index<1 || index >ll->size) {
-		printf("linkedlist removeIndexOf error: out of bound\n");
+		printf("singlelinkedlist removeIndexOf error: out of bound\n");
 	}
 	else if (index == 1) {
 		rslt = ll->head->data;
@@ -127,14 +127,14 @@ int removeIndexOf(linkedlist * ll, int index)
 	return -1;
 }
 
-void printLinkedList(linkedlist * ll)
+void printLinkedList(singlelinkedlist * ll)
 {
 	if (ll == NULL ) {
-		printf("linkedlist printLinkedList error: linkedlist null error\n");
+		printf("singlelinkedlist printLinkedList error: singlelinkedlist null error\n");
 	}
 	else if(ll->head == NULL || ll->size==0)
 	{
-		printf("the linkedlist is empty\n");
+		printf("the singlelinkedlist is empty\n");
 	}
 	else
 	{

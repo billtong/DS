@@ -1,10 +1,10 @@
 #ifndef LINKEDSTACK_H
 #define LINKEDSTACK_H
-#include "linkedlist.h"
+#include "SingleLinkedList.h"
 
 typedef struct _LinkedStack
 {
-	linkedlist *ll;
+	singlelinkedlist *ll;
 	int top;
 } linkedstack;
 

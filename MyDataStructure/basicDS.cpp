@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include "arraylist.h"
-#include "linkedlist.h"
+#include "SingleLinkedList.h"
 #include "arraystack.h"
 #include "linkedstack.h"
 #include "arrayqueue.h"
@@ -12,20 +12,19 @@
 #include "avlbinarysearchtree.h"
 
 int isTestingArrayList = 0;
-int isTestingLinkedList = 0;
+int isTestingLinkedList = 1;
 int isTestArrayStack = 0;
-int isTestLinkedStack = 0;
+int isTestLinkedStack = 1;
 int isTestArrayQueue = 0;
-int isTestLinkedQueue = 0;
-int isTestCircularQueue = 1;
-
+int isTestLinkedQueue = 1;
+int isTestCircularQueue = 0;
 int isTestingBinaryTree = 0;
 int isTestingSearchTree = 0;
 int isTestingAVLBinaryTree = 0;
 
 int main()
 {
-//list testing	
+//list---------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestingArrayList) {
 		arraylist *al = initArrayList();
 		for (int i = 0; i < 15; i++) {
@@ -41,7 +40,7 @@ int main()
 	}
 
 	if (isTestingLinkedList) {
-		linkedlist *ll = initLinkedList();
+		singlelinkedlist *ll = initLinkedList();
 		printLinkedList(ll);
 		for (int i = 1; i < 10; i++) {
 			append(ll, i);
@@ -53,7 +52,7 @@ int main()
 		freeLinkedList(ll);
 	}
 
-	//stack testing
+//stack-------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestArrayStack) {
 		arraystack *as = initArraystack();
 		for (int i = 0; i < 20; i++) {
@@ -80,7 +79,7 @@ int main()
 		freeLinkedStack(ls);
 	}
 
-	//queue testing
+//queue-------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestArrayQueue) {
 		arrayqueue *aq = initArrayQueue();
 		printArrayQueue(aq);
@@ -130,6 +129,7 @@ int main()
 	}
 
 
+//tree---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	if (isTestingBinaryTree) {
 		binarytree *bt = getBinaryTree(15);
@@ -171,7 +171,6 @@ int main()
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
 	}
-
 
 	if (isTestingAVLBinaryTree) {
 		avlbinarysearchtree *avl = initAVLBinaryTree();
