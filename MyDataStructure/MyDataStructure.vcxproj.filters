@@ -42,6 +42,9 @@
     <ClInclude Include="avlbinarysearchtree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="circularqueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arraylist.cpp">
@@ -68,13 +71,13 @@
     <ClCompile Include="binarytree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="TreeDS.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="binarysearchtree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="avlbinarysearchtree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="circularqueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

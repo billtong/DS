@@ -121,6 +121,7 @@
     <ClInclude Include="avlbinarysearchtree.h" />
     <ClInclude Include="binarysearchtree.h" />
     <ClInclude Include="binarytree.h" />
+    <ClInclude Include="circularqueue.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="linkedqueue.h" />
     <ClInclude Include="linkedstack.h" />
@@ -132,11 +133,11 @@
     <ClCompile Include="avlbinarysearchtree.cpp" />
     <ClCompile Include="binarysearchtree.cpp" />
     <ClCompile Include="binarytree.cpp" />
+    <ClCompile Include="circularqueue.cpp" />
     <ClCompile Include="linkedlist.cpp" />
     <ClCompile Include="linkedqueue.cpp" />
     <ClCompile Include="linkedstack.cpp" />
     <ClCompile Include="basicDS.cpp" />
-    <ClCompile Include="TreeDS.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
