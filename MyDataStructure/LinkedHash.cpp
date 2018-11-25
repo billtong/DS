@@ -29,7 +29,7 @@ int divisionHash(linkedhashtable * ht, char * ch)
 	return hashString(ch) % ht->size;
 }
 
-void insertLinkedHash(linkedhashtable * ht, char * ch)
+linkedhashtable *insertLinkedHash(linkedhashtable * ht, char * ch)
 {
 
 	int key = divisionHash(ht, ch);
@@ -37,6 +37,11 @@ void insertLinkedHash(linkedhashtable * ht, char * ch)
 		ht->collision++;
 	}
 	addSingleLinkedListFront((ht->hashlist)[key], ch);
+	if (calcLoadFactor(ht) > 75) {
+		rehashLinkedHashTable(&ht);
+	}
+
+	return ht;
 }
 
 bool findInLinkedHash(linkedhashtable * ht, char * ch)
@@ -60,13 +65,45 @@ bool findInLinkedHash(linkedhashtable * ht, char * ch)
 	return false;
 }
 
+double calcLoadFactor(linkedhashtable * ht)
+{
+	double n = 0;
+	for (int i = 0; i < ht->size; i++) {
+		if (isSingleLinkedListEmpty((ht->hashlist)[i]) == false) {
+			n++;
+		}
+	}
+
+	return (n/ht->size)*100;
+}
+
+void rehashLinkedHashTable(linkedhashtable ** ht)
+{
+
+	if (*ht == nullptr) {
+		return;
+	}
+
+	linkedhashtable *oldht = *ht;
+	*ht = initLinkedHashTable(oldht->size * 2);
+	
+	for (int i = 0; i < oldht->size; i++) {
+		if (isSingleLinkedListEmpty((oldht->hashlist)[i]) == false) {
+			llnode *ptr = (oldht->hashlist)[i]->head;
+			while (ptr) {
+				*ht = insertLinkedHash(*ht, ptr->ch);
+				ptr = ptr->next;
+			}
+		}
+	}
+}
+
 void printLinkedHash(linkedhashtable * ht)
 {
 	for (int i = 0; i < ht->size; i++) {
 		printf("%d -->", i);
 		printCharSingleLinkedList((ht->hashlist)[i]);
 	}
-	printf("# of Collisions=%d\n", ht->collision);
 }
 
 

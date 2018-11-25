@@ -1,3 +1,4 @@
-﻿  SingleLinkedList.cpp
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\singlelinkedlist.cpp(124): warning C4715: “findIndexOf”: 不是所有的控件路径都返回值
+﻿  TestDS.cpp
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(127): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“binarytreenode *”
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(127): warning C4313: “printf”: 格式字符串中的“%d”与“binarytreenode *”类型的参数 1 冲突
   MyDataStructure.vcxproj -> C:\Users\Bill Tong\Source\Repos\billtong\DS\x64\Debug\MyDataStructure.exe

@@ -23,8 +23,18 @@ int divisionHash(linkedhashtable *ht, char *ch);
 
 
 
-void insertLinkedHash(linkedhashtable *ht, char *ch);
+linkedhashtable *insertLinkedHash(linkedhashtable *ht, char *ch);
+
 bool findInLinkedHash(linkedhashtable *ht, char *ch);
+
+double calcLoadFactor(linkedhashtable *ht);
+
+/*
+size *2
+rehash every item
+*/
+void rehashLinkedHashTable(linkedhashtable ** ht);
+
 void printLinkedHash(linkedhashtable *ht);
 
 

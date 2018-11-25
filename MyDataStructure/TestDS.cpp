@@ -186,19 +186,23 @@ int main()
 	if (isTestingLinkedHash) {
 		int size = 5;
 		linkedhashtable *ht = initLinkedHashTable(size);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
 			char *ch = (char *)malloc(sizeof(char) * x);
 			for (int j = 0; j < x; j++) {
 				ch[j] = rand() % 26 + 97;
 			}
 			ch[x] = '\0';
-			insertLinkedHash(ht, ch);
-			printLinkedHash(ht);
-			findInLinkedHash(ht, ch);
+			ht = insertLinkedHash(ht, ch);
 		}
 
+		printLinkedHash(ht);
+		printf("# of Collisions=%d\n", ht->collision);
+		printf("Load Factor %%=%.2f\n----------", calcLoadFactor(ht));
+
 	}
+
+
 
 
 	system("pause");
