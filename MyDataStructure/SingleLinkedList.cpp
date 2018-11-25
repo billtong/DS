@@ -10,7 +10,16 @@ llnode * initLinkedNode(int value)
 	return node;
 }
 
-singlelinkedlist * initLinkedList()
+llnode * initLinkedNode(char * ch)
+{
+	llnode *node = (llnode *)malloc(sizeof(llnode));
+	node->ch = ch;
+	node->next = NULL;
+	return node;
+	return node;
+}
+
+singlelinkedlist * initSingleLinkedList()
 {
 	singlelinkedlist *ll = (singlelinkedlist *)malloc(sizeof(singlelinkedlist));
 	ll->head = NULL;
@@ -60,6 +69,14 @@ void append(singlelinkedlist * ll, int value)
 	}
 }
 
+void addSingleLinkedListFront(singlelinkedlist * ll, char * ch)
+{
+	llnode *node = ll->head;
+	ll->head = initLinkedNode(ch);
+	ll->head->next = node;
+	ll->size++;
+}
+
 llnode * findIndexOf(singlelinkedlist * ll, int index)
 {
 	llnode *node = ll->head;
@@ -81,6 +98,16 @@ llnode * findIndexOf(singlelinkedlist * ll, int index)
 		}
 		return node;
 	}
+}
+
+bool isSingleLinkedListEmpty(singlelinkedlist * ll)
+{
+	return (ll != nullptr) && (ll->head != nullptr) ? false : true;
+}
+
+bool isEmpty(singlelinkedlist * ll)
+{
+	return (ll != nullptr) && (ll->head != nullptr) ? false : true;
 }
 
 void freeLinkedList(singlelinkedlist *ll)
@@ -129,10 +156,8 @@ int removeIndexOf(singlelinkedlist * ll, int index)
 
 void printLinkedList(singlelinkedlist * ll)
 {
-	if (ll == NULL ) {
-		printf("singlelinkedlist printLinkedList error: singlelinkedlist null error\n");
-	}
-	else if(ll->head == NULL || ll->size==0)
+	
+	if(isSingleLinkedListEmpty(ll) || ll->size==0)
 	{
 		printf("the singlelinkedlist is empty\n");
 	}
@@ -147,4 +172,24 @@ void printLinkedList(singlelinkedlist * ll)
 		printf("]\n");
 	}
 	
+}
+
+void printCharSingleLinkedList(singlelinkedlist * ll)
+{
+	if (isSingleLinkedListEmpty(ll) || ll->size == 0)
+	{
+		printf("the singlelinkedlist is empty\n");
+	}
+	else
+	{
+		printf("[ ");
+		llnode *node = ll->head;
+		while (node) {
+			printf("%s --", node->ch);
+			node = node->next;
+		}
+		printf("]\n");
+	}
+
+
 }

@@ -4,7 +4,7 @@
 linkedstack * initLinkedstack()
 {
 	linkedstack *ls = (linkedstack *)malloc(sizeof(linkedstack));
-	ls->ll = initLinkedList();
+	ls->ll = initSingleLinkedList();
 	ls->top = ls->ll->size;
 	return ls;
 }

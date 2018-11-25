@@ -135,6 +135,7 @@
     <ClCompile Include="binarysearchtree.cpp" />
     <ClCompile Include="binarytree.cpp" />
     <ClCompile Include="circularqueue.cpp" />
+    <ClCompile Include="LinkedHash.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="linkedqueue.cpp" />
     <ClCompile Include="linkedstack.cpp" />

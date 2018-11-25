@@ -10,17 +10,19 @@
 #include "binarytree.h"
 #include "binarysearchtree.h"
 #include "avlbinarysearchtree.h"
+#include "LinkedHash.h"
 
 int isTestingArrayList = 0;
-int isTestingLinkedList = 1;
+int isTestingLinkedList = 0;
 int isTestArrayStack = 0;
-int isTestLinkedStack = 1;
+int isTestLinkedStack = 0;
 int isTestArrayQueue = 0;
-int isTestLinkedQueue = 1;
+int isTestLinkedQueue = 0;
 int isTestCircularQueue = 0;
 int isTestingBinaryTree = 0;
 int isTestingSearchTree = 0;
 int isTestingAVLBinaryTree = 0;
+int isTestingLinkedHash = 1;
 
 int main()
 {
@@ -40,7 +42,7 @@ int main()
 	}
 
 	if (isTestingLinkedList) {
-		singlelinkedlist *ll = initLinkedList();
+		singlelinkedlist *ll = initSingleLinkedList();
 		printLinkedList(ll);
 		for (int i = 1; i < 10; i++) {
 			append(ll, i);
@@ -188,6 +190,40 @@ int main()
 
 
 		preoderPrintBinaryTree(avl->root);
+
+	}
+
+//hash---------------------------------------------------------------------------------------------------------------------------------------------------------
+	if (isTestingLinkedHash) {
+		int size = 5;
+		linkedhashtable *ht = initLinkedHashTable(size);
+		for (int i = 0; i < 5; i++) {
+			int x = rand() % 5 + 1;
+			char *ch = (char *)malloc(sizeof(char) * x);
+			for (int j = 0; j < x; j++) {
+				ch[j] = rand() % 26 + 97;
+			}
+			ch[x] = '\0';
+			insertLinkedHash(ht, ch);
+			printLinkedHash(ht);
+		}
+
+	
+
+
+		/*
+		for(i=0;i<100;i++){
+		int x = rand()%5+1;
+		char *p = malloc(sizeof(char)*x);
+		int j=0;
+		for(j=0;j<x;j++)
+			p[j] = rand()%26 + 97;
+		p[j]='\0';
+		insert(h,p);
+	}	
+		*/
+
+
 
 	}
 

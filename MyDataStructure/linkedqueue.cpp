@@ -14,7 +14,7 @@ bool isLinkedQueueEmpty(linkedqueue * aq)
 linkedqueue * initLinkedQueue()
 {
 	linkedqueue *lq = (linkedqueue *)malloc(sizeof(linkedqueue));
-	lq->ll = initLinkedList();
+	lq->ll = initSingleLinkedList();
 	lq->count = 0;
 	return lq;
 }
