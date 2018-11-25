@@ -39,9 +39,25 @@ void insertLinkedHash(linkedhashtable * ht, char * ch)
 	addSingleLinkedListFront((ht->hashlist)[key], ch);
 }
 
-void findInLinkedHash(linkedhashtable * ht, char * ch)
+bool findInLinkedHash(linkedhashtable * ht, char * ch)
 {
+	if (ht == nullptr) {
+		printf("string %s is not exist in linked hash\n", ch);
+		return false;
+	}
+	
+	int key = divisionHash(ht, ch);
+	if (isSingleLinkedListEmpty((ht->hashlist)[key])) {
+		printf("string %s is not exist in linked hash\n", ch);
+		return false;
+	}
 
+	if (findCharInSingleLinkedList((ht->hashlist)[key], ch) != -1) {
+		printf("find string %s in key %d\n", ch, key);
+		return true;
+	}
+	printf("string %s is not exist in linked hash\n", ch);
+	return false;
 }
 
 void printLinkedHash(linkedhashtable * ht)

@@ -24,7 +24,7 @@ int divisionHash(linkedhashtable *ht, char *ch);
 
 
 void insertLinkedHash(linkedhashtable *ht, char *ch);
-void findInLinkedHash(linkedhashtable *ht, char *ch);
+bool findInLinkedHash(linkedhashtable *ht, char *ch);
 void printLinkedHash(linkedhashtable *ht);
 
 

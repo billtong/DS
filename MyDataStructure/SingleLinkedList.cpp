@@ -77,6 +77,29 @@ void addSingleLinkedListFront(singlelinkedlist * ll, char * ch)
 	ll->size++;
 }
 
+int findCharInSingleLinkedList(singlelinkedlist * ll, char * ch)
+{
+	if (isSingleLinkedListEmpty(ll) || ll->size == 0)
+	{
+		printf("the singlelinkedlist is empty\n");
+		return -1;
+	}
+	else {
+		int i = 0;
+		llnode *ptr = ll->head;
+		while (ptr) {
+			if (strcmp(ch, ptr->ch) == 0) {
+			
+				return i;
+			}
+			ptr = ptr->next;
+			i++;
+		}
+		return -1;
+	}
+	
+}
+
 llnode * findIndexOf(singlelinkedlist * ll, int index)
 {
 	llnode *node = ll->head;
@@ -159,7 +182,7 @@ void printLinkedList(singlelinkedlist * ll)
 	
 	if(isSingleLinkedListEmpty(ll) || ll->size==0)
 	{
-		printf("the singlelinkedlist is empty\n");
+		printf("[]\n");
 	}
 	else
 	{
@@ -178,7 +201,7 @@ void printCharSingleLinkedList(singlelinkedlist * ll)
 {
 	if (isSingleLinkedListEmpty(ll) || ll->size == 0)
 	{
-		printf("the singlelinkedlist is empty\n");
+		printf("[]\n");
 	}
 	else
 	{

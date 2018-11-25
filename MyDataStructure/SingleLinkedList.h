@@ -24,9 +24,6 @@ singlelinkedlist *initSingleLinkedList();		//初始化链表 返回一个链表的指针，其中
 
 void insertIndexOf(singlelinkedlist *ll, int index, int value);		//向某个index插入值
 void append(singlelinkedlist *ll, int value);		//向链表后添加一个值
-
-void addSingleLinkedListFront(singlelinkedlist *ll, char *ch);//方便于实现linkedhash
-
 int removeIndexOf(singlelinkedlist*ll, int index);		//从链表里删除某个值
 void printLinkedList(singlelinkedlist* ll);		//打印链表
 void printCharSingleLinkedList(singlelinkedlist *ll);
@@ -37,5 +34,9 @@ bool isSingleLinkedListEmpty(singlelinkedlist *ll);
 
 
 void freeLinkedList(singlelinkedlist *ll);	//释放链表空间
+
+
+void addSingleLinkedListFront(singlelinkedlist *ll, char *ch);//方便于实现linkedhash
+int findCharInSingleLinkedList(singlelinkedlist *ll, char *ch);
 
 #endif // !LINKEDLIST_H
