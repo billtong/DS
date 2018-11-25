@@ -1,6 +1,4 @@
-#include "arraystack.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include"ZHeader.h"
 
 
 arraystack * initArraystack()

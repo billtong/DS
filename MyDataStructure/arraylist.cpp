@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "arraylist.h"
+#include"ZHeader.h"
+
 #define initalSize 10
 
 arraylist* initArrayList()

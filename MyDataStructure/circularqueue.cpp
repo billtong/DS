@@ -1,6 +1,4 @@
-#include "circularqueue.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include"ZHeader.h"
 
 circularqueue * initCircularQueue(int size)
 {

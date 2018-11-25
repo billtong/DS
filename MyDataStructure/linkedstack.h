@@ -1,7 +1,6 @@
 #ifndef LINKEDSTACK_H
 #define LINKEDSTACK_H
-#include "SingleLinkedList.h"
-
+#include"ZHeader.h"
 typedef struct _LinkedStack
 {
 	singlelinkedlist *ll;

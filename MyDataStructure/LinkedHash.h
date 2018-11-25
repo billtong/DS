@@ -1,11 +1,7 @@
 #ifndef LINKEDHASH_H
 #define LINKEDHASH_H
 
-#include "SingleLinkedList.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include<math.h>
-#include <string.h>
+#include"ZHeader.h"
 
 typedef struct _LinkedHash
 {

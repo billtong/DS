@@ -1,6 +1,6 @@
 #ifndef LINKEDQUEUE_H
 #define LINKEDQUEUE__H
-#include "SingleLinkedList.h"
+#include"ZHeader.h"
 
 typedef struct _LinkedQueue
 {

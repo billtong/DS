@@ -48,6 +48,9 @@
     <ClInclude Include="LinkedHash.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ZHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="linkedstack.cpp">

@@ -1,6 +1,6 @@
 #ifndef ARRAYQUEUE_H
 #define ARRAYQUEUE_H
-#include "arraylist.h"
+#include"ZHeader.h"
 
 typedef struct _ArrayQueue
 {

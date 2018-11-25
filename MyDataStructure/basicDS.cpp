@@ -1,27 +1,15 @@
-#include<stdlib.h>
-#include<stdio.h>
-#include "arraylist.h"
-#include "SingleLinkedList.h"
-#include "arraystack.h"
-#include "linkedstack.h"
-#include "arrayqueue.h"
-#include "linkedqueue.h"
-#include"circularqueue.h"
-#include "binarytree.h"
-#include "binarysearchtree.h"
-#include "avlbinarysearchtree.h"
-#include "LinkedHash.h"
+#include"ZHeader.h"
 
-int isTestingArrayList = 0;
-int isTestingLinkedList = 0;
-int isTestArrayStack = 0;
-int isTestLinkedStack = 0;
-int isTestArrayQueue = 0;
-int isTestLinkedQueue = 0;
-int isTestCircularQueue = 0;
-int isTestingBinaryTree = 0;
-int isTestingSearchTree = 0;
-int isTestingAVLBinaryTree = 0;
+int isTestingArrayList = 1;
+int isTestingLinkedList = 1;
+int isTestArrayStack = 1;
+int isTestLinkedStack = 1;
+int isTestArrayQueue = 1;
+int isTestLinkedQueue = 1;
+int isTestCircularQueue = 1;
+int isTestingBinaryTree = 1;
+int isTestingSearchTree = 1;
+int isTestingAVLBinaryTree = 1;
 int isTestingLinkedHash = 1;
 
 int main()
@@ -207,24 +195,6 @@ int main()
 			insertLinkedHash(ht, ch);
 			printLinkedHash(ht);
 		}
-
-	
-
-
-		/*
-		for(i=0;i<100;i++){
-		int x = rand()%5+1;
-		char *p = malloc(sizeof(char)*x);
-		int j=0;
-		for(j=0;j<x;j++)
-			p[j] = rand()%26 + 97;
-		p[j]='\0';
-		insert(h,p);
-	}	
-		*/
-
-
-
 	}
 
 	system("pause");

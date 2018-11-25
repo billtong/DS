@@ -1,4 +1,4 @@
-#include "binarysearchtree.h"
+#include"ZHeader.h"
 
 
 binarysearchtree * initBinarySearchTree()

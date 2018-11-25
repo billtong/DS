@@ -29,8 +29,7 @@ the height of a binary tree with n nodes at least log2(n+1)-1
 a binary tree of height h>=0 has at most 2^(h) leaves
 the height of a inary tree with l leaves at least log2(l)
 */
-#include "arraylist.h"
-#include "linkedqueue.h"
+#include"ZHeader.h"
 
 typedef struct _BinaryTreeNode
 {

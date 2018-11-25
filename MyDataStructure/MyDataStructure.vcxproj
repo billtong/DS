@@ -126,6 +126,7 @@
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="linkedqueue.h" />
     <ClInclude Include="linkedstack.h" />
+    <ClInclude Include="ZHeader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arraylist.cpp" />

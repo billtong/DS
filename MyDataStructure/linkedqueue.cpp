@@ -1,6 +1,6 @@
-#include "linkedqueue.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include"ZHeader.h"
+
+
 bool isLinkedQueueEmpty(linkedqueue * aq)
 {
 	if (aq == nullptr || aq->count == 0) {

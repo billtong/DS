@@ -1,10 +1,7 @@
 #ifndef AVLBINARYSEARCHTREE_H
 #define AVLBINARYSEARCHTREE_H
-#include "binarytree.h"
-#include "binarysearchtree.h"
-#include <stdlib.h>
-#include<stdio.h>
 
+#include"ZHeader.h"
 
 typedef struct _AVLBinarySearchTree
 {

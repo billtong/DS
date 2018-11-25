@@ -1,4 +1,4 @@
-#include "LinkedHash.h"
+#include"ZHeader.h"
 
 linkedhashtable * initLinkedHashTable(int size)
 {

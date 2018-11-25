@@ -1,6 +1,8 @@
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
 
+#include"ZHeader.h"
+
 typedef struct _ArrayList
 {
 	int *arr;

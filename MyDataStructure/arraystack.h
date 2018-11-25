@@ -1,6 +1,6 @@
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
-#include "arraylist.h"
+#include"ZHeader.h"
 
 typedef struct _ArrayStack
 {

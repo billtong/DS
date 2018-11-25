@@ -1,7 +1,5 @@
-#include "binarytree.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include"ZHeader.h"
+
 binarytreenode * initBinaryTreeNode(int value, int key)
 {
 	binarytreenode *node = (binarytreenode *)malloc(sizeof(binarytreenode));
