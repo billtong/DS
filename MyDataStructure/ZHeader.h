@@ -17,7 +17,7 @@
 #include "BinarySearchTree.h"
 #include "BinaryTree.h"
 #include "CircularQueue.h"
-#include "LinkedHash.h"
+#include "LinkedHashTable.h"
 #include "LinkedQueue.h"
 #include "LinkedStack.h"
 #include "SingleLinkedList.h"

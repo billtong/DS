@@ -18,9 +18,6 @@
     <ClInclude Include="SingleLinkedList.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LinkedHash.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ZHeader.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -52,6 +49,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="LinkedStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedHashTable.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

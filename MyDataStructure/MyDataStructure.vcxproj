@@ -123,7 +123,7 @@
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="CircularQueue.h" />
-    <ClInclude Include="LinkedHash.h" />
+    <ClInclude Include="LinkedHashTable.h" />
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="LinkedQueue.h" />
     <ClInclude Include="LinkedStack.h" />
