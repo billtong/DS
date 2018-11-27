@@ -115,31 +115,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="arraylist.h" />
-    <ClInclude Include="arrayqueue.h" />
-    <ClInclude Include="arraystack.h" />
-    <ClInclude Include="avlbinarysearchtree.h" />
-    <ClInclude Include="binarysearchtree.h" />
-    <ClInclude Include="binarytree.h" />
-    <ClInclude Include="circularqueue.h" />
+    <ClInclude Include="ArrayBinaryHeap.h" />
+    <ClInclude Include="ArrayList.h" />
+    <ClInclude Include="ArrayQueue.h" />
+    <ClInclude Include="ArrayStack.h" />
+    <ClInclude Include="AVLBinarySearchTree.h" />
+    <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="CircularQueue.h" />
     <ClInclude Include="LinkedHash.h" />
     <ClInclude Include="SingleLinkedList.h" />
-    <ClInclude Include="linkedqueue.h" />
-    <ClInclude Include="linkedstack.h" />
+    <ClInclude Include="LinkedQueue.h" />
+    <ClInclude Include="LinkedStack.h" />
     <ClInclude Include="ZHeader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="arraylist.cpp" />
-    <ClCompile Include="arrayqueue.cpp" />
-    <ClCompile Include="arraystack.cpp" />
-    <ClCompile Include="avlbinarysearchtree.cpp" />
-    <ClCompile Include="binarysearchtree.cpp" />
-    <ClCompile Include="binarytree.cpp" />
-    <ClCompile Include="circularqueue.cpp" />
+    <ClCompile Include="ArrayBinaryHeap.cpp" />
+    <ClCompile Include="ArrayList.cpp" />
+    <ClCompile Include="ArrayQueue.cpp" />
+    <ClCompile Include="ArrayStack.cpp" />
+    <ClCompile Include="AVLBinarySearchTree.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="CircularQueue.cpp" />
     <ClCompile Include="LinkedHash.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
-    <ClCompile Include="linkedqueue.cpp" />
-    <ClCompile Include="linkedstack.cpp" />
+    <ClCompile Include="LinkedQueue.cpp" />
+    <ClCompile Include="LinkedStack.cpp" />
     <ClCompile Include="TestDS.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

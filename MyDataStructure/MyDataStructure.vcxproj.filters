@@ -15,33 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arraylist.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="linkedstack.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="arraystack.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="arrayqueue.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="linkedqueue.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="binarytree.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="binarysearchtree.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="avlbinarysearchtree.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="circularqueue.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="SingleLinkedList.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -51,35 +24,38 @@
     <ClInclude Include="ZHeader.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ArrayBinaryHeap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AVLBinarySearchTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="linkedstack.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="linkedqueue.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="binarytree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="binarysearchtree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="circularqueue.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="avlbinarysearchtree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="arraystack.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="arrayqueue.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="arraylist.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SingleLinkedList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -87,6 +63,36 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TestDS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayBinaryHeap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AVLBinarySearchTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearchTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

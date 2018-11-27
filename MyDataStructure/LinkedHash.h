@@ -1,7 +1,7 @@
 #ifndef LINKEDHASH_H
 #define LINKEDHASH_H
 
-#include"ZHeader.h"
+#include "SingleLinkedList.h"
 
 typedef struct _LinkedHash
 {

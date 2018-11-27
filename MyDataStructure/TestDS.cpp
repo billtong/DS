@@ -1,15 +1,18 @@
 #include"ZHeader.h"
-int isTestingArrayList = 0;
-int isTestingLinkedList = 0;
-int isTestArrayStack = 0;
-int isTestLinkedStack = 0;
-int isTestArrayQueue = 0;
-int isTestLinkedQueue = 0;
-int isTestCircularQueue = 0;
-int isTestingBinaryTree = 0;
-int isTestingSearchTree = 0;
-int isTestingAVLBinaryTree = 0;
+
+
+int isTestingArrayList = 1;
+int isTestingLinkedList = 1;
+int isTestArrayStack = 1;
+int isTestLinkedStack = 1;
+int isTestArrayQueue = 1;
+int isTestLinkedQueue = 1;
+int isTestCircularQueue = 1;
+int isTestingBinaryTree = 1;
+int isTestingSearchTree = 1;
+int isTestingAVLBinaryTree = 1;
 int isTestingLinkedHash = 1;
+int isTestingArrayBinaryHeap = 1;
 
 
 
@@ -198,10 +201,21 @@ int main()
 
 		printLinkedHash(ht);
 		printf("# of Collisions=%d\n", ht->collision);
-		printf("Load Factor %%=%.2f\n----------", calcLoadFactor(ht));
+		printf("Load Factor %%=%.2f\n", calcLoadFactor(ht));
 
 	}
 
+
+	if (isTestingArrayBinaryHeap) {
+		int size = 15;
+		int *arr = (int *)malloc(sizeof(int) * size);
+		for (int i = 0; i < size; i++) {
+			arr[i] = rand() % 100;
+		}
+		arraybinaryheap *heap = minArrayBinaryHeapify(arr, size);
+		printArrayBinaryHeap(heap);
+		
+	}
 
 
 

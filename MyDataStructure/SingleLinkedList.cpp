@@ -1,7 +1,5 @@
 #include"ZHeader.h"
 
-
-
 llnode * initLinkedNode(int value)
 {
 	llnode *node = (llnode *)malloc(sizeof(llnode));

@@ -1,6 +1,5 @@
 #include"ZHeader.h"
 
-
 linkedstack * initLinkedstack()
 {
 	linkedstack *ls = (linkedstack *)malloc(sizeof(linkedstack));

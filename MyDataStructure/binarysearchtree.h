@@ -1,7 +1,7 @@
 #ifndef BINARYSEARCHTREE_H
 #define BINARYSEARCHTREE_H
 
-#include"ZHeader.h"
+#include "BinaryTree.h"
 
 typedef struct _BinarySearchTree
 {

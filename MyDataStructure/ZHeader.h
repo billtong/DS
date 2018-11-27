@@ -9,22 +9,18 @@
 
 //my libraries
 
-#include "arraylist.h"
-#include "SingleLinkedList.h"
-
-#include "arraystack.h"
-#include "linkedstack.h"
-
-#include "arrayqueue.h"
-#include "linkedqueue.h"
-#include"circularqueue.h"
-
-#include "binarytree.h"
-#include "binarysearchtree.h"
-#include "avlbinarysearchtree.h"
-
+#include "ArrayBinaryHeap.h"
+#include "ArrayList.h"
+#include "ArrayQueue.h"
+#include "ArrayStack.h"
+#include "AVLBinarySearchTree.h"
+#include "BinarySearchTree.h"
+#include "BinaryTree.h"
+#include "CircularQueue.h"
 #include "LinkedHash.h"
-
+#include "LinkedQueue.h"
+#include "LinkedStack.h"
+#include "SingleLinkedList.h"
 
 #endif // ! ZHEADER_H
 #pragma once

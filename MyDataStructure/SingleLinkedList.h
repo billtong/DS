@@ -2,8 +2,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-#include"ZHeader.h"
-
 typedef struct _LinkedListNode 
 {
 	int data;

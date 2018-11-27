@@ -1,6 +1,5 @@
 #include"ZHeader.h"
 
-
 binarysearchtree * initBinarySearchTree()
 {
 	binarysearchtree *bt = (binarysearchtree *)malloc(sizeof(binarysearchtree));
