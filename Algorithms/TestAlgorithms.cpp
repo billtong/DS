@@ -26,7 +26,7 @@ int main() {
 	int n = 7;
 	long	swaps = 0;
 
-	printf("Before   Sorting:\t\t");
+	printf("Before   Sorting:\t");
 	printArray(a, n);
 	printf("*****\n");
 
@@ -45,6 +45,15 @@ int main() {
 	binaryInsertionSorts(a, n);
 	printArray(a,n);
 
+	initArray(a);
+	printf("bubble sort result:\n");
+	bubbleSorts(a, n);
+	printArray(a, n);
+
+	int test[] = {200, 50, 212, 23, 43, 7, 1200, 50, 60, 2, 5, 3, 1};//s13
+	printf("quick sort result:\n");
+	quickSorts(test, 0, 12);
+	printArray(test, 13);
 
 	system("pause");
 	return 0;
