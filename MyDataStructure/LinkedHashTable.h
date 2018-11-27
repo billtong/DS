@@ -18,10 +18,7 @@ used in division hash
 */
 long hashString(char *ch);
 
-
 int divisionHash(linkedhashtable *ht, char *ch);
-
-
 
 linkedhashtable *insertLinkedHash(linkedhashtable *ht, char *ch);
 
