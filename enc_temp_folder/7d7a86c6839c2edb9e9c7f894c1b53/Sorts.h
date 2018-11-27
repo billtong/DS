@@ -94,11 +94,7 @@ void merge(int *a, int start, int middle, int end, int *b);
 
 void bucketSort(int *a, int size, int bucketSize);
 
-/*(0, 10^p)
-先排列个位
-在排10位
-最后排100位
-*/
+//(0, 10^p)
 void radixSort(int *a, int size, int p);
 
 #endif // !SORTS_H

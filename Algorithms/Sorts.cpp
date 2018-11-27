@@ -1,6 +1,7 @@
 #include "Sorts.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void swap(int *a, int *b) {
 	int temp = *a;
@@ -155,5 +156,65 @@ void merge(int *a, int start, int middle, int end, int *b)
 	for (i = start; i <= end; i++) {
 		a[i] = b[i];
 	}
+
+}
+
+void bucketSort(int * a, int size, int bucketSize)
+{
+	int *buckets = (int *)malloc(sizeof(int) * bucketSize);
+
+	for (int i = 0; i < bucketSize; i++) {
+		buckets[i] = 0;
+		
+	}
+
+	for (int i = 0; i < size; i++) {
+		buckets[a[i]]++;
+	}
+	
+	for (int i = 0, j = 0; j < size; j++) {
+		int k = buckets[j];
+		while (k > 0) {
+			a[i++] = j;
+			k--;
+		}
+	}
+
+
+}
+
+void radixSort(int * a, int size, int p)
+{
+	//base 10 is used
+	for (int k = 0; k < p; k++) {
+	
+		print(a, size);
+		int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		int *tmp = (int *)malloc(sizeof(int) * size);
+		int *offset = (int *)malloc(sizeof(int) * 10);
+		for (int i = 0; i < size; i++) {
+			count[(a[i] / (int)pow(10, k)) % 10]++;
+		}
+
+		
+		offset[0] = 0;
+		for (int i = 1; i < 10; i++) {
+			offset[i] = 0;
+			for (int j = 0; j < i; j++) {
+				offset[i] += count[j];
+			}
+		}
+
+		for (int i = 0; i < size; i++) {
+			tmp[offset[(a[i] / (int)pow(10, k)) % 10]++] = a[i];
+		}
+		print(tmp, size);
+
+		for (int i = 0; i < size; i++) {
+			a[i] = tmp[i];
+		}
+
+	}
+
 
 }

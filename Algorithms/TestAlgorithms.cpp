@@ -60,6 +60,17 @@ int main() {
 	mergeSort(test2, 13);
 	printArray(test2, 13);
 
+
+	int test3[] = { 3, 1, 2, 2, 5, 9, 2, 4, 4, 1, 6, 9, 0, 1, 2 };
+	printf("bucket sort result:\n");
+	//bucketSort(test3, 15, 10);
+	printArray(test3, 15);
+
+	int test4[] = {62, 20, 40, 59, 10, 13, 34, 23,13, 1, 12, 23, 43, 53, 90 };
+	radixSort(test4, 15, 3);
+	printf("radix sort result:\n");
+	printArray(test4, 15);
+
 	system("pause");
 	return 0;
 }
