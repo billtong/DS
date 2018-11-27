@@ -1,5 +1,6 @@
 #include "Sorts.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void swap(int *a, int *b) {
 	int temp = *a;
@@ -113,3 +114,46 @@ void quickSorts(int * arr, int left, int right)
 
 
 
+void mergeSort(int * arr, int n)
+{
+	int *b = (int *)malloc(sizeof(int)*n);
+	mergeSortRec(arr, 0, n-1, b);
+}
+
+void mergeSortRec(int *a, int start, int end, int* b) 
+{
+	if (start >= end) {
+		return;
+	}
+	int middle = (start + end) / 2;
+	mergeSortRec(a, start, middle, b);
+	mergeSortRec(a,middle+1, end, b);
+	merge(a, start, middle, end, b);
+}
+
+
+void merge(int *a, int start, int middle, int end, int *b) 
+{
+	int i, j, k;
+	for(i = start, j = start, k = middle + 1; j <= middle && k <= end; i++) {
+		if (a[j] < a[k]) {
+			b[i] = a[j++];
+		}
+		else {
+			b[i] = a[k++];
+		}
+	}
+
+	while (j <= middle) {
+		b[i++] = a[j++];
+	}
+
+	while (k <= end) {
+		b[i++] = a[k++];
+	}
+
+	for (i = start; i <= end; i++) {
+		a[i] = b[i];
+	}
+
+}

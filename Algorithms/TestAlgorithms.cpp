@@ -55,6 +55,11 @@ int main() {
 	quickSorts(test, 0, 12);
 	printArray(test, 13);
 
+	int test2[] = { 200, 50, 212, 23, 43, 7, 1200, 50, 60, 2, 5, 3, 1 };//s13
+	printf("merge sort result:\n");
+	mergeSort(test2, 13);
+	printArray(test2, 13);
+
 	system("pause");
 	return 0;
 }

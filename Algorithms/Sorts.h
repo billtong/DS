@@ -63,5 +63,32 @@ void bubbleSorts(int *arr, int size);
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 */
 void quickSorts(int *arr, int left, int right);
+
+
+/*
+该函式使用了merge的递归函数，用于简化使用，穿的参数少一点//被main里使用
+*/
+void mergeSort(int *arr, int n);
+
+/*merge递归
+获得middle
+然后将函数分为两部分分别进行排序，
+最后再整合到一起
+*/
+void mergeSortRec(int *a, int start, int end, int* b);
+/*这个merge时排序的核心
+	定义连个变量j和k
+	第一步
+	j从start开始遍历，k从middle加1开始遍历
+	那个小一点就先赋给b数组，并且那个小一些的index往前移动一格
+	等j或k中的一个走完全部所在区间
+	第二步
+	a中（middle的左边区间或者右边区间）剩下的元素还没有遍历的
+	统统给按照顺序给赋值到b中
+	第三步
+	将排序好的b赋值给a
+*/
+void merge(int *a, int start, int middle, int end, int *b);
+
 #endif // !SORTS_H
 
