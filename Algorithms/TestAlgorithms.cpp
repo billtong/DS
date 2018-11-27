@@ -36,9 +36,15 @@ int main() {
 	printArray(a,n);
 
 	initArray(a);
-	printf("insertion sort result:\n");
-	insertionSorts(a, n);
+	printf("linear insertion sort result:\n");
+	linearInsertionSorts(a, n);
 	printArray(a, n);
+
+	initArray(a);
+	printf("binary insertion sort result:\n");
+	binaryInsertionSorts(a, n);
+	printArray(a,n);
+
 
 	system("pause");
 	return 0;

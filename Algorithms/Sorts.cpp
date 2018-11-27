@@ -26,7 +26,7 @@ void selectionSorts(int * arr, int size)
 }
 
 
-void insertionSorts(int * arr, int size)
+void linearInsertionSorts(int * arr, int size)
 {
 	
 	for (int i = 1; i < size; i++) {
@@ -35,6 +35,31 @@ void insertionSorts(int * arr, int size)
 		}
 	}
 	
+}
+
+void binaryInsertionSorts(int * arr, int size)
+{
+	for (int i = 1; i < size; i++) {
+	
+		int left = 0;
+		int right = i;
+		int taget = arr[i];
+
+		while (left < right) {
+			int mid = (left + right) / 2;
+			if (taget >= arr[mid]) {
+				left = mid + 1;
+			}
+			else {
+				right = mid;
+			}
+		}
+
+		for (int j = i; j > right; j--) {
+			swap(&arr[j], &arr[j-1]);
+		}
+	
+	}
 }
 
 
