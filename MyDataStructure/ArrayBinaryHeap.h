@@ -51,6 +51,10 @@ arraybinaryheap *arrayMinHeapify(int a[], int size);
 交换数组里两个index的数值
 */
 void swapArray(int *arr, int a, int b);
+
+
+int *heapSort(int *arr, int size);
+
 /*
 打印出heap
 */

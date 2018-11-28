@@ -63,14 +63,10 @@ int withdrawMinHeap(arraybinaryheap *heap)
 		printf("the min heap is empty\n");
 		return 0;
 	}
-
 	int min = heap->a[0];
-
 	heap->a[0] = heap->a[heap->last];
 	heap->last--;
-	
 	minReheapDown(heap, 0);
-
 	return min;
 
 }
@@ -115,4 +111,14 @@ void swapArray(int *arr, int a, int b)
 	int t = arr[a];
 	arr[a] = arr[b];
 	arr[b] = t;
+}
+
+int *heapSort(int * arr, int size)
+{
+	arraybinaryheap *heap = arrayMinHeapify(arr, size);
+	int *b = (int *)malloc(sizeof(int)*size);
+	for (int i = 0; i < size; i++) {
+		b[i] = withdrawMinHeap(heap);
+	}
+	return b;
 }

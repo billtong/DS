@@ -66,7 +66,7 @@ int main() {
 	//bucketSort(test3, 15, 10);
 	printArray(test3, 15);
 
-	int test4[] = {62, 20, 40, 59, 10, 13, 34, 23,13, 1, 12, 23, 43, 53, 90 };
+	int test4[] = {629, 202, 40, 593, 2, 131, 34, 23,13, 1, 12, 23, 43, 53, 90 };
 	radixSort(test4, 15, 3);
 	printf("radix sort result:\n");
 	printArray(test4, 15);

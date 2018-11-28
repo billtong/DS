@@ -9,8 +9,17 @@ void swap(int *a, int *b) {
 	*b = temp;
 }
 
-
-
+void print(int *arr, int n) {
+	for (int i = 0; i < n; i++) {
+		//if (i >= left && i <= right) {
+		printf("%d ", arr[i]);
+		//}
+		//else {
+		//	printf("  ");
+		//}
+	}
+	printf("\n");
+}
 
 void selectionSorts(int * arr, int size)
 {
@@ -76,18 +85,6 @@ void bubbleSorts(int * arr, int size)
 
 }
 
-void print(int *arr, int n) {
-	for (int i = 0; i < n; i++) {
-		//if (i >= left && i <= right) {
-			printf("%d ", arr[i]);
-		//}
-		//else {
-		//	printf("  ");
-		//}
-	}
-	printf("\n");
-}
-
 void quickSorts(int * arr, int left, int right)
 {
 
@@ -99,11 +96,13 @@ void quickSorts(int * arr, int left, int right)
 		while (i < j) {
 			while (arr[i] < pivot) i++;
 			while (arr[j] > pivot) j--;
-			//这里的等号用来处理当被交换的项相同时，将把他插在后面
+			
+			//这里很妙
+			//这里的等号用来处理当被交换的项相同时，依然让i++
+			//这样能够将right和靠右一些的一项交换，保证哪一项依然比right要大
+
 			if (i <= j)
 				swap(&arr[i++], &arr[j--]);
-
-
 		}
 		
 		swap(&arr[i], &arr[right]);
@@ -188,7 +187,6 @@ void radixSort(int * a, int size, int p)
 	//base 10 is used
 	for (int k = 0; k < p; k++) {
 	
-		print(a, size);
 		int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		int *tmp = (int *)malloc(sizeof(int) * size);
 		int *offset = (int *)malloc(sizeof(int) * 10);
@@ -205,10 +203,11 @@ void radixSort(int * a, int size, int p)
 			}
 		}
 
+
 		for (int i = 0; i < size; i++) {
 			tmp[offset[(a[i] / (int)pow(10, k)) % 10]++] = a[i];
 		}
-		print(tmp, size);
+		
 
 		for (int i = 0; i < size; i++) {
 			a[i] = tmp[i];

@@ -189,6 +189,7 @@ int main()
 	if (isTestingLinkedHash) {
 		int size = 5;
 		linkedhashtable *ht = initLinkedHashTable(size);
+		
 		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
 			char *ch = (char *)malloc(sizeof(char) * x);
@@ -198,6 +199,9 @@ int main()
 			ch[x] = '\0';
 			ht = insertLinkedHash(ht, ch);
 		}
+
+		int a[] = { 9,11,20,15,40,9,16,27 };
+		
 
 		printLinkedHash(ht);
 		printf("# of Collisions=%d\n", ht->collision);
@@ -213,12 +217,10 @@ int main()
 			arr[i] = rand() % 100;
 		}
 		arraybinaryheap *heap = arrayMinHeapify(arr, size);
-		printArrayBinaryHeap(heap);
-		
-		printf("%d\n", heap->last);
-		int i = withdrawMinHeap(heap);
-		printf("after delete the root %d:", i);
-		printArrayBinaryHeap(heap);
+		arr = heapSort(heap->a, size);
+		for (int i = 0; i < size; i++) {
+			printf("%d ", arr[i]);
+		}
 
 	}
 

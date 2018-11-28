@@ -91,13 +91,27 @@ void mergeSortRec(int *a, int start, int end, int* b);
 void merge(int *a, int start, int middle, int end, int *b);
 
 
-
+/*
+bucketSize需要是数组的最大值
+按照从小到大的顺序，统计每种的元素数量，
+然后将他们统统取出来就时sorted了
+*/
 void bucketSort(int *a, int size, int bucketSize);
 
-/*(0, 10^p)
+/*基数排序是改良版的bucketsort
+bucketsize
+
+(0, 10^p)
 先排列个位
 在排10位
 最后排100位
+
+每个轮回中
+第一步：将每个数hash后进行bucket sort；（count赋值）
+第二步：计算出每个位置上的数字从那个index开始（offset赋值）
+第三步：按照offset的情况进行取出值（temp赋值）
+第四部：arr=temp
+
 */
 void radixSort(int *a, int size, int p);
 
