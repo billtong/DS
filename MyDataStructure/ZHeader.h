@@ -14,6 +14,7 @@
 #include "ArrayQueue.h"
 #include "ArrayStack.h"
 #include "AVLBinarySearchTree.h"
+#include "ArrayHashTable.h"
 #include "BinarySearchTree.h"
 #include "BinaryTree.h"
 #include "CircularQueue.h"

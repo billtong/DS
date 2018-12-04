@@ -12,7 +12,8 @@ int isTestingBinaryTree = 0;
 int isTestingSearchTree = 0;
 int isTestingAVLBinaryTree = 0;
 int isTestingLinkedHash = 0;
-int isTestingArrayBinaryHeap = 1;
+int isTestingArrayBinaryHeap = 0;
+int isTestingArrayHash = 1;
 
 
 
@@ -199,8 +200,6 @@ int main()
 			ch[x] = '\0';
 			ht = insertLinkedHash(ht, ch);
 		}
-
-		int a[] = { 9,11,20,15,40,9,16,27 };
 		
 
 		printLinkedHash(ht);
@@ -221,6 +220,24 @@ int main()
 		for (int i = 0; i < size; i++) {
 			printf("%d ", arr[i]);
 		}
+
+	}
+
+	if (isTestingArrayHash) {
+
+		arrayhashtable *ht = initArrayHashTable(30);
+
+		for (int i = 0; i < 20; i++) {
+			int x = rand() % 5 + 1;
+			char *ch = (char *)malloc(sizeof(char) * x);
+			for (int j = 0; j < x; j++) {
+				ch[j] = rand() % 26 + 97;
+			}
+			ch[x] = '\0';
+			insertArrayHashTable(ht, ch);
+		}
+
+		printArrayHashTable(ht);
 
 	}
 

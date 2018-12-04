@@ -1,21 +1,4 @@
-﻿  AVLBinarySearchTree.cpp
-  ArrayBinaryHeap.cpp
-  ArrayList.cpp
-  ArrayQueue.cpp
-  ArrayStack.cpp
-  BinarySearchTree.cpp
-  BinaryTree.cpp
-  CircularQueue.cpp
-  LinkedHash.cpp
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\linkedhash.cpp(19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  LinkedQueue.cpp
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\linkedqueue.cpp(59): warning C4551: 缺少参数列表的函数调用
-  LinkedStack.cpp
-  SingleLinkedList.cpp
-  TestDS.cpp
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(130): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“binarytreenode *”
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(130): warning C4313: “printf”: 格式字符串中的“%d”与“binarytreenode *”类型的参数 1 冲突
-  正在生成代码...
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\singlelinkedlist.cpp(122): warning C4715: “findIndexOf”: 不是所有的控件路径都返回值
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\arraylist.cpp(88): warning C4715: “removeValueOf”: 不是所有的控件路径都返回值
+﻿  TestDS.cpp
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(131): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“binarytreenode *”
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.cpp(131): warning C4313: “printf”: 格式字符串中的“%d”与“binarytreenode *”类型的参数 1 冲突
   MyDataStructure.vcxproj -> C:\Users\Bill Tong\Source\Repos\billtong\DS\x64\Debug\MyDataStructure.exe

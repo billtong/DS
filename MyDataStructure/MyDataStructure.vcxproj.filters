@@ -54,6 +54,9 @@
     <ClInclude Include="LinkedHashTable.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ArrayHashTable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SingleLinkedList.cpp">
@@ -93,6 +96,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LinkedStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayHashTable.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

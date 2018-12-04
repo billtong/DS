@@ -30,6 +30,7 @@ double calcLoadFactor(linkedhashtable *ht);
 size *2
 rehash every item
 */
+
 void rehashLinkedHashTable(linkedhashtable ** ht);
 
 void printLinkedHash(linkedhashtable *ht);
