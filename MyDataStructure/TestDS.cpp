@@ -225,7 +225,7 @@ int main()
 
 	if (isTestingArrayHash) {
 
-		arrayhashtable *ht = initArrayHashTable(30);
+		arrayhashtable *ht = initArrayHashTable(19);
 
 		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
@@ -235,10 +235,18 @@ int main()
 			}
 			ch[x] = '\0';
 			insertArrayHashTable(ht, ch);
+			if (i == 10 ) {
+				deleteArrayHashTable(ht, ch);
+			}
+			printf("%s is in %d \n%", ch, findArrayHashTable(ht, ch));
 		}
 
 		printArrayHashTable(ht);
 
+	
+		printf("# of Collisions=%d\n", ht->collision);
+		printf("# of LoadFactor=%.2f\n", getLoadFactor(ht));
+		
 	}
 
 

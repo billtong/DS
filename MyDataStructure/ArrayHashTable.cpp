@@ -32,14 +32,52 @@ void insertArrayHashTable(arrayhashtable * ht, char * data)
 			return;
 		}
 		key = (key + 1) % ht->tablesize;
+		ht->collision++;
 	} while (key != keyOri);
 
 	printf("error: the hashtable is full cannot input value %s\n", data);
 }
 
+int findArrayHashTable(arrayhashtable * ht, char * data)
+{
+	int indexOri = hash(ht, data), index = indexOri;
+
+	do
+	{
+		if (ht->hashtable[index] && strcmp(ht->hashtable[index], data) == 0) {
+			return index;
+		}
+
+		index = (index + 1) % ht->tablesize;
+	} while (index != indexOri);
+	
+	return -1;
+}
+
+int deleteArrayHashTable(arrayhashtable * ht, char * data)
+{
+	int key = findArrayHashTable(ht, data);
+	if (key >=0 && key<ht->tablesize) {
+		ht->hashtable[key] = nullptr;
+	}
+	return key;
+}
 
 
 
+
+
+double getLoadFactor(arrayhashtable * ht)
+{
+	 double n = 0;
+	for (int i = 0; i < ht->tablesize; i++) {
+		if (ht->hashtable[i]) {
+			n++;
+		}
+	}
+
+	return (n/ht->tablesize) *100;
+}
 
 void printArrayHashTable(arrayhashtable * ht)
 {
