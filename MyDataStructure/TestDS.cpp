@@ -13,7 +13,8 @@ int isTestingSearchTree = 0;
 int isTestingAVLBinaryTree = 0;
 int isTestingLinkedHash = 0;
 int isTestingArrayBinaryHeap = 0;
-int isTestingArrayHash = 1;
+int isTestingArrayHash = 0;
+int isTestingDirectedGraph = 1;
 
 
 
@@ -247,6 +248,20 @@ int main()
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("# of LoadFactor=%.2f\n", getLoadFactor(ht));
 		
+	}
+
+	if (isTestingDirectedGraph) {
+		edge edges[] = 
+		{
+			{0, 5},{2, 6}, {3, 1}, {5, 1}, {2, 4},{5, 9}, {9, 2}, {4, 3}, {7, 9}, {8, 7}, {1,8}
+		};
+
+		int verticeNum = 10;
+		int edgesNum = sizeof(edges) / sizeof(edge);
+
+		graph *myg = createGraph(edges, edgesNum, verticeNum);
+		printDirectedGraph(myg);
+
 	}
 
 

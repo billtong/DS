@@ -124,6 +124,7 @@
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="CircularQueue.h" />
+    <ClInclude Include="DirectedGraph.h" />
     <ClInclude Include="LinkedHashTable.h" />
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="LinkedQueue.h" />
@@ -140,6 +141,7 @@
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="CircularQueue.cpp" />
+    <ClCompile Include="DirectedGraph.cpp" />
     <ClCompile Include="LinkedHash.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="LinkedQueue.cpp" />

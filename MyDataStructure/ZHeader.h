@@ -22,6 +22,7 @@
 #include "LinkedQueue.h"
 #include "LinkedStack.h"
 #include "SingleLinkedList.h"
+#include "DirectedGraph.h"
 
 #endif // ! ZHEADER_H
 #pragma once
