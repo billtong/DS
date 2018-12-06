@@ -107,5 +107,50 @@
     <ClCompile Include="DirectedGraph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayBinaryHeap.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayHashTable.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayList.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayQueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayStack.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AVLBinarySearchTree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearchTree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularQueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectedGraph.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedHash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedQueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedStack.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleLinkedList.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDS.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

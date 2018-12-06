@@ -21,6 +21,7 @@ typedef struct Graph {
 typedef struct Edge {
 	int ori;
 	int dest;
+	int weight;
 }edge;
 
 graph *createGraph(edge edges[], int edgesNum, int verticesNum);
@@ -29,5 +30,20 @@ void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
 
 void printDirectedGraph(graph *myGraph);
 
+//primeÀ„∑®
+//https://blog.csdn.net/zwz2011303359/article/details/63254575
+
+
+
+//here is implemented a queue for graph
+
+typedef struct Queue {
+
+};
+
+
+
+
 #endif // !DIRECTEDGRAPH_H
 #pragma once
+
