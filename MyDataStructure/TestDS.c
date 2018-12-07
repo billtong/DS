@@ -1,19 +1,19 @@
 #include"ZHeader.h"
 
 
-int isTestingArrayList = 1;
-int isTestingLinkedList = 1;
-int isTestArrayStack = 1;
-int isTestLinkedStack = 1;
-int isTestArrayQueue = 1;
-int isTestLinkedQueue = 1;
-int isTestCircularQueue = 1;
-int isTestingBinaryTree = 1;
-int isTestingSearchTree = 1;
-int isTestingAVLBinaryTree = 1;
-int isTestingLinkedHash = 1;
+int isTestingArrayList = 0;
+int isTestingLinkedList = 0;
+int isTestArrayStack = 0;
+int isTestLinkedStack = 0;
+int isTestArrayQueue = 0;
+int isTestLinkedQueue = 0;
+int isTestCircularQueue = 0;
+int isTestingBinaryTree = 0;
+int isTestingSearchTree = 0;
+int isTestingAVLBinaryTree = 0;
+int isTestingLinkedHash = 0;
 int isTestingArrayBinaryHeap = 1;
-int isTestingArrayHash = 1;
+int isTestingArrayHash = 0;
 int isTestingDirectedGraph = 1;
 
 

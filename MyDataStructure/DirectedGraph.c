@@ -31,6 +31,8 @@ graph * createGraph(edge myEdges[],int edgesNum, int verticesNum)
 	return myGraph;
 }
 
+
+
 void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 {
 
@@ -65,3 +67,22 @@ void printDirectedGraph(graph * myGraph)
 
 }
 
+
+
+
+
+graphQueue *initGraphQueue()
+{
+	graphQueue *gq = (graphQueue *)malloc(sizeof(graphQueue));
+
+	gq->graphQueues = (graphnode *)malloc(sizeof(graphnode) * INIT_QUEUE_SIZE);
+
+	//init memory
+	for (int i = 0; i < INIT_QUEUE_SIZE; i++) {
+		gq->graphQueues[i].index = 0;
+		gq->graphQueues[i].next = NULL;
+	}
+
+	gq->count = 0;
+	return gq;
+}

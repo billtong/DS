@@ -5,6 +5,8 @@
 #define waiting 2
 #define visited 3
 
+#define INIT_QUEUE_SIZE 10
+
 typedef struct Node {
 	int index;
 	struct Node **next;
@@ -21,12 +23,9 @@ typedef struct Graph {
 typedef struct Edge {
 	int ori;
 	int dest;
-	int weight;
 }edge;
 
 graph *createGraph(edge edges[], int edgesNum, int verticesNum);
-
-void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
 
 void printDirectedGraph(graph *myGraph);
 
@@ -35,11 +34,16 @@ void printDirectedGraph(graph *myGraph);
 
 
 
+void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
+
+
 //here is implemented a queue for graph
+typedef struct VerticeQueue {
+	graphnode *graphQueues;
+	int count;
+}graphQueue;
 
-//typedef struct Queue {
-
-//};
+graphQueue *initGraphQueue();
 
 
 
