@@ -48,15 +48,16 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 	
 	//vertice出栈
 	//这里有一个奇怪的问题：currentIndex必须紧挨着currV获取，不然就失效了
+	//因为return里用&会返回特殊值，不最好不要用
 	//vertice的next全部进展
 	while (gq->count > 0) {
 
 		graphnode *currV = dequeueGraph(gq);
-		
+
+		state[currV->index] = visited;
+		printf("%d->", currV->index);
+
 		int currIndex = currV->index;
-		state[currIndex] = visited;
-		printf("%d->", currIndex);
-		
 		
 		for (int i = 0, isEmpty = 1; i < myGraph->num - 1 && isEmpty == 1; i++) {
 			if (myGraph->graphnodes[currIndex].next[i] == NULL) {
@@ -70,7 +71,6 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 					state[input.index] = waiting;
 				}
 			}
-			
 		}
 	}
 
@@ -191,9 +191,9 @@ graphnode *dequeueGraph(graphQueue * gq)
 		ptr = ptr->next;
 	}
 
-	graphnode rslt = ptr->value;
+	graphnode *rslt = &(ptr->value);
 	prevPtr->next = ptr->next;
 	gq->count--;
 
-	return &rslt;
+	return rslt;
 }
