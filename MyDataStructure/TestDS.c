@@ -12,7 +12,7 @@ int isTestingBinaryTree = 0;
 int isTestingSearchTree = 0;
 int isTestingAVLBinaryTree = 0;
 int isTestingLinkedHash = 0;
-int isTestingArrayBinaryHeap = 1;
+int isTestingArrayBinaryHeap = 0;
 int isTestingArrayHash = 0;
 int isTestingDirectedGraph = 1;
 
@@ -261,6 +261,7 @@ int main()
 
 		graph *myg = createGraph(edges, edgesNum, verticeNum);
 		printDirectedGraph(myg);
+		BreadthFirstTraversalDirectedGraph(myg, 0);
 
 	}
 

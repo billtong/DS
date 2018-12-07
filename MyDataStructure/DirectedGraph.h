@@ -13,8 +13,8 @@ typedef struct Node {
 }graphnode;
 
 typedef struct Graph {
-	int num;
-	graphnode *graphnodes;
+	int num;										//the number of vertices
+	graphnode *graphnodes;    //an array of vertices
 }graph;
 
 
@@ -38,14 +38,23 @@ void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
 
 
 //here is implemented a queue for graph
-typedef struct VerticeQueue {
-	graphnode *graphQueues;
+
+struct QueueNode {
+	graphnode value;
+	struct QueueNode *next;
+};
+
+typedef struct GraphQueue {
+	struct QueueNode *head;
 	int count;
 }graphQueue;
 
+
+
 graphQueue *initGraphQueue();
 
-
+void enqueueGraph(graphQueue *myGraphQueue, graphnode value);
+graphnode *dequeueGraph(graphQueue *myGraphQueue);
 
 
 #endif // !DIRECTEDGRAPH_H

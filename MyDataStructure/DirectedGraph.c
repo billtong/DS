@@ -42,9 +42,40 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 		state[i] = inital;
 	}
 
-	linkedqueue *lq = initLinkedQueue();
-	//?need to add specific queue for graphs
+	graphQueue *gq = initGraphQueue();
+	enqueueGraph(gq, myGraph->graphnodes[startIndex]);
+	state[startIndex] = waiting;
+	
+	//vertice出栈
+	//这里有一个奇怪的问题：currentIndex必须紧挨着currV获取，不然就失效了
+	//vertice的next全部进展
+	while (gq->count > 0) {
 
+		graphnode *currV = dequeueGraph(gq);
+		
+		int currIndex = currV->index;
+		state[currIndex] = visited;
+		printf("%d->", currIndex);
+		
+		
+		for (int i = 0, isEmpty = 1; i < myGraph->num - 1 && isEmpty == 1; i++) {
+			if (myGraph->graphnodes[currIndex].next[i] == NULL) {
+				isEmpty = 0;
+			}
+			else {
+				int index = myGraph->graphnodes[currIndex].next[i]->index;
+				if (state[index] == inital) {
+					graphnode input = *(myGraph->graphnodes[currIndex].next[i]);
+					enqueueGraph(gq, input);
+					state[input.index] = waiting;
+				}
+			}
+			
+		}
+	}
+
+
+	printf("\n");
 }
 
 void printDirectedGraph(graph * myGraph)
@@ -75,14 +106,62 @@ graphQueue *initGraphQueue()
 {
 	graphQueue *gq = (graphQueue *)malloc(sizeof(graphQueue));
 
-	gq->graphQueues = (graphnode *)malloc(sizeof(graphnode) * INIT_QUEUE_SIZE);
-
-	//init memory
-	for (int i = 0; i < INIT_QUEUE_SIZE; i++) {
-		gq->graphQueues[i].index = 0;
-		gq->graphQueues[i].next = NULL;
-	}
-
+	gq->head = (struct QueueNode *)malloc(sizeof(struct QueueNode));
+	gq->head->next = NULL;
 	gq->count = 0;
 	return gq;
+}
+
+void enqueueGraph(graphQueue * gq, graphnode value)
+{
+	if (gq == NULL) {
+		printf("the enqueuegraph is empty\n");
+		return;
+	}
+
+	//if it is the first time
+	if (gq->count == 0) {
+		gq->head = (struct QueueNode *)malloc(sizeof(struct QueueNode));
+		gq->head->value = value;
+		gq->head->next = NULL;
+		gq->count++;
+		return;
+	}
+
+	struct QueueNode* oriHead = gq->head;
+	gq->head = (struct QueueNode *)malloc(sizeof(struct QueueNode));
+	gq->head->value = value;
+	gq->head->next = oriHead;
+
+	gq->count++;
+
+	
+}
+
+graphnode *dequeueGraph(graphQueue * gq)
+{
+	if (gq == NULL || gq->head == NULL) {
+		printf("the enqueuegraph is already empty\n");
+		return NULL;
+	}
+	struct QueueNode* ptr = gq->head, *prevPtr = NULL;
+
+	if (gq->count == 1) {
+		gq->head = NULL;
+		gq->count = 0;
+		return  &(ptr->value);
+	}
+
+	
+	while (ptr->next != NULL)
+	{
+		prevPtr = ptr;
+		ptr = ptr->next;
+	}
+
+	graphnode rslt = ptr->value;
+	prevPtr->next = ptr->next;
+	gq->count--;
+
+	return &rslt;
 }
