@@ -11,7 +11,7 @@ graph * createGraph(edge myEdges[],int edgesNum, int verticesNum)
 		myGraph->graphnodes[i].index = i;
 		myGraph->graphnodes[i].next = (graphnode **)malloc(sizeof(graphnode *)*(verticesNum - 1));
 		for (int j = 0; j < verticesNum - 1; j++) {
-			myGraph->graphnodes[i].next[j] = nullptr;
+			myGraph->graphnodes[i].next[j] = NULL;
 		}
 	}
 
@@ -21,7 +21,7 @@ graph * createGraph(edge myEdges[],int edgesNum, int verticesNum)
 
 		//find the empty place to add the next vertices
 		for (int j = 0; j < verticesNum - 1; j++) {
-			if (myGraph->graphnodes[ori].next[j] == nullptr) {
+			if (myGraph->graphnodes[ori].next[j] == NULL) {
 				myGraph->graphnodes[ori].next[j] = &(myGraph->graphnodes[dest]);
 				break;
 			}
@@ -47,7 +47,7 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 
 void printDirectedGraph(graph * myGraph)
 {
-	if (myGraph == nullptr || myGraph->graphnodes==nullptr || myGraph->num == 0) {
+	if (myGraph == NULL || myGraph->graphnodes== NULL || myGraph->num == 0) {
 		printf("empty graph\n");
 		return;
 	}
@@ -55,7 +55,7 @@ void printDirectedGraph(graph * myGraph)
 	for (int i = 0; i < myGraph->num; i++) {
 		printf("vertice :%d ", myGraph->graphnodes[i].index);
 		for (int j = 0; j < myGraph->num - 1; j++) {
-			if (myGraph->graphnodes[i].next[j] == nullptr) {
+			if (myGraph->graphnodes[i].next[j] == NULL) {
 				break;
 			}
 			printf("--> %d ", myGraph->graphnodes[i].next[j]->index);

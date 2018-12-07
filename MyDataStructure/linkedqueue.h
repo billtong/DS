@@ -11,10 +11,10 @@ typedef struct _LinkedQueue
 }linkedqueue;
 
 
-bool isLinkedQueueEmpty(linkedqueue *aq);
+int isLinkedQueueEmpty(linkedqueue *aq);
 linkedqueue *initLinkedQueue();
-void enqueue(linkedqueue *aq, int value);
-int dequeue(linkedqueue *lq);
+void linkedEnqueue(linkedqueue *aq, int value);
+int linkedDequeue(linkedqueue *lq);
 void prinLinkedQueue(linkedqueue *aq);
 
 void freeLinkedQueue(linkedqueue *lq);

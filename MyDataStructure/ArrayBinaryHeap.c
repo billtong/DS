@@ -59,7 +59,7 @@ void minReheapDown(arraybinaryheap * heap, int index)
 
 int withdrawMinHeap(arraybinaryheap *heap)
 {
-	if (heap == nullptr || heap->a == nullptr) {
+	if (heap == NULL || heap->a == NULL) {
 		printf("the min heap is empty\n");
 		return 0;
 	}
@@ -91,7 +91,7 @@ arraybinaryheap * arrayMinHeapify(int a[], int size)
 
 void printArrayBinaryHeap(arraybinaryheap * heap)
 {
-	if (heap == nullptr || heap->a == nullptr) {
+	if (heap == NULL || heap->a ==NULL) {
 		printf("empty heap\n");
 	}
 	else {

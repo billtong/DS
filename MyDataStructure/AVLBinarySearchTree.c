@@ -3,7 +3,7 @@
 avlbinarysearchtree * initAVLBinaryTree()
 {
 	avlbinarysearchtree *bt = (avlbinarysearchtree *)malloc(sizeof(avlbinarysearchtree));
-	bt->root = nullptr;
+	bt->root = NULL;
 	return bt;
 }
 
@@ -24,7 +24,7 @@ void calculateHeight(binarytreenode * root)
 int getBalanceFactor(binarytreenode *root)
 {
 	int lh, rh;
-	if (root == nullptr) {
+	if (root == NULL) {
 		return 0;
 	}
 
@@ -46,7 +46,7 @@ binarytreenode * rotateLeft(binarytreenode * root)
 		return rc;
 	}
 	else {
-		return nullptr;
+		return NULL;
 	}
 
 }
@@ -64,7 +64,7 @@ binarytreenode * rotateRight(binarytreenode * root)
 		return rc;
 	}
 	else {
-		return nullptr;
+		return NULL;
 	}
 }
 
@@ -120,7 +120,7 @@ binarytreenode * rebalance(binarytreenode * root, int key)
 
 binarytreenode * insertAVLBinaryTree(binarytreenode * root, int value, int key)
 {
-	if (root == nullptr) {
+	if (root == NULL) {
 		return initBinaryTreeNode(value, key);
 	}
 
@@ -137,8 +137,8 @@ binarytreenode * insertAVLBinaryTree(binarytreenode * root, int value, int key)
 
 binarytreenode * deleteAVLBinaryTree(binarytreenode * root, int key)
 {
-	if (root == nullptr) {
-		return nullptr;
+	if (root == NULL) {
+		return NULL;
 	}
 	else if (root->key > key) {
 		root->left = deleteBinarySearchTree(root->left, key);
@@ -147,9 +147,9 @@ binarytreenode * deleteAVLBinaryTree(binarytreenode * root, int key)
 		root->right = deleteBinarySearchTree(root->right, key);
 	}
 	else if (root->key == key) {
-		if (root->left == nullptr)
+		if (root->left == NULL)
 			root = root->right;
-		else if (root->right == nullptr)
+		else if (root->right == NULL)
 			root = root->left;
 		else if (root->left && root->right) {
 			binarytreenode *leftMax = findMaxBinarySearchTree(root->left);

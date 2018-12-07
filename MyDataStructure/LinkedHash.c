@@ -33,7 +33,7 @@ linkedhashtable *insertLinkedHash(linkedhashtable * ht, char * ch)
 {
 
 	int key = divisionHash(ht, ch);
-	if (isSingleLinkedListEmpty((ht->hashlist)[key]) == false) {
+	if (isSingleLinkedListEmpty((ht->hashlist)[key]) == 0) {
 		ht->collision++;
 	}
 	addSingleLinkedListFront((ht->hashlist)[key], ch);
@@ -44,32 +44,32 @@ linkedhashtable *insertLinkedHash(linkedhashtable * ht, char * ch)
 	return ht;
 }
 
-bool findInLinkedHash(linkedhashtable * ht, char * ch)
+int findInLinkedHash(linkedhashtable * ht, char * ch)
 {
-	if (ht == nullptr) {
+	if (ht == NULL) {
 		printf("string %s is not exist in linked hash\n", ch);
-		return false;
+		return 0;
 	}
 	
 	int key = divisionHash(ht, ch);
 	if (isSingleLinkedListEmpty((ht->hashlist)[key])) {
 		printf("string %s is not exist in linked hash\n", ch);
-		return false;
+		return 0;
 	}
 
 	if (findCharInSingleLinkedList((ht->hashlist)[key], ch) != -1) {
 		printf("find string %s in key %d\n", ch, key);
-		return true;
+		return 1;
 	}
 	printf("string %s is not exist in linked hash\n", ch);
-	return false;
+	return 0;
 }
 
 double calcLoadFactor(linkedhashtable * ht)
 {
 	double n = 0;
 	for (int i = 0; i < ht->size; i++) {
-		if (isSingleLinkedListEmpty((ht->hashlist)[i]) == false) {
+		if (isSingleLinkedListEmpty((ht->hashlist)[i]) == 0) {
 			n++;
 		}
 	}
@@ -80,7 +80,7 @@ double calcLoadFactor(linkedhashtable * ht)
 void rehashLinkedHashTable(linkedhashtable ** ht)
 {
 
-	if (*ht == nullptr) {
+	if (*ht == NULL) {
 		return;
 	}
 
@@ -88,7 +88,7 @@ void rehashLinkedHashTable(linkedhashtable ** ht)
 	*ht = initLinkedHashTable(oldht->size * 2);
 	
 	for (int i = 0; i < oldht->size; i++) {
-		if (isSingleLinkedListEmpty((oldht->hashlist)[i]) == false) {
+		if (isSingleLinkedListEmpty((oldht->hashlist)[i]) == 0) {
 			llnode *ptr = (oldht->hashlist)[i]->head;
 			while (ptr) {
 				*ht = insertLinkedHash(*ht, ptr->ch);

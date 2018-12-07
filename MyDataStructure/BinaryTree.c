@@ -44,7 +44,7 @@ binarytree * getBinaryTree(int nodeNum)
 int getBinaryTreeHeight(binarytreenode * root)
 {
 	//int height = -1;
-	if (root == nullptr) {
+	if (root == NULL) {
 		return -1;
 	} else 
 	{
@@ -58,8 +58,8 @@ int getBinaryTreeHeight(binarytreenode * root)
 
 binarytreenode * findParentNode(binarytreenode * root, int key)
 {
-	if (root == nullptr)
-		return nullptr;
+	if (root == NULL)
+		return NULL;
 
 	if ((root->left && root->left->key == key) || (root->right && root->right->key == key)) {
 		return root;
@@ -76,7 +76,7 @@ binarytreenode * findParentNode(binarytreenode * root, int key)
 		if (right) {
 			return right;
 		}
-		return nullptr;
+		return NULL;
 	}
 }
 
@@ -85,8 +85,8 @@ binarytreenode *findNodeByKey(binarytreenode *root, int key)
 	/*
 	先判断root的话，在往后的逻辑中就不用再判断root是不是为空了
 	*/
-	if (root == nullptr) {
-		return nullptr;
+	if (root == NULL) {
+		return NULL;
 	}
 	
 	if (root->key == key) {
@@ -105,7 +105,7 @@ binarytreenode *findNodeByKey(binarytreenode *root, int key)
 	
 		
 		//其他如果什么都没找到的话就返回null了
-		return nullptr;
+		return NULL;
 	}
 	
 }
@@ -149,15 +149,15 @@ void breathfirstPrintBinaryTree(binarytree *bt)
 	printf("breathfirstPrint:	");
 	linkedqueue *lq = initLinkedQueue();
 	if (bt->root) {
-		enqueue(lq, bt->root->key);
+		linkedEnqueue(lq, bt->root->key);
 		while (!isLinkedQueueEmpty(lq)) {
-			binarytreenode* r = findNodeByKey(bt->root, dequeue(lq));
+			binarytreenode* r = findNodeByKey(bt->root, linkedDequeue(lq));
 			printf("%d  ",r->key );
 			if (r->left) {
-				enqueue(lq, r->left->key);
+				linkedEnqueue(lq, r->left->key);
 			}
 			if (r->right) {
-				enqueue(lq, r->right->key);
+				linkedEnqueue(lq, r->right->key);
 			}
 			
 		}

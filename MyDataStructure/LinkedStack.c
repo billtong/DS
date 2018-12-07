@@ -8,34 +8,34 @@ linkedstack * initLinkedstack()
 	return ls;
 }
 
-void push(linkedstack * ls, int value)
+void linkedPush(linkedstack * ls, int value)
 {
 	if (ls == NULL) {
-		printf("linkedstack push error: as is not exist");
+		printf("linkedstack linkedPush error: as is not exist");
 	}
 	else {
-		append(ls->ll, value);
+		singleLinkedAppend(ls->ll, value);
 		ls->top = ls->ll->size;
 	}
 }
 
-int pop(linkedstack * ls)
+int linkedPop(linkedstack * ls)
 {
 	if (ls == NULL) {
-		printf("linkedstack pop error: linkedstack not exist\n");
+		printf("linkedstack linkedPop error: linkedstack not exist\n");
 		return -1;
 	}
 	else {
-		int rslt = removeIndexOf(ls->ll, ls->top);
+		int rslt = removeSingleLinkedListIndexOf(ls->ll, ls->top);
 		ls->top = ls->ll->size;
 		return rslt;
 	}
 }
 
-int tos(linkedstack * ls)
+int linkedTos(linkedstack * ls)
 {
 	if (ls == NULL) {
-		printf("linkedstack tos error: linkedstack is not exist\n");
+		printf("linkedstack linkedTos error: linkedstack is not exist\n");
 		return -1;
 	}
 	else {

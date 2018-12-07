@@ -37,9 +37,9 @@ void printDirectedGraph(graph *myGraph);
 
 //here is implemented a queue for graph
 
-typedef struct Queue {
+//typedef struct Queue {
 
-};
+//};
 
 
 

@@ -1,6 +1,6 @@
 #include"ZHeader.h"
 
-llnode * initLinkedNode(int value)
+llnode * initLinkedIntNode(int value)
 {
 	llnode *node = (llnode *)malloc(sizeof(llnode));
 	node->data = value;
@@ -8,7 +8,7 @@ llnode * initLinkedNode(int value)
 	return node;
 }
 
-llnode * initLinkedNode(char * ch)
+llnode * initLinkedCharNode(char * ch)
 {
 	llnode *node = (llnode *)malloc(sizeof(llnode));
 	node->ch = ch;
@@ -25,13 +25,13 @@ singlelinkedlist * initSingleLinkedList()
 	return ll;
 }
 
-void insertIndexOf(singlelinkedlist * ll, int index, int value)
+void insertSingleLinkedListIndexOf(singlelinkedlist * ll, int index, int value)
 {
 
-	llnode *addNode = initLinkedNode(value) ,*temp;
+	llnode *addNode = initLinkedIntNode(value) ,*temp;
 
 	if (ll == NULL) {
-		printf("singlelinkedlist insertIndexOf error: singlelinkedlist null error\n");
+		printf("singlelinkedlist insertSingleLinkedListIndexOf error: singlelinkedlist null error\n");
 	}
 	else if (index ==1) {
 		temp = ll->head;
@@ -41,7 +41,7 @@ void insertIndexOf(singlelinkedlist * ll, int index, int value)
 	}
 	else if (index<1 || index>ll->size+1)
 	{
-		printf("singlelinkedlist insertIndexOf error: index out of bound\n");
+		printf("singlelinkedlist insertSingleLinkedListIndexOf error: index out of bound\n");
 	}
 	else {
 		
@@ -54,23 +54,23 @@ void insertIndexOf(singlelinkedlist * ll, int index, int value)
 	}
 }
 
-void append(singlelinkedlist * ll, int value)
+void singleLinkedAppend(singlelinkedlist * ll, int value)
 {
 	llnode *addNode = (llnode *)malloc(sizeof(llnode)), *temp = NULL;
 	addNode->data = value;
 	addNode->next = NULL;
 	if (ll == NULL) {
-		printf("singlelinkedlist append error: singlelinkedlist null error\n");
+		printf("singlelinkedlist singleLinkedAppend error: singlelinkedlist null error\n");
 	}
 	else {
-		insertIndexOf(ll, ll->size+1, value);
+		insertSingleLinkedListIndexOf(ll, ll->size+1, value);
 	}
 }
 
 void addSingleLinkedListFront(singlelinkedlist * ll, char * ch)
 {
 	llnode *node = ll->head;
-	ll->head = initLinkedNode(ch);
+	ll->head = initLinkedCharNode(ch);
 	ll->head->next = node;
 	ll->size++;
 }
@@ -121,14 +121,14 @@ llnode * findIndexOf(singlelinkedlist * ll, int index)
 	}
 }
 
-bool isSingleLinkedListEmpty(singlelinkedlist * ll)
+int isSingleLinkedListEmpty(singlelinkedlist * ll)
 {
-	return (ll != nullptr) && (ll->head != nullptr) ? false : true;
+	return (ll != NULL) && (ll->head != NULL) ? 0 : 1;
 }
 
-bool isEmpty(singlelinkedlist * ll)
+int isEmpty(singlelinkedlist * ll)
 {
-	return (ll != nullptr) && (ll->head != nullptr) ? false : true;
+	return (ll != NULL) && (ll->head != NULL) ? 0 : 1;
 }
 
 void freeLinkedList(singlelinkedlist *ll)
@@ -149,15 +149,15 @@ void freeLinkedList(singlelinkedlist *ll)
 	printf("cleaned the whole singlelinkedlist.\n");
 }
 
-int removeIndexOf(singlelinkedlist * ll, int index)
+int removeSingleLinkedListIndexOf(singlelinkedlist * ll, int index)
 {
 	int rslt = 0;
 	llnode *temp = NULL;
 	if (ll == NULL || ll->head == NULL) {
-		printf("singlelinkedlist removeIndexOf error: singlelinkedlist null\n");
+		printf("singlelinkedlist removeSingleLinkedListIndexOf error: singlelinkedlist null\n");
 	}
 	else if (index<1 || index >ll->size) {
-		printf("singlelinkedlist removeIndexOf error: out of bound\n");
+		printf("singlelinkedlist removeSingleLinkedListIndexOf error: out of bound\n");
 	}
 	else if (index == 1) {
 		rslt = ll->head->data;

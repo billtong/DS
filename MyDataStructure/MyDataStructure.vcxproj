@@ -133,35 +133,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArrayBinaryHeap.c" />
-    <ClCompile Include="ArrayBinaryHeap.cpp" />
     <ClCompile Include="ArrayHashTable.c" />
-    <ClCompile Include="ArrayHashTable.cpp" />
     <ClCompile Include="ArrayList.c" />
-    <ClCompile Include="ArrayList.cpp" />
     <ClCompile Include="ArrayQueue.c" />
-    <ClCompile Include="ArrayQueue.cpp" />
     <ClCompile Include="ArrayStack.c" />
-    <ClCompile Include="ArrayStack.cpp" />
     <ClCompile Include="AVLBinarySearchTree.c" />
-    <ClCompile Include="AVLBinarySearchTree.cpp" />
     <ClCompile Include="BinarySearchTree.c" />
-    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BinaryTree.c" />
-    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="CircularQueue.c" />
-    <ClCompile Include="CircularQueue.cpp" />
     <ClCompile Include="DirectedGraph.c" />
-    <ClCompile Include="DirectedGraph.cpp" />
     <ClCompile Include="LinkedHash.c" />
-    <ClCompile Include="LinkedHash.cpp" />
     <ClCompile Include="LinkedQueue.c" />
     <ClCompile Include="LinkedStack.c" />
     <ClCompile Include="SingleLinkedList.c" />
-    <ClCompile Include="SingleLinkedList.cpp" />
-    <ClCompile Include="LinkedQueue.cpp" />
-    <ClCompile Include="LinkedStack.cpp" />
     <ClCompile Include="TestDS.c" />
-    <ClCompile Include="TestDS.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

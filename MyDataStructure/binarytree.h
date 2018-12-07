@@ -35,8 +35,8 @@ typedef struct _BinaryTreeNode
 {
 	int value;
 	int key;
-	_BinaryTreeNode *left;
-	_BinaryTreeNode *right;
+	struct _BinaryTreeNode *left;
+	struct _BinaryTreeNode *right;
 	int height;
 } binarytreenode;
 

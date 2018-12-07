@@ -13,8 +13,8 @@ typedef struct _CircularQueue
 } circularqueue;
 
 circularqueue *initCircularQueue(int size);
-bool isFull(circularqueue *cq);
-bool isEmpty(circularqueue *cq);
+int isFull(circularqueue *cq);
+int isCircularQueueEmpty(circularqueue *cq);
 
 void enCircularQueue(circularqueue *cq, int value);
 int deCircularQueue(circularqueue *cq);

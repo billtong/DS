@@ -6,7 +6,7 @@ arrayhashtable * initArrayHashTable(int size)
 	arrayhashtable *ht = (arrayhashtable *)malloc(sizeof(arrayhashtable));
 	ht->hashtable = (char **)malloc(sizeof(char *)*size);
 	for (int i = 0; i < size; i++) {
-		ht->hashtable[i]  = nullptr;
+		ht->hashtable[i]  = NULL;
 	}
 	ht->tablesize = size;
 	ht->collision = 0;
@@ -15,7 +15,7 @@ arrayhashtable * initArrayHashTable(int size)
 
 int hash(arrayhashtable * ht, char * data)
 {
-	if (ht == nullptr) {
+	if (ht == NULL) {
 		printf("error null hashtable");
 		return -1;
 	}
@@ -27,7 +27,7 @@ void insertArrayHashTable(arrayhashtable * ht, char * data)
 	int keyOri = hash(ht, data), key = keyOri;
 	do
 	{
-		if (ht->hashtable[key] == nullptr) {
+		if (ht->hashtable[key] == NULL) {
 			ht->hashtable[key] = data;
 			return;
 		}
@@ -58,7 +58,7 @@ int deleteArrayHashTable(arrayhashtable * ht, char * data)
 {
 	int key = findArrayHashTable(ht, data);
 	if (key >=0 && key<ht->tablesize) {
-		ht->hashtable[key] = nullptr;
+		ht->hashtable[key] = NULL;
 	}
 	return key;
 }
@@ -81,13 +81,13 @@ double getLoadFactor(arrayhashtable * ht)
 
 void printArrayHashTable(arrayhashtable * ht)
 {
-	if (ht == nullptr) {
+	if (ht == NULL) {
 		printf("this array hash table is empty\n");
 	}
 	else {
 		printf("print the array hash table below:\n");
 		for (int i = 0; i < ht->tablesize; i++) {
-			if (ht->hashtable[i] == nullptr) {
+			if (ht->hashtable[i] == NULL) {
 				printf("%d->\n", i);
 			}
 			else

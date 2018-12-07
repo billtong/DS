@@ -1,13 +1,13 @@
 #include"ZHeader.h"
 
 
-bool isLinkedQueueEmpty(linkedqueue * aq)
+int isLinkedQueueEmpty(linkedqueue * aq)
 {
-	if (aq == nullptr || aq->count == 0) {
-		return true;
+	if (aq == NULL || aq->count == 0) {
+		return 1;
 	}
 	else {
-		return false;
+		return 0;
 	}
 }
 
@@ -19,26 +19,26 @@ linkedqueue * initLinkedQueue()
 	return lq;
 }
 
-void enqueue(linkedqueue * lq, int value)
+void linkedEnqueue(linkedqueue * lq, int value)
 {
 	if (lq ==NULL || lq->ll == NULL) {
-		printf("linkedqueue enqueue error: queue null\n");
+		printf("linkedqueue linkedEnqueue error: queue null\n");
 	}
 	else
 	{
-		append(lq->ll, value);
+		singleLinkedAppend(lq->ll, value);
 		lq->count = lq->ll->size;
 	}
 }
 
-int dequeue(linkedqueue *lq)
+int linkedDequeue(linkedqueue *lq)
 {
 	if (isLinkedQueueEmpty(lq)) {
-		printf("linkedqueue dequeue error: queue empty\n");
+		printf("linkedqueue linkedDequeue error: queue empty\n");
 		return -1;
 	}
 	else {
-		int i = removeIndexOf(lq->ll, 1);
+		int i = removeSingleLinkedListIndexOf(lq->ll, 1);
 		lq->count = lq->ll->size;
 		return i;
 	}

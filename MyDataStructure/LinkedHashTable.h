@@ -22,7 +22,7 @@ int divisionHash(linkedhashtable *ht, char *ch);
 
 linkedhashtable *insertLinkedHash(linkedhashtable *ht, char *ch);
 
-bool findInLinkedHash(linkedhashtable *ht, char *ch);
+int findInLinkedHash(linkedhashtable *ht, char *ch);
 
 double calcLoadFactor(linkedhashtable *ht);
 

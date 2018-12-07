@@ -1,10 +1,10 @@
 #include"ZHeader.h"
 
-bool isArrayQueueEmpty(arrayqueue * aq)
+int isArrayQueueEmpty(arrayqueue * aq)
 {
 
-	if (aq==nullptr || aq->count==0) return true;
-	else return false;
+	if (aq== NULL || aq->count==0) return 1;
+	else return 0;
 }
 
 arrayqueue * initArrayQueue()

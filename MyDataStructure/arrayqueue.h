@@ -9,7 +9,7 @@ typedef struct _ArrayQueue
 } arrayqueue;
 
 
-bool isArrayQueueEmpty(arrayqueue *aq);
+int isArrayQueueEmpty(arrayqueue *aq);
 arrayqueue *initArrayQueue();
 void enqueue(arrayqueue *aq, int value);
 int dequeue(arrayqueue *aq);

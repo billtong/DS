@@ -3,7 +3,7 @@
 binarysearchtree * initBinarySearchTree()
 {
 	binarysearchtree *bt = (binarysearchtree *)malloc(sizeof(binarysearchtree));
-	bt->root = nullptr;
+	bt->root = NULL;
 	return bt;
 }
 
@@ -26,8 +26,8 @@ binarytreenode * findMaxBinarySearchTree(binarytreenode * root)
 binarytreenode * findBinarySearchTree(binarytreenode * root, int key)
 {
 
-	if (root == nullptr)
-		return nullptr;
+	if (root == NULL)
+		return NULL;
 
 	if (root->key > key) 
 		return findBinarySearchTree(root->left, key);
@@ -42,7 +42,7 @@ binarytreenode * findBinarySearchTree(binarytreenode * root, int key)
 
 binarytreenode * insertBinarySearchTree(binarytreenode * root, int value, int key)
 {
-	if (root == nullptr) {
+	if (root == NULL) {
 		return initBinaryTreeNode(value, key);
 	}
 
@@ -69,19 +69,19 @@ binarysearchtree *getSampleBinarySearchTree()
 
 binarytreenode * deleteBinarySearchTree(binarytreenode *root, int key)
 {
-	if (root == nullptr) {
-		return nullptr;
+	if (root == NULL) {
+		return NULL;
 	}
 	else if (root->key > key) {
 		root->left = deleteBinarySearchTree(root->left, key);
 	}
 	else if (root->key < key) {
 		root->right = deleteBinarySearchTree(root->right, key);
-	}
+	} 
 	else if (root->key == key) {
-		if (root->left == nullptr)
+		if (root->left == NULL)
 			root = root->right;
-		else if (root->right == nullptr)
+		else if (root->right == NULL)
 			root = root->left;
 		else if (root->left && root->right) {
 			binarytreenode *leftMax = findMaxBinarySearchTree(root->left);
