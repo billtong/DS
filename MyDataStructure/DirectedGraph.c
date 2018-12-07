@@ -74,9 +74,41 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 		}
 	}
 
-
 	printf("\n");
 }
+
+void DepthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
+{
+	int *state = (int *)malloc(sizeof(int)*myGraph->num);
+	for (int i = 0; i < myGraph->num; i++)
+	{
+		state[i] = inital;
+	}
+
+	printf("dft:\n");
+	dft(myGraph, startIndex, state);
+	printf("\n");
+}
+
+
+void dft(graph * myGraph, int currIndex, int *state)
+{
+	printf("%d->", currIndex);
+	state[currIndex] = visited;
+
+	for (int i = 0; i < myGraph->num - 1; i++) {
+		if (myGraph->graphnodes[currIndex].next[i] == NULL) {
+			break;
+		}
+		graphnode *nextNode = myGraph->graphnodes[currIndex].next[i];
+		if (state[nextNode->index] != visited) {
+			dft(myGraph, nextNode->index, state);
+		}
+
+	}
+	
+}
+
 
 void printDirectedGraph(graph * myGraph)
 {

@@ -262,7 +262,7 @@ int main()
 		graph *myg = createGraph(edges, edgesNum, verticeNum);
 		printDirectedGraph(myg);
 		BreadthFirstTraversalDirectedGraph(myg, 0);
-
+		DepthFirstTraversalDirectedGraph(myg, 0);
 	}
 
 

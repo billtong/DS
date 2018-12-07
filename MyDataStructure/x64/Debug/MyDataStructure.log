@@ -1,3 +1,24 @@
-﻿  DirectedGraph.c
-c:\users\bill tong\source\repos\billtong\ds\mydatastructure\directedgraph.c(161): warning C4172: 返回局部变量或临时变量的地址: rslt
+﻿  ArrayBinaryHeap.c
+  ArrayHashTable.c
+  ArrayList.c
+  ArrayQueue.c
+  ArrayStack.c
+  AVLBinarySearchTree.c
+  BinarySearchTree.c
+  BinaryTree.c
+  CircularQueue.c
+  DirectedGraph.c
+  LinkedHash.c
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\linkedhash.c(19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  LinkedQueue.c
+  LinkedStack.c
+  SingleLinkedList.c
+  TestDS.c
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.c(132): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“binarytreenode *”
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.c(132): warning C4313: “printf”: 格式字符串中的“%d”与“binarytreenode *”类型的参数 1 冲突
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\testds.c(242): warning C4778: “printf”: 格式字符串“%”未终止
+  正在生成代码...
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\singlelinkedlist.c(122): warning C4715: “findIndexOf”: 不是所有的控件路径都返回值
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\directedgraph.c(198): warning C4172: 返回局部变量或临时变量的地址: rslt
+c:\users\bill tong\source\repos\billtong\ds\mydatastructure\arraylist.c(88): warning C4715: “removeValueOf”: 不是所有的控件路径都返回值
   MyDataStructure.vcxproj -> C:\Users\Bill Tong\Source\Repos\billtong\DS\x64\Debug\MyDataStructure.exe

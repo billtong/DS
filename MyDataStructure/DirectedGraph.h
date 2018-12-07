@@ -33,9 +33,12 @@ void printDirectedGraph(graph *myGraph);
 //https://blog.csdn.net/zwz2011303359/article/details/63254575
 
 
-
+//广度优先遍历（queue）
 void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
 
+//深度有限 遍历递归就行了
+void DepthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
+void dft(graph * myGraph, int currIndex, int *state);
 
 //here is implemented a queue for graph
 
