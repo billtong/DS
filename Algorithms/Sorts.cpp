@@ -90,6 +90,7 @@ void quickSorts(int * arr, int left, int right)
 
 	if (right - left >=2) {
 	
+		swap(&arr[findPivot(arr, left, right)], &arr[right]);
 		int pivot = arr[right];
 		int i = left;
 		int j = right-1;
@@ -112,6 +113,24 @@ void quickSorts(int * arr, int left, int right)
 	}
 }
 
+int findPivot(int *arr,int left, int right) {
+	int a = arr[left];
+	int b = arr[(left+right)/2];
+	int c = arr[right];
+	
+	if ((a >= b && a <= c) || (a >= c && a <= b)) {
+		return left;
+	}
+
+	if ((b >= a && b <= c) || (b<=a && b>=c)) {
+		return (left+right)/2;
+	}
+
+	if ((c >= a && c <= b) || (c<=a && c>=b)) {
+		return right;
+	}
+	
+}
 
 
 void mergeSort(int * arr, int n)

@@ -1,9 +1,9 @@
-﻿  ArrayBinaryHeap.c
+﻿  AVLBinarySearchTree.c
+  ArrayBinaryHeap.c
   ArrayHashTable.c
   ArrayList.c
   ArrayQueue.c
   ArrayStack.c
-  AVLBinarySearchTree.c
   BinarySearchTree.c
   BinaryTree.c
   CircularQueue.c

@@ -63,7 +63,7 @@ void bubbleSorts(int *arr, int size);
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 */
 void quickSorts(int *arr, int left, int right);
-
+int findPivot(int *arr, int left, int right);
 
 /*
 该函式使用了merge的递归函数，用于简化使用，穿的参数少一点//被main里使用
