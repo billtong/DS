@@ -1,4 +1,5 @@
-
+# DS
+data structure&amp;sorting implementation in C
 1.Dynamic Array(ArrayList)
 2.LinkedList
 添，删，查
