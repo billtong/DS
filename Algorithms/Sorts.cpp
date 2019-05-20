@@ -215,23 +215,26 @@ void radixSort(int * a, int size, int p)
 
 		
 		offset[0] = 0;
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 10; i++) 
+		{
 			offset[i] = 0;
-			for (int j = 0; j < i; j++) {
+			for (int j = 0; j < i; j++) 
+			{
 				offset[i] += count[j];
 			}
 		}
 
 
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) 
+		{
 			tmp[offset[(a[i] / (int)pow(10, k)) % 10]++] = a[i];
 		}
 		
 
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) 
+		{
 			a[i] = tmp[i];
 		}
-
 	}
 
 

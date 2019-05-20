@@ -1,14 +1,13 @@
 #ifndef ZHEADER_H
 #define ZHEADER_H
 
-//outside libraries
+//standard libraries
 #include <stdlib.h>
 #include <stdio.h>
 #include<math.h>
 #include <string.h>
 
-//my libraries
-
+//my header
 #include "ArrayBinaryHeap.h"
 #include "ArrayList.h"
 #include "ArrayQueue.h"

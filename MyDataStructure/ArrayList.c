@@ -30,7 +30,6 @@ void insertIndexOf(arraylist * al, int index, int value)
 		al->used++;
 		}
 		else {
-
 			if (al->size == al->used) {
 				al->arr = (int *)realloc(al->arr, sizeof(int)*(al->size) * 2);
 				al->size *= 2;
@@ -80,7 +79,6 @@ int removeValueOf(arraylist *al, int value)
 				removeIndexOf(al, i + 1);
 				return i + 1;
 			} 
-			
 		}
 		printf("the value %d is not found in the arraylist\n", value);
 		return -1;

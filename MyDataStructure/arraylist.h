@@ -11,11 +11,17 @@ typedef struct _ArrayList
 } arraylist;
 
 arraylist *initArrayList();
+
 void append(arraylist* al, int value);
+
 void insertIndexOf(arraylist* al, int index, int value);
+
 int removeIndexOf(arraylist *al, int index);
+
 int removeValueOf(arraylist *al, int value);
+
 void printArrayList(arraylist *al);
+
 void freeArrayList(arraylist *al);
 
 #endif // !ARRAYLIST_H

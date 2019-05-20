@@ -6,11 +6,9 @@
 #ifndef ARRAYBINARYHEAP_H
 #define ARRAYBINARYHEAP_H
 
-
 #define LeftChild(i) ((2 * i) + 1)
 #define RightChild(i) ((2*i) + 2)
 #define Parent(i) ((i-1)/2)
-
 
 typedef struct _ArrayBinaryHeap
 {
@@ -46,12 +44,10 @@ int withdrawMinHeap(arraybinaryheap *heap);
 */
 arraybinaryheap *arrayMinHeapify(int a[], int size);
 
-
 /*
 交换数组里两个index的数值
 */
 void swapArray(int *arr, int a, int b);
-
 
 int *heapSort(int *arr, int size);
 

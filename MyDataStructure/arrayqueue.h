@@ -8,11 +8,14 @@ typedef struct _ArrayQueue
 	int count;
 } arrayqueue;
 
-
 int isArrayQueueEmpty(arrayqueue *aq);
+
 arrayqueue *initArrayQueue();
+
 void enqueue(arrayqueue *aq, int value);
+
 int dequeue(arrayqueue *aq);
+
 void printArrayQueue(arrayqueue *aq);
 
 void freeArrayQueue(arrayqueue *aq);

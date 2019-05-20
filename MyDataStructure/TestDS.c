@@ -1,6 +1,5 @@
 #include"ZHeader.h"
 
-
 int isTestingArrayList = 0;
 int isTestingLinkedList = 0;
 int isTestArrayStack = 0;
@@ -16,8 +15,6 @@ int isTestingArrayBinaryHeap = 0;
 int isTestingArrayHash = 0;
 int isTestingDirectedGraph = 1;
 
-
-
 int main()
 {
 //list---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -27,7 +24,6 @@ int main()
 			append(al, i);
 			printf("used: %d	size: %d\n",al->used,al->size);
 		}
-
 		for (int i = 0; i < 15; i++) {
 			removeValueOf(al, i);
 			printf("used: %d	size: %d\n", al->used, al->size);
@@ -43,7 +39,6 @@ int main()
 		}
 		printLinkedList(ll);
 		insertSingleLinkedListIndexOf(ll, ll->size, 111);
-
 		printLinkedList(ll);
 		freeLinkedList(ll);
 	}
@@ -98,7 +93,6 @@ int main()
 			linkedEnqueue(lq, i);
 			prinLinkedQueue(lq);
 		}
-		
 		for (int i = 0; i < 11; i++) {
 			linkedDequeue(lq);
 			prinLinkedQueue(lq);
@@ -108,14 +102,12 @@ int main()
 
 	if (isTestCircularQueue) {
 		int size = 10;
-
 		circularqueue *cq = initCircularQueue(10);
 		for (int i = 0; i < size; i++) {
 			enCircularQueue(cq, i);
 			//printCircularQueue(cq);
 			//printf("\n");
 		}
-
 		for (int i = 0; i < size; i++) {
 			deCircularQueue(cq);
 			enCircularQueue(cq, i);
@@ -124,9 +116,7 @@ int main()
 		}
 	}
 
-
 //tree---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 	if (isTestingBinaryTree) {
 		binarytree *bt = getBinaryTree(15);
 		printf("the height of the tree: %d\n", bt->root);
@@ -142,26 +132,20 @@ int main()
 		node = findParentNode(bt->root, 13);
 		printf("find parent node of key 13: %d\n", node->key);
 		breathfirstPrintBinaryTree(bt);
-
 		freeBinaryTree(bt->root);
 	}
 
 	if (isTestingSearchTree) {
-
 		binarysearchtree *bt = getSampleBinarySearchTree();
-
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
 		printf("find the max key in the bt: %d\n", (findMaxBinarySearchTree(bt->root))->key);
 		printf("find the min key in the bt: %d\n", (findMinBinarySearchTree(bt->root))->key);
 		printf("find the key 13 node value in the bt: %d\n", (findBinarySearchTree(bt->root, 13)->value));
-
-
 		printf("delete the key 30 node value in the bt: \n");
 		bt->root = deleteBinarySearchTree(bt->root, 30);
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
-
 		printf("delete the key 13 node value in the bt: \n");
 		bt->root = deleteBinarySearchTree(bt->root, 13);
 		preoderPrintBinaryTree(bt->root);
@@ -170,7 +154,6 @@ int main()
 
 	if (isTestingAVLBinaryTree) {
 		avlbinarysearchtree *avl = initAVLBinaryTree();
-
 		avl->root = insertAVLBinaryTree(avl->root, 1, 30);
 		avl->root = insertAVLBinaryTree(avl->root, 1, 10);
 		avl->root = insertAVLBinaryTree(avl->root, 1, 20);
@@ -178,20 +161,14 @@ int main()
 		avl->root = insertAVLBinaryTree(avl->root, 1, 102);
 		avl->root = insertAVLBinaryTree(avl->root, 1, 25);
 		avl->root = insertAVLBinaryTree(avl->root, 1, 50);
-
 		avl->root = deleteAVLBinaryTree(avl->root, 30);
-
-
-
 		preoderPrintBinaryTree(avl->root);
-
 	}
 
 //hash---------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestingLinkedHash) {
 		int size = 5;
 		linkedhashtable *ht = initLinkedHashTable(size);
-		
 		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
 			char *ch = (char *)malloc(sizeof(char) * x);
@@ -201,12 +178,9 @@ int main()
 			ch[x] = '\0';
 			ht = insertLinkedHash(ht, ch);
 		}
-		
-
 		printLinkedHash(ht);
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("Load Factor %%=%.2f\n", calcLoadFactor(ht));
-
 	}
 
 
@@ -221,13 +195,10 @@ int main()
 		for (int i = 0; i < size; i++) {
 			printf("%d ", arr[i]);
 		}
-
 	}
 
 	if (isTestingArrayHash) {
-
 		arrayhashtable *ht = initArrayHashTable(19);
-
 		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
 			char *ch = (char *)malloc(sizeof(char) * x);
@@ -241,13 +212,9 @@ int main()
 			}
 			printf("%s is in %d \n%", ch, findArrayHashTable(ht, ch));
 		}
-
 		printArrayHashTable(ht);
-
-	
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("# of LoadFactor=%.2f\n", getLoadFactor(ht));
-		
 	}
 
 	if (isTestingDirectedGraph) {
@@ -255,18 +222,13 @@ int main()
 		{
 			{0, 5},{2, 6}, {3, 1}, {5, 1}, {2, 4},{5, 9}, {9, 2}, {4, 3}, {7, 9}, {8, 7}, {1,8}
 		};
-
 		int verticeNum = 10;
 		int edgesNum = sizeof(edges) / sizeof(edge);
-
 		graph *myg = createGraph(edges, edgesNum, verticeNum);
 		printDirectedGraph(myg);
 		BreadthFirstTraversalDirectedGraph(myg, 0);
 		DepthFirstTraversalDirectedGraph(myg, 0);
 	}
-
-
-
 	system("pause");
 	return 0;
 }

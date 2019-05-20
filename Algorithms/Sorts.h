@@ -107,7 +107,7 @@ bucketsize
 最后排100位
 
 每个轮回中
-第一步：将每个数hash后进行bucket sort；（count赋值）
+第一步：将每个数hash（得商）后进行bucket sort；（count赋值）
 第二步：计算出每个位置上的数字从那个index开始（offset赋值）
 第三步：按照offset的情况进行取出值（temp赋值）
 第四部：arr=temp

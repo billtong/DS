@@ -2,7 +2,6 @@
 
 int isArrayQueueEmpty(arrayqueue * aq)
 {
-
 	if (aq== NULL || aq->count==0) return 1;
 	else return 0;
 }

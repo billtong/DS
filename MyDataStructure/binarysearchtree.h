@@ -9,7 +9,9 @@ typedef struct _BinarySearchTree
 } binarysearchtree;
 
 binarysearchtree *initBinarySearchTree();
+
 binarytreenode *findMinBinarySearchTree(binarytreenode *root);
+
 binarytreenode *findMaxBinarySearchTree(binarytreenode *root);
 
 /*find node

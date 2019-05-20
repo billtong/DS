@@ -1,6 +1,5 @@
 #include "ZHeader.h"
 
-
 arrayhashtable * initArrayHashTable(int size)
 {
 	arrayhashtable *ht = (arrayhashtable *)malloc(sizeof(arrayhashtable));
@@ -63,10 +62,6 @@ int deleteArrayHashTable(arrayhashtable * ht, char * data)
 	return key;
 }
 
-
-
-
-
 double getLoadFactor(arrayhashtable * ht)
 {
 	 double n = 0;
@@ -75,7 +70,6 @@ double getLoadFactor(arrayhashtable * ht)
 			n++;
 		}
 	}
-
 	return (n/ht->tablesize) *100;
 }
 
@@ -93,8 +87,7 @@ void printArrayHashTable(arrayhashtable * ht)
 			else
 			{
 				printf("%d->%s\n", i, ht->hashtable[i]);
-			}
-			
+			}	
 		}
 	}
 }

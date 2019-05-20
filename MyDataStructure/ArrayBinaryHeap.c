@@ -23,25 +23,20 @@ void minReheapUp(arraybinaryheap * heap, int index)
 		}
 		minReheapUp(heap, parentIndex);
 	}
-
 }
 
 void minReheapDown(arraybinaryheap * heap, int index)
 {
-	
 	int leftChildIndex = LeftChild(index);
 	int rightChildIndex = RightChild(index);
 	if (index >= heap->last || leftChildIndex > heap->last) {
 		return;
 	}
-	
 	int item = heap->a[index], lchild = heap->a[leftChildIndex], rchild = heap->a[rightChildIndex];
 	int targetIndex = index;
-
 	if (item < lchild && item < rchild) {
 		return;
 	}
-
 	if (lchild < rchild) {
 		swapArray(heap->a, index, leftChildIndex);
 		targetIndex = leftChildIndex;
@@ -68,7 +63,6 @@ int withdrawMinHeap(arraybinaryheap *heap)
 	heap->last--;
 	minReheapDown(heap, 0);
 	return min;
-
 }
 
 
@@ -79,14 +73,12 @@ arraybinaryheap * arrayMinHeapify(int a[], int size)
 	heap->last = 0;
 	heap->maxSize = size;
 	heap->a = a;
-
 	for (int i = 0; i < size; i++) {
 		minReheapUp(heap, heap->last);
 		heap->last++;
 	}
 	heap->last--;
 	return heap;
-
 }
 
 void printArrayBinaryHeap(arraybinaryheap * heap)
@@ -101,7 +93,6 @@ void printArrayBinaryHeap(arraybinaryheap * heap)
 		}
 		printf("]\n");
 	}
-
 }
 
 
