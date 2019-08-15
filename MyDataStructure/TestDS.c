@@ -17,7 +17,6 @@ int isTestingDirectedGraph = 1;
 
 int main()
 {
-//list---------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestingArrayList) {
 		arraylist *al = initArrayList();
 		for (int i = 0; i < 15; i++) {
@@ -30,7 +29,6 @@ int main()
 		}
 		freeArrayList(al);
 	}
-
 	if (isTestingLinkedList) {
 		singlelinkedlist *ll = initSingleLinkedList();
 		printLinkedList(ll);
@@ -42,8 +40,6 @@ int main()
 		printLinkedList(ll);
 		freeLinkedList(ll);
 	}
-
-//stack-------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestArrayStack) {
 		arraystack *as = initArraystack();
 		for (int i = 0; i < 20; i++) {
@@ -56,7 +52,6 @@ int main()
 		printArrayStack(as);
 		freeArrayStack(as);
 	}
-
 	if (isTestLinkedStack) {
 		linkedstack *ls = initLinkedstack();
 		for (int i = 0; i < 20; i++) {
@@ -69,8 +64,6 @@ int main()
 		printLinkedStack(ls);
 		freeLinkedStack(ls);
 	}
-
-//queue-------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestArrayQueue) {
 		arrayqueue *aq = initArrayQueue();
 		printArrayQueue(aq);
@@ -99,7 +92,6 @@ int main()
 		}
 		freeLinkedQueue(lq);
 	}
-
 	if (isTestCircularQueue) {
 		int size = 10;
 		circularqueue *cq = initCircularQueue(10);
@@ -115,8 +107,6 @@ int main()
 			printf("\n");
 		}
 	}
-
-//tree---------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestingBinaryTree) {
 		binarytree *bt = getBinaryTree(15);
 		printf("the height of the tree: %d\n", bt->root);
@@ -134,7 +124,6 @@ int main()
 		breathfirstPrintBinaryTree(bt);
 		freeBinaryTree(bt->root);
 	}
-
 	if (isTestingSearchTree) {
 		binarysearchtree *bt = getSampleBinarySearchTree();
 		preoderPrintBinaryTree(bt->root);
@@ -151,7 +140,6 @@ int main()
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
 	}
-
 	if (isTestingAVLBinaryTree) {
 		avlbinarysearchtree *avl = initAVLBinaryTree();
 		avl->root = insertAVLBinaryTree(avl->root, 1, 30);
@@ -164,8 +152,6 @@ int main()
 		avl->root = deleteAVLBinaryTree(avl->root, 30);
 		preoderPrintBinaryTree(avl->root);
 	}
-
-//hash---------------------------------------------------------------------------------------------------------------------------------------------------------
 	if (isTestingLinkedHash) {
 		int size = 5;
 		linkedhashtable *ht = initLinkedHashTable(size);
@@ -182,8 +168,6 @@ int main()
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("Load Factor %%=%.2f\n", calcLoadFactor(ht));
 	}
-
-
 	if (isTestingArrayBinaryHeap) {
 		int size = 15;
 		int *arr = (int *)malloc(sizeof(int) * size);
@@ -196,7 +180,6 @@ int main()
 			printf("%d ", arr[i]);
 		}
 	}
-
 	if (isTestingArrayHash) {
 		arrayhashtable *ht = initArrayHashTable(19);
 		for (int i = 0; i < 20; i++) {
@@ -216,7 +199,6 @@ int main()
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("# of LoadFactor=%.2f\n", getLoadFactor(ht));
 	}
-
 	if (isTestingDirectedGraph) {
 		edge edges[] = 
 		{
@@ -232,4 +214,3 @@ int main()
 	system("pause");
 	return 0;
 }
-
