@@ -2,32 +2,30 @@
 #define BINARYTREE_H
 
 /*		TREE BASIC CONCEPT
-1. ROOT: node without parent
-2. INTERNAL NODE: node with at least one child
-3. LEAF: node without children(degree zero)
-4. SUBTREE: tree consisting of a node and its decendats
-5. NODE_DEGREE: the number of the subtrees associated with that node
-
-6. PATH: a non-empty sequence of nodes	P = {r1, r2, ..., rk} the lenght of path is k-1
-7. ANCESTOR/DECENDANT: if there exits a path from r1 to r2, then r1 is an ancestor of r2, r2 is an decendant of r1. r1 is an ancestor/decendant of itself.
-PROPER ANCESTOR/DECENDANT: if path length from r1 to r2 is non-zero.
-
-8. NODE_DEPTH(LEVEL): the length of the unique path in the tree from its root to the node.  the root depth(level) is zero
-9. NODE_HEIGHT: the length of the longest path from the wanted node to a leaf
-10.TREE_HEIGHT: the NODE_HEIGHT of the root of the tree.
+- ROOT: node without parent
+- INTERNAL NODE: node with at least one child
+- LEAF: node without children(degree zero)
+- SUBTREE: tree consisting of a node and its decendats
+- NODE_DEGREE: the number of the subtrees associated with that node
+- PATH: a non-empty sequence of nodes	P = {r1, r2, ..., rk} the lenght of path is k-1
+- ANCESTOR/DECENDANT: if there exits a path from r1 to r2, then r1 is an ancestor of r2, r2 is an decendant of r1. r1 is an ancestor/decendant of itself.
+- PROPER ANCESTOR/DECENDANT: if path length from r1 to r2 is non-zero.
+ - NODE_DEPTH(LEVEL): the length of the unique path in the tree from its root to the node.  the root depth(level) is zero
+ - NODE_HEIGHT: the length of the longest path from the wanted node to a leaf
+- TREE_HEIGHT: the NODE_HEIGHT of the root of the tree.
 */
 
 /*Binary Tree
 1. properties:
-either the set is empty; or the set consists of a root, r, and exactly two distnct binary trees.
+- either the set is empty; or the set consists of a root, r, and exactly two distnct binary trees.
 
 2. relations between TREE_HEIGHT, and NODE_NUMs
-a binary tree of height h>=0 has at most 2^(h+1)-1 nodes
-the height of a binary tree with n nodes at least log2(n+1)-1
+- a binary tree of height h>=0 has at most 2^(h+1)-1 nodes
+- the height of a binary tree with n nodes at least log2(n+1)-1
 
 3.relations between TREE_HEIGHT, and LEAF_NUMs
-a binary tree of height h>=0 has at most 2^(h) leaves
-the height of a inary tree with l leaves at least log2(l)
+- a binary tree of height h>=0 has at most 2^(h) leaves
+-  with #leaf of leaves, the height of a inary tree is at least log2(#leaf)
 */
 
 typedef struct _BinaryTreeNode
@@ -48,11 +46,15 @@ binarytreenode *initBinaryTreeNode(int value, int key);
 
 binarytree *initBinaryTree();
 
-//这里另外有一个递归函数封装在了cpp文件里
+/*
+这里另外有一个递归函数封装在了cpp文件里
+*/
 binarytree *getBinaryTree(int nodeNum);
 
-//获取左右子节点高度的最大值，它加一就是高度
-//空的话就返回-1
+/*
+获取左右子节点高度的最大值，它加一就是高度
+空的话就返回-1
+*/
 int getBinaryTreeHeight(binarytreenode *root);
 
 /*
@@ -63,8 +65,11 @@ int getBinaryTreeHeight(binarytreenode *root);
 */
 binarytreenode *findNodeByKey(binarytreenode *root, int key);
 
-//先打印根节点。看着最容易
+/*
+先打印根节点。看着最容易
+*/
 void preoderPrintBinaryTree(binarytreenode *root);
+
 
 void inorderPrintBinaryTree(binarytreenode *root);
 

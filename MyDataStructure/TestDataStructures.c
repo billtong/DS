@@ -1,35 +1,43 @@
 #include"ZHeader.h"
 
-int isTestingArrayList = 0;
-int isTestingLinkedList = 0;
-int isTestArrayStack = 0;
-int isTestLinkedStack = 0;
-int isTestArrayQueue = 0;
-int isTestLinkedQueue = 0;
-int isTestCircularQueue = 0;
-int isTestingBinaryTree = 0;
-int isTestingSearchTree = 0;
-int isTestingAVLBinaryTree = 0;
-int isTestingLinkedHash = 0;
-int isTestingArrayBinaryHeap = 0;
-int isTestingArrayHash = 0;
-int isTestingDirectedGraph = 1;
+/*
+不想执行的测试代码块，把define的值改为0
+*/
+#define ARRAY_LIST_TEST 0
+#define LINKED_LIST_TEST 1
+#define ARRAY_STACK_TEST 0 
+#define LINKED_STACK_TEST 0
+#define ARRAY_QUEUE_TEST 0
+#define LINKED_QUEUE_TEST 0
+#define CIRCULAR_QUEUE_TEST 0
+#define BINARY_TREE_TEST 0
+#define BINARY_SEARCH_TREE_TEST 0
+#define AVL_BINARY_TREE_TEST 0
+#define LINKED_HASH_TEST 0
+#define ARRAY_BINARY_HEAP_TEST 0
+#define ARRAY_HASH_TEST 0
+#define DIRECTED_GRAPH_TEST 0
 
 int main()
 {
-	if (isTestingArrayList) {
+	#if ARRAY_LIST_TEST
 		arraylist *al = initArrayList();
+		printf("start append to arraylist\n");
 		for (int i = 0; i < 15; i++) {
 			append(al, i);
-			printf("used: %d	size: %d\n",al->used,al->size);
+			printf("used: %d, size: %d\n", al->used, al->size);
 		}
+		printf("end append to arraylist\n\n");
+		printf("start remove from arraylist\n");
 		for (int i = 0; i < 15; i++) {
 			removeValueOf(al, i);
-			printf("used: %d	size: %d\n", al->used, al->size);
+			printf("used: %d, size: %d\n", al->used, al->size);
 		}
+		printf("end remove from arraylist\n\n");
 		freeArrayList(al);
-	}
-	if (isTestingLinkedList) {
+	#endif // ARRAY_LIST_TEST
+
+	#if LINKED_LIST_TEST
 		singlelinkedlist *ll = initSingleLinkedList();
 		printLinkedList(ll);
 		for (int i = 1; i < 10; i++) {
@@ -39,8 +47,8 @@ int main()
 		insertSingleLinkedListIndexOf(ll, ll->size, 111);
 		printLinkedList(ll);
 		freeLinkedList(ll);
-	}
-	if (isTestArrayStack) {
+	#endif
+	#if ARRAY_STACK_TEST 
 		arraystack *as = initArraystack();
 		for (int i = 0; i < 20; i++) {
 			push(as, i);
@@ -51,8 +59,8 @@ int main()
 		}
 		printArrayStack(as);
 		freeArrayStack(as);
-	}
-	if (isTestLinkedStack) {
+	#endif
+	#if LINKED_STACK_TEST
 		linkedstack *ls = initLinkedstack();
 		for (int i = 0; i < 20; i++) {
 			linkedPush(ls, i);
@@ -63,8 +71,8 @@ int main()
 		}
 		printLinkedStack(ls);
 		freeLinkedStack(ls);
-	}
-	if (isTestArrayQueue) {
+	#endif
+	#if ARRAY_QUEUE_TEST
 		arrayqueue *aq = initArrayQueue();
 		printArrayQueue(aq);
 		for (int i = 0; i < 11; i++) {
@@ -78,9 +86,8 @@ int main()
 		}
 		printArrayQueue(aq);
 		freeArrayQueue(aq);
-	}
-	
-	if (isTestLinkedQueue) {
+	#endif // ARRAY_QUEUE_TEST
+	#if LINKED_QUEUE_TEST
 		linkedqueue *lq = initLinkedQueue();
 		for (int i = 0; i < 11; i++) {
 			linkedEnqueue(lq, i);
@@ -91,8 +98,9 @@ int main()
 			prinLinkedQueue(lq);
 		}
 		freeLinkedQueue(lq);
-	}
-	if (isTestCircularQueue) {
+	#endif // LINKED_QUEUE_TEST
+
+	#if CIRCULAR_QUEUE_TEST
 		int size = 10;
 		circularqueue *cq = initCircularQueue(10);
 		for (int i = 0; i < size; i++) {
@@ -106,8 +114,9 @@ int main()
 			printCircularQueue(cq);
 			printf("\n");
 		}
-	}
-	if (isTestingBinaryTree) {
+	#endif // CIRCULAR_QUEUE_TEST
+
+	#if BINARY_TREE_TEST
 		binarytree *bt = getBinaryTree(15);
 		printf("the height of the tree: %d\n", bt->root);
 		preoderPrintBinaryTree(bt->root);
@@ -123,8 +132,9 @@ int main()
 		printf("find parent node of key 13: %d\n", node->key);
 		breathfirstPrintBinaryTree(bt);
 		freeBinaryTree(bt->root);
-	}
-	if (isTestingSearchTree) {
+	#endif // BINARY_TREE_TEST
+
+	#if BINARY_SEARCH_TREE_TEST
 		binarysearchtree *bt = getSampleBinarySearchTree();
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
@@ -139,8 +149,9 @@ int main()
 		bt->root = deleteBinarySearchTree(bt->root, 13);
 		preoderPrintBinaryTree(bt->root);
 		printf("\n");
-	}
-	if (isTestingAVLBinaryTree) {
+	#endif // BINARY_SEARCH_TREE_TEST
+
+	#if AVL_BINARY_TREE_TEST
 		avlbinarysearchtree *avl = initAVLBinaryTree();
 		avl->root = insertAVLBinaryTree(avl->root, 1, 30);
 		avl->root = insertAVLBinaryTree(avl->root, 1, 10);
@@ -151,8 +162,9 @@ int main()
 		avl->root = insertAVLBinaryTree(avl->root, 1, 50);
 		avl->root = deleteAVLBinaryTree(avl->root, 30);
 		preoderPrintBinaryTree(avl->root);
-	}
-	if (isTestingLinkedHash) {
+	#endif // AVL_BINARY_TREE_TEST
+
+	#if LINKED_HASH_TEST
 		int size = 5;
 		linkedhashtable *ht = initLinkedHashTable(size);
 		for (int i = 0; i < 20; i++) {
@@ -167,8 +179,9 @@ int main()
 		printLinkedHash(ht);
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("Load Factor %%=%.2f\n", calcLoadFactor(ht));
-	}
-	if (isTestingArrayBinaryHeap) {
+	#endif // LINKED_HASH_TEST
+
+	#if ARRAY_BINARY_HEAP_TEST
 		int size = 15;
 		int *arr = (int *)malloc(sizeof(int) * size);
 		for (int i = 0; i < size; i++) {
@@ -179,8 +192,9 @@ int main()
 		for (int i = 0; i < size; i++) {
 			printf("%d ", arr[i]);
 		}
-	}
-	if (isTestingArrayHash) {
+	#endif // ARRAY_BINARY_HEAP_TEST
+
+	#if ARRAY_HASH_TEST
 		arrayhashtable *ht = initArrayHashTable(19);
 		for (int i = 0; i < 20; i++) {
 			int x = rand() % 5 + 1;
@@ -190,7 +204,7 @@ int main()
 			}
 			ch[x] = '\0';
 			insertArrayHashTable(ht, ch);
-			if (i == 10 ) {
+			if (i == 10) {
 				deleteArrayHashTable(ht, ch);
 			}
 			printf("%s is in %d \n%", ch, findArrayHashTable(ht, ch));
@@ -198,9 +212,10 @@ int main()
 		printArrayHashTable(ht);
 		printf("# of Collisions=%d\n", ht->collision);
 		printf("# of LoadFactor=%.2f\n", getLoadFactor(ht));
-	}
-	if (isTestingDirectedGraph) {
-		edge edges[] = 
+	#endif // (ARRAY_HASH_TEST
+
+	#if DIRECTED_GRAPH_TEST
+		edge edges[] =
 		{
 			{0, 5},{2, 6}, {3, 1}, {5, 1}, {2, 4},{5, 9}, {9, 2}, {4, 3}, {7, 9}, {8, 7}, {1,8}
 		};
@@ -210,7 +225,8 @@ int main()
 		printDirectedGraph(myg);
 		BreadthFirstTraversalDirectedGraph(myg, 0);
 		DepthFirstTraversalDirectedGraph(myg, 0);
-	}
+	#endif // DIRECTED_GRAPH_TEST
+
 	system("pause");
 	return 0;
 }

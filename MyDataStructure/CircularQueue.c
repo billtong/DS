@@ -7,7 +7,6 @@ circularqueue * initCircularQueue(int size)
 	for (int i = 0; i < size; i++) {
 		cq->arr[i] = 0;
 	}
-
 	cq->front = cq->rear = -1;
 	cq->count = 0;
 	cq->size = size;
@@ -28,7 +27,6 @@ void enCircularQueue(circularqueue * cq, int value)
 {
 	if (isFull(cq)) {
 		printf("the queue is full, cannot enqueue anymore.\n");
-
 	}
 	else {
 		cq->rear = (cq->rear + 1) % cq->size;

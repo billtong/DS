@@ -95,19 +95,15 @@ binarytreenode *findNodeByKey(binarytreenode *root, int key)
 	else {
 		binarytreenode *left = findNodeByKey(root->left, key);
 		binarytreenode *right = findNodeByKey(root->right, key);
-	
 		//这里的两句是否为空的判断是防止
 		//返回null，将找到的结果覆盖掉
 		if (left)
 			return left;
 		if (right)
 			return right;
-	
-		
 		//其他如果什么都没找到的话就返回null了
 		return NULL;
 	}
-	
 }
 
 void preoderPrintBinaryTree(binarytreenode *root)

@@ -1,12 +1,12 @@
 #include"ZHeader.h"
 
-#define initalSize 10
+#define INITIAL_ARRAY_SIZE 10
 
 arraylist* initArrayList()
 {
 	arraylist *al = (arraylist *)malloc(sizeof(arraylist));
-	al->arr = (int *)malloc(sizeof(int)*initalSize);
-	al->size = initalSize;
+	al->arr = (int *)malloc(sizeof(int)*INITIAL_ARRAY_SIZE);
+	al->size = INITIAL_ARRAY_SIZE;
 	al->used = 0;
 	return al;
 }
