@@ -1,5 +1,0 @@
-﻿  Sorts.cpp
-  TestAlgorithms.cpp
-  正在生成代码...
-c:\users\bill tong\source\repos\billtong\ds\algorithms\sorts.cpp(133): warning C4715: “findPivot”: 不是所有的控件路径都返回值
-  Algorithms.vcxproj -> C:\Users\Bill Tong\Source\Repos\billtong\DS\x64\Debug\Algorithms.exe

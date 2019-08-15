@@ -1,6 +1,0 @@
-﻿  TreeDS.cpp
-c:\users\bill tong\source\repos\mydatastructure\mydatastructure\treeds.cpp(16): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“binarytreenode *”
-  avlbinarysearchtree.cpp
-  binarysearchtree.cpp
-  正在生成代码...
-  MyDataStructure.vcxproj -> C:\Users\Bill Tong\source\repos\MyDataStructure\Debug\MyDataStructure.exe
