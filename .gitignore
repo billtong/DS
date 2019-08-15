@@ -1,3 +1,10 @@
 ﻿## visual studio
 .vs/
 x64/
+Algorithms/.vs/
+Algorithms/x64/
+Algorithms/Debug/
+
+MyDataStructure/.vs/
+MyDataStructure/x64/
+MyDataStructure/Debug/
