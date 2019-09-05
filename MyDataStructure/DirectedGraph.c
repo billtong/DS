@@ -39,12 +39,12 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 	int *state = (int *)malloc(sizeof(int)*myGraph->num);
 	for (int i = 0; i < myGraph->num; i++)
 	{
-		state[i] = inital;
+		state[i] = INITIAL;
 	}
 
 	graphQueue *gq = initGraphQueue();
 	enqueueGraph(gq, myGraph->graphnodes[startIndex]);
-	state[startIndex] = waiting;
+	state[startIndex] = WAITING;
 	
 	//vertice出栈
 	//这里有一个奇怪的问题：currentIndex必须紧挨着currV获取，不然就失效了
@@ -54,7 +54,7 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 
 		graphnode *currV = dequeueGraph(gq);
 
-		state[currV->index] = visited;
+		state[currV->index] = VISITED;
 		printf("%d->", currV->index);
 
 		int currIndex = currV->index;
@@ -65,10 +65,10 @@ void BreadthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 			}
 			else {
 				int index = myGraph->graphnodes[currIndex].next[i]->index;
-				if (state[index] == inital) {
+				if (state[index] == INITIAL) {
 					graphnode input = *(myGraph->graphnodes[currIndex].next[i]);
 					enqueueGraph(gq, input);
-					state[input.index] = waiting;
+					state[input.index] = WAITING;
 				}
 			}
 		}
@@ -82,7 +82,7 @@ void DepthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 	int *state = (int *)malloc(sizeof(int)*myGraph->num);
 	for (int i = 0; i < myGraph->num; i++)
 	{
-		state[i] = inital;
+		state[i] = INITIAL;
 	}
 
 	printf("dft:\n");
@@ -94,14 +94,14 @@ void DepthFirstTraversalDirectedGraph(graph * myGraph, int startIndex)
 void dft(graph * myGraph, int currIndex, int *state)
 {
 	printf("%d->", currIndex);
-	state[currIndex] = visited;
+	state[currIndex] = VISITED;
 
 	for (int i = 0; i < myGraph->num - 1; i++) {
 		if (myGraph->graphnodes[currIndex].next[i] == NULL) {
 			break;
 		}
 		graphnode *nextNode = myGraph->graphnodes[currIndex].next[i];
-		if (state[nextNode->index] != visited) {
+		if (state[nextNode->index] != VISITED) {
 			dft(myGraph, nextNode->index, state);
 		}
 

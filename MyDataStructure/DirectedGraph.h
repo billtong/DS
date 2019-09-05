@@ -1,9 +1,9 @@
 #ifndef DIRECTEDGRAPH_H
 #define DIRECTEDGRAPH_H
 
-#define inital 1
-#define waiting 2
-#define visited 3
+#define INITIAL 1
+#define WAITING 2
+#define VISITED 3
 
 #define INIT_QUEUE_SIZE 10
 
