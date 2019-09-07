@@ -4,7 +4,7 @@
 不想执行的测试代码块，把define的值改为0
 */
 #define ARRAY_LIST_TEST 0
-#define LINKED_LIST_TEST 1
+#define LINKED_LIST_TEST 0
 #define ARRAY_STACK_TEST 0 
 #define LINKED_STACK_TEST 0
 #define ARRAY_QUEUE_TEST 0
