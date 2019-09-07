@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+
 	#if ADJACENCY_GRAPH
 	AdjacencyGraph *graph = initAdjacencyGraph(5);
 	printAdjacencyGraph(graph);

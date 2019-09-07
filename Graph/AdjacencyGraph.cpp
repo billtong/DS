@@ -30,7 +30,7 @@ AdjacencyGraph *initAdjacencyGraph(int length)
 	return adjacencyGraph;
 }
 
-void creatAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
+void createAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 {
 	if (adjacencyGraph->length <= 1) {
 		cout << "ERROR: the length of this adjacent linked list is 0" << endl;
@@ -69,6 +69,11 @@ void creatAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 			cout << v1 << "-" << v2 << "'s arc created, weight is "<< weight << endl;
 		}
 	}
+}
+
+void createAdjacencyGraphFromMatrix(AdjacencyGraph *adjacencyGraph, SquareMatrix *squareMatrix)
+{
+	
 }
 
 void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph) 

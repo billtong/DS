@@ -2,7 +2,7 @@
 #define PCH_H
 
 #include "AdjacencyGraph.h"
-#include "LinkedList.h"
+#include "SquareMatrix.h"
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
