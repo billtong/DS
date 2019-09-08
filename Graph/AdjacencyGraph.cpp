@@ -30,11 +30,23 @@ AdjacencyGraph *initAdjacencyGraph(int length)
 	return adjacencyGraph;
 }
 
+AdjacencyGraph *initAdjacencyGraphFromMatrix(SquareMatrix squareMatrix)
+{
+	AdjacencyGraph *adjacencyGraph = initAdjacencyGraph(squareMatrix.length);
+	for (int v1 = 0; v1<squareMatrix.length; v1++) {
+		for (int v2 = 0; v2 < squareMatrix.length; v2++) {
+			int weight = squareMatrix.matrix[v1][v2];
+			if (weight != 0)
+				createNewArc(v1, v2, weight, adjacencyGraph);
+		}
+	}
+	return adjacencyGraph;
+}
+
 void createAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 {
-	if (adjacencyGraph->length <= 1) {
+	if (adjacencyGraph->length <= 1)
 		cout << "ERROR: the length of this adjacent linked list is 0" << endl;
-	}
 	else {
 		while (true) {
 			int v1 = 0, v2 = 0, weight=0;
@@ -46,41 +58,35 @@ void createAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 				break;
 			}
 			cin >> v2 >> weight;
-			if (v1 < 0 || v2 < 0 || v1 >= adjacencyGraph->length || v2 >= adjacencyGraph->length || v1 == v2) {
-				cout << "ERROR: the index you have inputed out of bound" << endl;
-				continue;
-			}
-			if (weight <= 0) {
-				cout << "ERROR: the value of weight cannot be negative" << endl;
-				continue;
-			}
-			Arcnode *node = initArcnode(v2, weight, NULL);
-			if (adjacencyGraph->graph[v1].firstArc == NULL) {
-				adjacencyGraph->graph[v1].firstArc = node;
-			}
-			else {
-				Arcnode *ite = adjacencyGraph->graph[v1].firstArc;
-				while (ite->nextArc != NULL)
-				{
-					ite = ite->nextArc;
-				}
-				ite->nextArc = node;
-			}
-			cout << v1 << "-" << v2 << "'s arc created, weight is "<< weight << endl;
+			createNewArc(v1, v2, weight, adjacencyGraph);
 		}
 	}
 }
 
-void createAdjacencyGraphFromMatrix(AdjacencyGraph *adjacencyGraph, SquareMatrix *squareMatrix)
+void createNewArc(int v1, int v2, int weight, AdjacencyGraph *adjacencyGraph)
 {
-	
+	if (v1 < 0 || v2 < 0 || v1 >= adjacencyGraph->length || v2 >= adjacencyGraph->length || v1 == v2)
+		cout << "ERROR: the index you have inputed out of bound" << endl;
+	else if (weight <= 0)
+		cout << "ERROR: the weight of weight cannot be negative" << endl;
+	else {
+		Arcnode *node = initArcnode(v2, weight, NULL);
+		if (adjacencyGraph->graph[v1].firstArc == NULL)
+			adjacencyGraph->graph[v1].firstArc = node;
+		else {
+			Arcnode *ite = adjacencyGraph->graph[v1].firstArc;
+			while (ite->nextArc != NULL)
+				ite = ite->nextArc;
+			ite->nextArc = node;
+		}
+		cout << v1 << "-" << v2 << "'s arc created, weight is " << weight << endl;
+	}
 }
 
 void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph) 
 {
-	if (adjacencyGraph->length == 0) {
+	if (adjacencyGraph->length == 0)
 		cout << "this is an empty adjacency graph" << endl;
-	}
 	else {
 		for (int i = 0; i<adjacencyGraph->length; i++) {
 			cout << i << ":(" << adjacencyGraph->graph[i].vexData << ")->";

@@ -1,11 +1,12 @@
 #include "pch.h"
 using namespace std;
 
-SquareMatrix *initSquareMatrix(int length, void *matrix)
+SquareMatrix *initSquareMatrix(int length, int **matrix)
 {
 	SquareMatrix *squareMatrix = (SquareMatrix *)malloc(sizeof(SquareMatrix));
 	squareMatrix->length = length;
 	squareMatrix->matrix = matrix;
+	return squareMatrix;
 }
 
 void freeSquareMatrix(SquareMatrix *squareMatrix)
