@@ -1,4 +1,5 @@
 #include "pch.h"
+#define INFINITY -1
 using namespace std;
 
 Arcnode *initArcnode(int adjvex, int weight, Arcnode *nextArc)
@@ -30,12 +31,12 @@ AdjacencyGraph *initAdjacencyGraph(int length)
 	return adjacencyGraph;
 }
 
-AdjacencyGraph *initAdjacencyGraphFromMatrix(SquareMatrix squareMatrix)
+AdjacencyGraph *initAdjacencyGraphFromMatrix(SquareMatrix *squareMatrix)
 {
-	AdjacencyGraph *adjacencyGraph = initAdjacencyGraph(squareMatrix.length);
-	for (int v1 = 0; v1<squareMatrix.length; v1++) {
-		for (int v2 = 0; v2 < squareMatrix.length; v2++) {
-			int weight = squareMatrix.matrix[v1][v2];
+	AdjacencyGraph *adjacencyGraph = initAdjacencyGraph(squareMatrix->length);
+	for (int v1 = 0; v1<squareMatrix->length; v1++) {
+		for (int v2 = 0; v2 < squareMatrix->length; v2++) {
+			int weight = squareMatrix->matrix[v1][v2];
 			if (weight != 0)
 				createNewArc(v1, v2, weight, adjacencyGraph);
 		}
@@ -98,6 +99,20 @@ void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 			cout << "null" << endl;
 		}
 	}
+}
+
+SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph)
+{
+	SquareMatrix *squareMatrix = initSquareMatrix(adjacencyGraph->length, 0);
+	for (int i = 0; i < adjacencyGraph->length; i++) {
+		Arcnode *arcnode = adjacencyGraph->graph[i].firstArc;
+		while (arcnode != NULL) {
+			int j = arcnode->adjvex;
+			squareMatrix->matrix[i][j] = arcnode->weight;
+			arcnode = arcnode->nextArc;
+		}
+	}
+	return squareMatrix;
 }
 
 void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph) 

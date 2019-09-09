@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdjacencyGraph.cpp" />
+    <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="SquareMatrix.cpp" />
     <ClCompile Include="TestGraph.cpp" />
     <ClCompile Include="pch.cpp">

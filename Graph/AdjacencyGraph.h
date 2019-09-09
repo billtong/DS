@@ -1,5 +1,6 @@
 #pragma once
 #include "SquareMatrix.h"
+
 // define the Arcnode(arc or node)
 typedef struct _Arcnode
 {
@@ -29,7 +30,7 @@ Vexnode *initVexnode(Arcnode *firstArc, char vexData);
 
 AdjacencyGraph *initAdjacencyGraph(int length);
 
-AdjacencyGraph *initAdjacencyGraphFromMatrix(SquareMatrix squareMatrix);
+AdjacencyGraph *initAdjacencyGraphFromMatrix(SquareMatrix *squareMatrix);
 
 void createNewArc(int v1, int v2, int weight, AdjacencyGraph *adjacencyGraph);
 
@@ -39,6 +40,47 @@ void createNewArc(int v1, int v2, int weight, AdjacencyGraph *adjacencyGraph);
 */
 void createAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
 
+/* 
+sample
+0:(a)->1,3->2,4->3,2->null
+1:(b)->0,3->3,3->null
+2:(c)->0,4->3,5->null
+3:(d)->0,2->1,3->2,5->4,1->null
+4:(e)->3,1->null
+*/
 void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
 
+SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph);
+
 void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
+
+
+typedef struct _GraphNode
+{
+	int vexIndex;
+	int weight;
+
+} GraphNode;
+
+typedef struct _GraphNodeArray
+{
+	GraphNode *array;
+	int used;
+	int length;
+} GraphNodeArray;
+
+GraphNode *initGraphNode(int vexIndex, int weight);
+GraphNodeArray *initGraphNodeArray(int length);
+GraphNodeArray *initGraphNodeArray(int length, int weight);
+
+void append(GraphNodeArray *array, int vexIndex, int weight);
+void removeFirstByVexIndex(GraphNodeArray *array, int vexIndex);
+
+void freeGraphNodeArray(GraphNodeArray *array);
+void printGraphNodeArray(GraphNodeArray *array);
+
+/*
+	返回一个数组，是offset点到该index的最短路径
+*/
+GraphNodeArray *dijkstra(AdjacencyGraph *adjacencyGraph, int offset);
+
