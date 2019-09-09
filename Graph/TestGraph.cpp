@@ -25,9 +25,9 @@ int main()
 	printSquareMatrix(mat);
 	#if ADJACENCY_GRAPH
 	AdjacencyGraph *graph = initAdjacencyGraphFromMatrix(mat);
-	freeSquareMatrix(mat);
 	printAdjacencyGraph(graph);
-	GraphNodeArray *array = dijkstra(graph, 0);
+	GraphNodeArray *array = dijkstra(mat, 0);
+	freeSquareMatrix(mat);
 	printGraphNodeArray(array);
 	freeGraphNodeArray(array);
 	freeAdjacencyGraph(graph);

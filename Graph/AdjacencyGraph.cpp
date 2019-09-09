@@ -101,9 +101,8 @@ void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 	}
 }
 
-SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph)
+SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph, SquareMatrix *squareMatrix)
 {
-	SquareMatrix *squareMatrix = initSquareMatrix(adjacencyGraph->length, 0);
 	for (int i = 0; i < adjacencyGraph->length; i++) {
 		Arcnode *arcnode = adjacencyGraph->graph[i].firstArc;
 		while (arcnode != NULL) {
@@ -117,15 +116,6 @@ SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph)
 
 void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph) 
 {
-	for (int i = 0; i < adjacencyGraph->length; i++) {
-		Arcnode *ite = adjacencyGraph->graph[i].firstArc;
-		while (ite != NULL) {
-			Arcnode *temp = ite->nextArc;
-			free(ite);
-			ite = temp;
-		}
-		cout << "done: free the the memory of the vertex #" << i << endl;
-	}
 	free(adjacencyGraph->graph);
 	free(adjacencyGraph);
 	cout << "done: free the memory of this adjacency graph";

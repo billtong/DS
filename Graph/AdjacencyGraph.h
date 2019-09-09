@@ -50,7 +50,7 @@ sample
 */
 void printAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
 
-SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph);
+SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph, SquareMatrix *squareMatrix);
 
 void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
 
@@ -82,5 +82,5 @@ void printGraphNodeArray(GraphNodeArray *array);
 /*
 	返回一个数组，是offset点到该index的最短路径
 */
-GraphNodeArray *dijkstra(AdjacencyGraph *adjacencyGraph, int offset);
+GraphNodeArray *dijkstra(SquareMatrix *adjacencyGraph, int offset);
 

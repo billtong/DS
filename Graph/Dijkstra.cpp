@@ -59,11 +59,9 @@ void printGraphNodeArray(GraphNodeArray *graphArray) {
 	cout << endl;
 }
 
-GraphNodeArray *dijkstra(AdjacencyGraph *adjacencyGraph, int offset) {
-	GraphNodeArray *s = initGraphNodeArray(adjacencyGraph->length);									//s是已经计算出的最短路径的集合
-	GraphNodeArray *u = initGraphNodeArray(adjacencyGraph->length, INFINITY);	//u是未计算出的最短路径的集合
-	SquareMatrix *squareMatrix = generateGraphMatrix(adjacencyGraph);
-
+GraphNodeArray *dijkstra(SquareMatrix *squareMatrix, int offset) {
+	GraphNodeArray *s = initGraphNodeArray(squareMatrix->length);									//s是已经计算出的最短路径的集合
+	GraphNodeArray *u = initGraphNodeArray(squareMatrix->length, INFINITY);	//u是未计算出的最短路径的集合
 	append(s, offset, 0);
 	removeFirstByVexIndex(u, offset);
 	while (u->used > 0) {
@@ -82,7 +80,6 @@ GraphNodeArray *dijkstra(AdjacencyGraph *adjacencyGraph, int offset) {
 				}
 				//cout << v1 << "-" << v2 << "-" << "vexIndex: " << vexIndex << ",minWeight: " << minWeight << endl;
 			}
-		
 		}
 		append(s, vexIndex, minWeight);
 		minWeight = BIG_NUMBER;
@@ -90,7 +87,6 @@ GraphNodeArray *dijkstra(AdjacencyGraph *adjacencyGraph, int offset) {
 		//printGraphNodeArray(s);
 		//printGraphNodeArray(u);
 	}
-	//freeSquareMatrix(squareMatrix);
 	freeGraphNodeArray(u);
 	return s;
 }
