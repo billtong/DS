@@ -15,7 +15,7 @@ GraphNodeArray *initGraphNodeArray(int length) {
 	graphArray->length = length;
 	graphArray->used = 0;
 	for (int i = 0; i < graphArray->length; i++) {
-		graphArray->array[i] = *initGraphNode(-1, -1);
+		graphArray->array[i] = *initGraphNode(NULL, NULL);
 	}
 	return graphArray;
 }
@@ -45,7 +45,7 @@ void removeFirstByVexIndex(GraphNodeArray *array, int vexIndex) {
 				array->array[i] = array->array[i + 1];
 			}
 			array->used--;
-			array->array[array->used] = *initGraphNode(-1, -1);
+			array->array[array->used] = *initGraphNode(NULL, NULL);
 			break;
 		}
 	}
@@ -57,7 +57,7 @@ void freeGraphNodeArray(GraphNodeArray *graphArray) {
 }
 
 void printGraphNodeArray(GraphNodeArray *graphArray) {
-	for (int i = 0; i < graphArray->length; i++)
+	for (int i = 0; i < graphArray->used; i++)
 		cout << graphArray->array[i].vexIndex << "(" << graphArray->array[i].weight << ") ";
 	cout << endl;
 }
@@ -85,8 +85,6 @@ GraphNodeArray *dijkstra(SquareMatrix *squareMatrix, int offset) {
 				u->array[j].weight = squareMatrix->matrix[v1][v2] + minWeight;
 			}
 		}
-		printGraphNodeArray(s);
-		printGraphNodeArray(u);
 	}
 	freeGraphNodeArray(u);
 	return s;

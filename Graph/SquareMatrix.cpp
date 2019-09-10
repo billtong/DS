@@ -33,8 +33,10 @@ void printSquareMatrix(SquareMatrix *squareMatrix)
 
 void freeSquareMatrix(SquareMatrix *squareMatrix)
 {
-	for (int i = 0; i < squareMatrix->length; i++)
+	for (int i = 0; i < squareMatrix->length; i++) {
 		free((int *)squareMatrix->matrix[i]);
+		squareMatrix->matrix[i] = NULL;
+	}
 	free((int *)squareMatrix->matrix);
 	free(squareMatrix);
 	cout << "free the memory of square matrix" << endl;

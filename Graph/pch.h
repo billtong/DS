@@ -7,5 +7,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+
+#include <iomanip>
+#include <fstream>
 using namespace std;
 #endif //PCH_H

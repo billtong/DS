@@ -6,7 +6,39 @@ using namespace std;
 
 int main()
 {
-	int matrix[MATRIX_SIZE][MATRIX_SIZE] = {
+	ifstream file;
+	file.open("./samples/Dijkstra_Data_1600.txt");
+	if (!file)
+	{
+		cout << "ERROR: cannot open file" << endl;
+		exit(1);
+	}
+	int length;
+	file >> length;
+	int **matrixPtr = (int **)malloc(sizeof(int *) * length);
+	for (int i = 0; i < length; i++)
+	{
+		matrixPtr[i] = (int *)malloc(sizeof(int) * length);
+		for (int j = 0; j < length; j++) {
+			file >> matrixPtr[i][j];
+		}
+	}
+	SquareMatrix *mat = initSquareMatrix(length, matrixPtr);
+	//printSquareMatrix(mat);
+
+	#if DIJKSTRA
+	GraphNodeArray *array = dijkstra(mat, 0);
+	freeSquareMatrix(mat);
+	printGraphNodeArray(array);
+	freeGraphNodeArray(array);
+	#endif // ADJACENCY_GRAPH
+
+	system("pause");
+	return 0;
+}
+
+/*
+int matrix[MATRIX_SIZE][MATRIX_SIZE] = {
 		{0, 3, 4, 2, 0},
 		{3, 0, 0, 3, 0},
 		{4, 0, 0, 5, 0},
@@ -21,14 +53,4 @@ int main()
 			matrixPtr[i][j] = matrix[i][j];
 		}
 	}
-	SquareMatrix *mat = initSquareMatrix(MATRIX_SIZE, matrixPtr);
-	printSquareMatrix(mat);
-	#if DIJKSTRA
-	GraphNodeArray *array = dijkstra(mat, 0);
-	freeSquareMatrix(mat);
-	printGraphNodeArray(array);
-	freeGraphNodeArray(array);
-	#endif // ADJACENCY_GRAPH
-	system("pause");
-	return 0;
-}
+*/
