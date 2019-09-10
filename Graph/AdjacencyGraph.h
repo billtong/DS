@@ -54,7 +54,6 @@ SquareMatrix *generateGraphMatrix(AdjacencyGraph *adjacencyGraph, SquareMatrix *
 
 void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph);
 
-
 typedef struct _GraphNode
 {
 	int vexIndex;
@@ -71,7 +70,7 @@ typedef struct _GraphNodeArray
 
 GraphNode *initGraphNode(int vexIndex, int weight);
 GraphNodeArray *initGraphNodeArray(int length);
-GraphNodeArray *initGraphNodeArray(int length, int weight);
+GraphNodeArray *initGraphNodeArray(int length, int weight, int offset);
 
 void append(GraphNodeArray *array, int vexIndex, int weight);
 void removeFirstByVexIndex(GraphNodeArray *array, int vexIndex);
@@ -82,5 +81,4 @@ void printGraphNodeArray(GraphNodeArray *array);
 /*
 	返回一个数组，是offset点到该index的最短路径
 */
-GraphNodeArray *dijkstra(SquareMatrix *adjacencyGraph, int offset);
-
+GraphNodeArray *dijkstra(SquareMatrix *squareMatrix, int offset);

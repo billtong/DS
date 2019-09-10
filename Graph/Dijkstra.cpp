@@ -1,6 +1,6 @@
 #include "pch.h"
-#define INFINITY 0
-#define BIG_NUMBER  999999
+#define CANNOT_ACCESS_NUM 0
+#define INFINITY_VALUE  100000
 
 GraphNode *initGraphNode(int vexIndex, int weight) {
 	GraphNode *node = (GraphNode *)malloc(sizeof(GraphNode));
@@ -20,10 +20,13 @@ GraphNodeArray *initGraphNodeArray(int length) {
 	return graphArray;
 }
 
-GraphNodeArray *initGraphNodeArray(int length, int weight) {
+GraphNodeArray *initGraphNodeArray(int length, int weight, int offset) {
 	GraphNodeArray *graphArray = initGraphNodeArray(length);
 	for (int i = 0; i < length; i++) {
-		append(graphArray, i, weight);
+		if (i == offset)
+			append(graphArray, i, 0);
+		else 
+			append(graphArray, i, weight);
 	}
 	return graphArray;
 }
@@ -60,32 +63,30 @@ void printGraphNodeArray(GraphNodeArray *graphArray) {
 }
 
 GraphNodeArray *dijkstra(SquareMatrix *squareMatrix, int offset) {
-	GraphNodeArray *s = initGraphNodeArray(squareMatrix->length);									//s是已经计算出的最短路径的集合
-	GraphNodeArray *u = initGraphNodeArray(squareMatrix->length, INFINITY);	//u是未计算出的最短路径的集合
-	append(s, offset, 0);
-	removeFirstByVexIndex(u, offset);
+	GraphNodeArray *s = initGraphNodeArray(squareMatrix->length);				//s是已经计算出的最短路径的集合
+	GraphNodeArray *u = initGraphNodeArray(squareMatrix->length, INFINITY_VALUE, offset);	//u是未计算出的最短路径的集合
 	while (u->used > 0) {
-		int vexIndex, minWeight = BIG_NUMBER;
-		for (int i = 0; i < s->used; i++) {
-			int v1 = s->array[i].vexIndex;
-			int weight = s->array[i].weight;
-			for (int j = 0; j < u->used; j++) {
-				int v2 = u->array[j].vexIndex;
-				if (squareMatrix->matrix[v1][v2] != INFINITY) {
-					int path = squareMatrix->matrix[v1][v2] + weight;
-					if (minWeight > path) {
-						minWeight = path;
-						vexIndex = v2;
-					}
-				}
-				//cout << v1 << "-" << v2 << "-" << "vexIndex: " << vexIndex << ",minWeight: " << minWeight << endl;
+		int minWeight = u->array[0].weight;
+		int v1 = u->array[0].vexIndex;
+		for (int i = 0; i < u->used; i++) {
+			if (minWeight > u->array[i].weight)
+			{
+				minWeight = u->array[i].weight;
+				v1 = u->array[i].vexIndex;
 			}
 		}
-		append(s, vexIndex, minWeight);
-		minWeight = BIG_NUMBER;
-		removeFirstByVexIndex(u, vexIndex);
-		//printGraphNodeArray(s);
-		//printGraphNodeArray(u);
+		append(s, v1, minWeight);
+		removeFirstByVexIndex(u, v1);
+		for (int j = 0; j < u->used; j++) {
+			int v2 = u->array[j].vexIndex;
+			int currWeight = squareMatrix->matrix[v1][v2] + minWeight;
+			if (squareMatrix->matrix[v1][v2] != CANNOT_ACCESS_NUM && squareMatrix->matrix[v1][v2] + minWeight < u->array[j].weight)
+			{
+				u->array[j].weight = squareMatrix->matrix[v1][v2] + minWeight;
+			}
+		}
+		printGraphNodeArray(s);
+		printGraphNodeArray(u);
 	}
 	freeGraphNodeArray(u);
 	return s;

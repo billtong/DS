@@ -1,5 +1,5 @@
 #include "pch.h"
-#define INFINITY -1
+#define CANNOT_ACCESS_NUM -1
 using namespace std;
 
 Arcnode *initArcnode(int adjvex, int weight, Arcnode *nextArc)
@@ -118,5 +118,5 @@ void freeAdjacencyGraph(AdjacencyGraph *adjacencyGraph)
 {
 	free(adjacencyGraph->graph);
 	free(adjacencyGraph);
-	cout << "done: free the memory of this adjacency graph";
+	cout << "done: free the memory of this adjacency graph" << endl;
 }
