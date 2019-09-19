@@ -3,7 +3,6 @@
 
 using std::cout;
 using std::endl;
-using std::string;
 using std::to_string;
 
 FlightOptions::FlightOptions()
@@ -42,13 +41,13 @@ void FlightOptions::append(int dt, int at)
 	size++;
 }
 
-string FlightOptions::toString()
+std::string FlightOptions::toString()
 {
 	Flight *ite = header;
-	string str = "";
+	std::string str = "";
 	while (ite != nullptr)
 	{
-		str = str + to_string(ite->arrivalTime) + " " + to_string(ite->depatureTime) + "\n";
+		str = str + getStringOf(ite);
 		ite = ite->next;
 	}
 	return str;

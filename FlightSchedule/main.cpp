@@ -6,23 +6,25 @@
 #include"FlightMatrix.h"
 
 using std::ifstream;
+using std::string;
 using std::cout;
 using std::endl;
 
-void readMatrixFromTxt(FlightMatrix *&, string);
+void readFlightMatrixFromTxt(FlightMatrix *&, string);
 
 int main(int argc, char* argv[])
 {
 	string filepath = "./assets/2019_Lab_2_flights_test_data.txt";
 	FlightMatrix *testFm;
-	readMatrixFromTxt(testFm, filepath);
-	testFm->print();
+	readFlightMatrixFromTxt(testFm, filepath);
+//	testFm->print();
+	testFm->dijkstra(0, 2);
 	testFm->~FlightMatrix();
 	system("pause");
 	return 0;
 }
 
-void readMatrixFromTxt(FlightMatrix *&fmPtr, string filePath)
+void readFlightMatrixFromTxt(FlightMatrix *&fmPtr, string filePath)
 {
 	ifstream file(filePath);
 	if (!file) {

@@ -2,8 +2,6 @@
 #include<string>
 #include"Flight.h"
 
-using std::string;
-
 class FlightOptions
 {
 public:
@@ -13,6 +11,6 @@ public:
 	FlightOptions();
 	~FlightOptions();
 	void append(int, int);
-	string toString();
+	std::string toString();
 };
 
