@@ -1,0 +1,55 @@
+#include<iostream>
+#include "FlightOptions.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+using std::to_string;
+
+FlightOptions::FlightOptions()
+{
+	header = nullptr;
+	FlightOptions::size = 0;
+}
+
+
+FlightOptions::~FlightOptions()
+{
+	Flight *ite =header, *temp = header;
+	while (ite != nullptr)
+	{
+		ite = ite->next;
+		freeFlight(temp);
+		temp = ite;
+	}
+	size = 0;
+}
+
+void FlightOptions::append(int dt, int at)
+{
+	if (size == 0)
+	{
+		header = initFlight(dt, at);
+	}
+	else {
+		Flight *ite = header;
+		while (ite->next != nullptr)
+		{
+			ite = ite->next;
+		}
+		ite->next = initFlight(dt, at);
+	}
+	size++;
+}
+
+string FlightOptions::toString()
+{
+	Flight *ite = header;
+	string str = "";
+	while (ite != nullptr)
+	{
+		str = str + to_string(ite->arrivalTime) + " " + to_string(ite->depatureTime) + "\n";
+		ite = ite->next;
+	}
+	return str;
+}
