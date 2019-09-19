@@ -17,9 +17,7 @@ int main(int argc, char* argv[])
 	string filepath = "./assets/2019_Lab_2_flights_test_data.txt";
 	FlightMatrix *testFm;
 	readFlightMatrixFromTxt(testFm, filepath);
-//	testFm->print();
 	testFm->dijkstra(0, 2);
-	testFm->~FlightMatrix();
 	system("pause");
 	return 0;
 }

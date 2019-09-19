@@ -42,7 +42,7 @@ void FlightMatrix::dijkstra(int start, int end)
 	vector<FlightGraphVertex> u(length);
 	for (int i = 0; i < length; i++) {
 		if (i == start)
-			u[i] = *new FlightGraphVertex(i, i, -1, -1, 0);
+			u[i] = *new FlightGraphVertex(i, i, 0, 0, 0);
 		else
 			u[i] = *new FlightGraphVertex(UNKNOWN, i, 0, 0, 99999);
 	}
@@ -63,18 +63,25 @@ void FlightMatrix::dijkstra(int start, int end)
 			break;
 		}
 		for (int j = 0; j < u.size(); j++) {
-			FlightOptions list = matrix[minVex.destination][u[j].destination];
+			u[j].source = minVex.destination;
+			FlightOptions list = matrix[u[j].source][u[j].destination];
+			cout << u[j].source << "->" << u[j].destination << endl;
 			if (list.size > 0) {
 				cout << list.toString() << endl;
 				Flight *iter = list.header;
 				while (iter != nullptr) {
-					if (iter->arrivalTime > u[j].arrivalTime && iter->duration+minVex.duration < u[j].duration ) {
-						u[j].setAll(minVex.destination, u[j].destination, iter->depatureTime, iter->arrivalTime, iter->duration);
+					if (iter->arrivalTime > minVex.arrivalTime && iter->arrivalTime - minVex.arrivalTime < u[j].duration ) {
+						u[j].setAll(minVex.destination, u[j].destination, iter->depatureTime, iter->arrivalTime, iter->arrivalTime - minVex.arrivalTime);
 					}
 					iter = iter->next;
 				}
 			}
 		}
+		cout << "s:" << endl;
+		printVector(s);
+		cout << "u:" << endl;
+		printVector(u);
+		cout << "end of one turn---" << endl;
 	}
 	cout << "s:" << endl;
 	printVector(s);
