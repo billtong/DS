@@ -22,12 +22,12 @@ public class FlightMatrix {
                 lineTxt.split("\t");
                 int source = Integer.parseInt(lineTxt.split("\t")[0]);
                 int destination = Integer.parseInt(lineTxt.split("\t")[1]);
-                int arrivaltime = Integer.parseInt(lineTxt.split("\t")[2]);
+                int arrivalTime = Integer.parseInt(lineTxt.split("\t")[2]);
                 int departureTime = Integer.parseInt(lineTxt.split("\t")[3]);
                 if (this.matrix[source][destination] == null) {
                     this.matrix[source][destination] = new ArrayList<>();
                 }
-                this.matrix[source][destination].add(new Flight(source, destination, arrivaltime, departureTime, arrivaltime-departureTime));
+                this.matrix[source][destination].add(new Flight(source, destination, arrivalTime, departureTime, arrivalTime-departureTime));
             }
             br.close();
             isr.close();
