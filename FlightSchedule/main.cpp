@@ -14,10 +14,11 @@ void readFlightMatrixFromTxt(FlightMatrix *&, string);
 
 int main(int argc, char* argv[])
 {
-	string filepath = "./assets/2019_Lab_2_flights_test_data.txt";
+	string testFilepath = "./assets/2019_Lab_2_flights_test_data.txt";
+	string realFilepath = "./assets/2019_Lab_2_flights_real_data.txt";
 	FlightMatrix *testFm;
-	readFlightMatrixFromTxt(testFm, filepath);
-	testFm->dijkstra(0, 2);
+	readFlightMatrixFromTxt(testFm, realFilepath);
+	testFm->dijkstra(98, 36);
 	system("pause");
 	return 0;
 }

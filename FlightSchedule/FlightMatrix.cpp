@@ -3,6 +3,7 @@
 #include "FlightMatrix.h"
 
 #define UNKNOWN -1
+#define BIG_INT 999999
 
 using std::cout;
 using std::endl;
@@ -22,7 +23,6 @@ FlightMatrix::FlightMatrix(int length, int value)
 	}
 	FlightMatrix::length = length;
 }
-
 
 FlightMatrix::~FlightMatrix()
 {
@@ -44,50 +44,49 @@ void FlightMatrix::dijkstra(int start, int end)
 		if (i == start)
 			u[i] = *new FlightGraphVertex(i, i, 0, 0, 0);
 		else
-			u[i] = *new FlightGraphVertex(UNKNOWN, i, 0, 0, 99999);
+			u[i] = *new FlightGraphVertex(UNKNOWN, i, 0, 0, BIG_INT);
 	}
 	while (u.size() > 0)
 	{	
 		FlightGraphVertex minVex(&u[0]);
-		int removeIndex = 0, i = 0;
+		int removeIndex = -1, i = 0;
 		for (i = 0; i < u.size(); i++) {
 			if (u[i].source!=UNKNOWN && minVex.duration > u[i].duration) {
 				minVex.setAll(u[i]);
 				removeIndex = i;
 			}
 		}
-		s.push_back(minVex);
-		u.erase(u.begin()+removeIndex);
-		if (minVex.destination == end)
+		if (removeIndex == -1)
 		{
+			cout << "ERROR: there is no valid road!" << endl;
 			break;
 		}
+		s.push_back(minVex);
+		u.erase(u.begin() + removeIndex);
+		if (minVex.destination == end)
+			break;
 		for (int j = 0; j < u.size(); j++) {
 			u[j].source = minVex.destination;
 			FlightOptions list = matrix[u[j].source][u[j].destination];
-			cout << u[j].source << "->" << u[j].destination << endl;
 			if (list.size > 0) {
-				cout << list.toString() << endl;
 				Flight *iter = list.header;
 				while (iter != nullptr) {
-					if (iter->arrivalTime > minVex.arrivalTime && iter->arrivalTime - minVex.arrivalTime < u[j].duration ) {
-						u[j].setAll(minVex.destination, u[j].destination, iter->depatureTime, iter->arrivalTime, iter->arrivalTime - minVex.arrivalTime);
+					if (iter->depatureTime > minVex.arrivalTime && iter->arrivalTime - minVex.arrivalTime < u[j].duration ) {
+						u[j].departureTime = iter->depatureTime;
+						u[j].arrivalTime = iter->arrivalTime;
+						u[j].duration = iter->arrivalTime - minVex.arrivalTime;
 					}
 					iter = iter->next;
 				}
 			}
+			else {
+				u[j].departureTime = 0;
+				u[j].arrivalTime = 0;
+				u[j].duration = BIG_INT;
+			}
 		}
-		cout << "s:" << endl;
-		printVector(s);
-		cout << "u:" << endl;
-		printVector(u);
-		cout << "end of one turn---" << endl;
 	}
-	cout << "s:" << endl;
-	printVector(s);
-	cout << "u:" << endl;
-	printVector(u);
-	cout << "end of one turn---" << endl;
+	printOptimalRoute(s);
 	u.clear();
 	s.clear();
 }
@@ -145,13 +144,14 @@ void FlightGraphVertex::setAll(int source, int destination, int departureTime, i
 
 std::string FlightGraphVertex::toString()
 {
-	return to_string(source) + " " + to_string(destination) + " " + to_string(departureTime) + " " + to_string(arrivalTime) + " " + to_string(duration) +"\n";
+	return "fly " + to_string(source) + " to " + to_string(destination) + ", " + to_string(departureTime) + "-" + to_string(arrivalTime);
 }
 
-void printVector(vector<FlightGraphVertex> v)
+void printOptimalRoute(vector<FlightGraphVertex> v)
 {
-	for (int i = 0; i < v.size(); i++) {
+	cout << "Optimal route from " << v[0].destination << " to " << v[v.size()-1].destination << endl;
+	for (int i = 1; i < v.size(); i++) {
 		cout << v[i].toString() << endl;
 	}
-	cout << endl;
+	cout << "arrive at " << v[v.size()-1].destination << " at time " << v[v.size()-1].arrivalTime << endl;
 }

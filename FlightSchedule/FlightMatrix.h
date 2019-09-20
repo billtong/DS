@@ -34,4 +34,4 @@ public:
 	void print();
 };
 
-void printVector(vector<FlightGraphVertex> v);
+void printOptimalRoute(vector<FlightGraphVertex> v);

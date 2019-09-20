@@ -11,7 +11,6 @@ FlightOptions::FlightOptions()
 	FlightOptions::size = 0;
 }
 
-
 FlightOptions::~FlightOptions()
 {
 	Flight *ite =header, *temp = header;
