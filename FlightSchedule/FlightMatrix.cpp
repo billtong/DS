@@ -71,10 +71,10 @@ void FlightMatrix::dijkstra(int start, int end)
 			if (list.size > 0) {
 				Flight *iter = list.header;
 				while (iter != nullptr) {
-					if (iter->depatureTime > minVex.arrivalTime && iter->arrivalTime - minVex.arrivalTime < u[j].duration ) {
+					if (iter->depatureTime > minVex.arrivalTime && iter->arrivalTime - minVex.arrivalTime + minVex.duration < u[j].duration ) {
 						u[j].departureTime = iter->depatureTime;
 						u[j].arrivalTime = iter->arrivalTime;
-						u[j].duration = iter->arrivalTime - minVex.arrivalTime;
+						u[j].duration = iter->arrivalTime - minVex.arrivalTime + minVex.duration;
 					}
 					iter = iter->next;
 				}
