@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 	string realFilepath = "./assets/2019_Lab_2_flights_real_data.txt";
 	FlightMatrix *testFm;
 	readFlightMatrixFromTxt(testFm, realFilepath);
-	testFm->dijkstra(98, 36);
+	testFm->dijkstra(16, 23);
 	system("pause");
 	return 0;
 }

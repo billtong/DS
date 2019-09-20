@@ -49,14 +49,14 @@ void FlightMatrix::dijkstra(int start, int end)
 	while (u.size() > 0)
 	{	
 		FlightGraphVertex minVex(&u[0]);
-		int removeIndex = -1, i = 0;
+		int removeIndex = 0, i = 0;
 		for (i = 0; i < u.size(); i++) {
 			if (u[i].source!=UNKNOWN && minVex.duration > u[i].duration) {
 				minVex.setAll(u[i]);
 				removeIndex = i;
 			}
 		}
-		if (removeIndex == -1)
+		if (minVex.duration == BIG_INT)
 		{
 			cout << "ERROR: there is no valid road!" << endl;
 			break;
