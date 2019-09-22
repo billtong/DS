@@ -5,18 +5,16 @@ public class Flight {
     public int destination;
     public int departureTime;
     public int arrivalTime;
-    public int duration;
 
-    public Flight(int source, int destination, int departureTime, int arrivalTime, int duration) {
+    public Flight(int source, int destination, int departureTime, int arrivalTime) {
         this.source = source;
         this.destination = destination;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
-        this.duration = duration;
     }
 
     public Flight(Flight flight) {
-        this(flight.source, flight.destination, flight.departureTime, flight.arrivalTime, flight.duration);
+        this(flight.source, flight.destination, flight.departureTime, flight.arrivalTime);
     }
 
     @Override
@@ -26,7 +24,6 @@ public class Flight {
                 ", destination=" + destination +
                 ", departureTime=" + departureTime +
                 ", arrivalTime=" + arrivalTime +
-                ", duration=" + duration +
                 '}';
     }
 }

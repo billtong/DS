@@ -1,7 +1,6 @@
 package cmpe365.lab1;
 
-import cmpe365.lab1.entity.Flight;
-import cmpe365.lab1.entity.FlightMatrix;
+import cmpe365.lab1.entity.FlightTable;
 import cmpe365.lab1.util.Dijkstra;
 
 public class Main {
@@ -9,17 +8,14 @@ public class Main {
     private static String real = "2019_Lab_2_flights_real_data.txt";
 
     public static void main(String args[]) {
-        FlightMatrix fm = new FlightMatrix(real);
-        Dijkstra dijkstra = new Dijkstra(fm, 16, 23);
-        for (Flight flight : dijkstra.s) {
-            System.out.println(flight);
-        }
+        FlightTable fm = new FlightTable(real);
+        Dijkstra dijkstra = new Dijkstra(fm, 98, 36);
+        System.out.print(dijkstra.routeToString());
     }
-    /** output
-     * Flight{source=16, destination=16, departureTime=0, arrivalTime=0, duration=0}
-     * Flight{source=16, destination=96, departureTime=1, arrivalTime=2, duration=2}
-     * Flight{source=96, destination=15, departureTime=4, arrivalTime=5, duration=5}
-     * Flight{source=15, destination=81, departureTime=7, arrivalTime=8, duration=8}
-     * Flight{source=81, destination=23, departureTime=11, arrivalTime=13, duration=13}
+    /**
+     *  Optimal route from 36 to 98
+     *  36 -> 157 -> 126 -> 42 -> 98
+     *  Arrival Time at city 98 is: 23
+     *  Process finished with exit code 0
      */
 }

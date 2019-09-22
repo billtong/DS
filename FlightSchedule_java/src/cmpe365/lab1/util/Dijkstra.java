@@ -1,65 +1,96 @@
 package cmpe365.lab1.util;
 
 import cmpe365.lab1.entity.Flight;
-import cmpe365.lab1.entity.FlightMatrix;
+import cmpe365.lab1.entity.FlightTable;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Dijkstra {
-    public ArrayList<Flight> s;
-    public ArrayList<Flight> u;
-    private static int BIG_INT = 100000;
-    private static int UNKNOWN_SOURCE = -1;
-    private static int NOT_FOUND_INDEX = -2;
+    private int[] totalTime;
+    private int[] route;
+    private int start;
+    private int end;
 
-    public Dijkstra(FlightMatrix flightMatrix, int start, int end) {
-        s = new ArrayList<>(0);
-        u = new ArrayList<>(flightMatrix.length);
-        for (int i=0; i<flightMatrix.length; i++) {
-            if (i==start) {
-                u.add(new Flight(i, i, 0, 0, 0));
-            } else {
-                u.add(new Flight(UNKNOWN_SOURCE, i, 0, 0, BIG_INT));
+    public Dijkstra(FlightTable flightMatrix, int start, int end) {
+        totalTime = new int[flightMatrix.length];
+        route = new int[flightMatrix.length];
+        this.start = start;
+        this.end = end;
+
+        int[] estimate = new int[flightMatrix.length];
+        boolean[] candidate = new boolean[flightMatrix.length];
+        boolean[] reached = new boolean[flightMatrix.length];
+        int currTime = -1;
+
+        totalTime[start] = 0;
+        estimate[start] = 0;
+        reached[start] = true;
+        candidate[start] = false;
+        for (int i = 0; i < flightMatrix.length; i++) {
+            if (i != start) {
+                estimate[i] = Integer.MAX_VALUE;
+                reached[i] = false;
+                candidate[i] = false;
             }
         }
-        while (u.size() > 0) {
-            Flight fastFlight = new Flight(u.get(0));
-            int fastFlightIndex = 0;
-            for (int i=0; i<u.size(); i++) {
-                if (u.get(i).source != UNKNOWN_SOURCE && fastFlight.duration > u.get(i).duration) {
-                    fastFlight = u.get(i);
-                    fastFlightIndex = i;
+        for (int i = 0; i < flightMatrix.table.size(); i++) {
+            Flight f = flightMatrix.table.get(i);
+            if (f.source == start && f.arrivalTime < estimate[f.destination]) {
+                estimate[f.destination] = f.arrivalTime;
+                candidate[f.destination] = true;
+                route[f.destination] = start;
+            }
+        }
+        while (true) {
+            int fastestArrivalTime = Integer.MAX_VALUE;
+            int nextCity = -1;
+            for (int i = 0; i < flightMatrix.length; i++) {
+                if (candidate[i] && estimate[i] < fastestArrivalTime) {
+                    nextCity = i;
+                    fastestArrivalTime = estimate[i];
                 }
             }
-            if (fastFlight.duration == BIG_INT) {
-                System.out.println("ERROR: there is no valid path, but here is some result output");
+            reached[nextCity] = true;
+            candidate[nextCity] = false;
+            totalTime[nextCity] = fastestArrivalTime;
+            currTime = fastestArrivalTime;
+            if (reached[end]) {
                 break;
             }
-            s.add(fastFlight);
-            u.remove(fastFlightIndex);
-            if (fastFlight.destination == end) {
-                break;
-            }
-            for (int i=0; i<u.size(); i++) {
-                u.get(i).source = fastFlight.destination;
-                ArrayList<Flight> flightList = flightMatrix.matrix[u.get(i).source][u.get(i).destination];
-                if (flightList!=null && !flightList.isEmpty()) {
-                    for (Flight flight : flightList) {
-                        if (flight.departureTime > fastFlight.arrivalTime && flight.arrivalTime - fastFlight.arrivalTime + fastFlight.duration < u.get(i).duration) {
-                            Flight flight1 = u.get(i);
-                            flight1.departureTime = flight.departureTime;
-                            flight1.arrivalTime = flight.arrivalTime;
-                            flight1.duration = flight.arrivalTime - fastFlight.arrivalTime + fastFlight.duration;
-                        }
+            for (int i = 0; i < flightMatrix.table.size(); i++) {
+                Flight f = flightMatrix.table.get(i);
+                if (f.source == nextCity && !reached[f.destination]) {
+                    if (f.arrivalTime < estimate[f.destination] && f.departureTime > currTime) {
+                        estimate[f.destination] = f.arrivalTime;
+                        candidate[f.destination] = true;
+                        route[f.destination] = nextCity;
                     }
-                } else {
-                    Flight flight = u.get(i);
-                    flight.departureTime = 0;
-                    flight.arrivalTime = 0;
-                    flight.duration = BIG_INT;
-                    u.set(i, flight);
                 }
             }
         }
+    }
+
+    private void initDijkstra() {
+    }
+
+    public String routeToString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Optimal route from " + start + " to " + end + "\n");
+        Stack<Integer> stack = new Stack<>();
+        int a = end;
+        while (a != start) {
+            stack.push(a);
+            a = route[a];
+        }
+        stack.push(start);
+        while (stack.size() > 0) {
+            stringBuilder.append(stack.pop());
+            if (stack.size() != 0) {    // Formats the last route
+                stringBuilder.append(" -> ");
+            }
+        }
+        stringBuilder.append("\n");
+        stringBuilder.append("Arrival Time at city " + end + " is: " + totalTime[end]);
+        return stringBuilder.toString();
     }
 }
