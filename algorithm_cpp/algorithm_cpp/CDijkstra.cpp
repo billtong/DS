@@ -3,8 +3,6 @@
 */
 #include"CDijkstra.h"
 
-using CDIJKSTRA::CDijkstra;
-
 CDijkstra::CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex)
 {
 	m_nSize = cSquareMatrix.m_nLength;
@@ -65,12 +63,6 @@ CDijkstra::CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex)
 	delete[] gEstimate;
 }
 
-CDijkstra::~CDijkstra()
-{
-	delete[] m_gCost;
-	delete[] m_gReached;
-}
-
 void CDijkstra::printResult()
 {
 	cout << "start display the result of dijkstra algorithm:" << endl;
@@ -83,4 +75,37 @@ void CDijkstra::printResult()
 			cout << "n/a\t";
 	}
 	cout << "\nend display the result of dijkstra algorithm" << endl;
+}
+
+CSquareMatrix::CSquareMatrix(const char* cFilepath)
+{
+	ifstream iFile;
+	iFile.open(cFilepath);
+	if (!iFile)
+	{
+		cout << "ERROR: cannot open file" << endl;
+		exit(1);
+	}
+	iFile >> m_nLength;
+	m_gData = (int**)operator new(m_nLength * sizeof(int*));
+	for (int i = 0; i < m_nLength; i++) {
+		m_gData[i] = (int*)operator new(m_nLength * sizeof(int));
+		for (int j = 0; j < m_nLength; j++)
+			iFile >> m_gData[i][j];
+	}
+	iFile.close();
+}
+
+void CSquareMatrix::print()
+{
+	cout << "start print the square matrix:" << endl;
+	for (int i = 0; i < m_nLength; i++)
+	{
+		for (int j = 0; j < m_nLength; j++)
+		{
+			cout << "\t" << m_gData[i][j];
+		}
+		cout << endl;
+	}
+	cout << "end print the square matrix" << endl;
 }

@@ -3,7 +3,12 @@
 */
 #pragma once
 #include<vector>
-#include"CSquareMatrix.h"
+#include<iostream>
+#include<fstream>
+
+using std::ifstream;
+using std::cout;
+using std::endl;
 
 #define DIJKSTRA_DATA_6 "./data/Dijkstra_Data_6.txt"
 #define DIJKSTRA_DATA_100 "./data/Dijkstra_Data_100.txt"
@@ -14,19 +19,25 @@
 
 using std::vector;
 
-namespace CDIJKSTRA
+class CSquareMatrix
 {
-	class CDijkstra
-	{
-	public:
-		bool* m_gReached;
-		int* m_gCost;
-		int m_nSize;
+public:
+	int** m_gData;
+	int m_nLength;
 
-	public:
-		CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex);
-		~CDijkstra();
-		void printResult();
-	};
-}
+public:
+	CSquareMatrix(const char* cFilepath);
+	void print();
+};
 
+class CDijkstra
+{
+public:
+	bool* m_gReached;
+	int* m_gCost;
+	int m_nSize;
+
+public:
+	CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex);
+	void printResult();
+};

@@ -124,12 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CDijkstra.cpp" />
-    <ClCompile Include="CSquareMatrix.cpp" />
+    <ClCompile Include="CSearch.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDijkstra.h" />
-    <ClInclude Include="CSquareMatrix.h" />
+    <ClInclude Include="CSearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

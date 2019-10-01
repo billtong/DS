@@ -18,10 +18,10 @@
     <ClCompile Include="CDijkstra.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CSquareMatrix.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="CSearch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="CDijkstra.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CSquareMatrix.h">
+    <ClInclude Include="CSearch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
