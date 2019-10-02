@@ -1,4 +1,8 @@
+#include<time.h>
 #include "CSearch.h"
+
+using std::cout;
+using std::endl;
 
 int CSearch::binarySearch(int* a, int size, int x)
 {
@@ -60,4 +64,13 @@ int CSearch::trinarySearch(int* a, int size, int x)
 		}
 	}
 	return -1;
+}
+
+void CSearch::execSearchFuncWithClock(int(*func)(int*, int, int), int* a, int size, int x)
+{
+	double start, finish;
+	start = clock();
+	cout << (*func)(a, size, x) << endl;
+	finish = clock();
+	cout << (finish - start) << " msec to complete." << endl;
 }
