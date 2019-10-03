@@ -24,12 +24,18 @@
     <ClCompile Include="CSearch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CSubsetSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDijkstra.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CSubsetSum.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
