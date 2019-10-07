@@ -1,6 +1,7 @@
-﻿## ide config files
-
+## ide config files
 ## visual studio
 
-## clion
-
+## jetbrain
+.idea/*
+data-structure-and-algorithm_cpp/.idea/*
+data-structure-and-algorithm_cpp/cmake-build-debug/*
