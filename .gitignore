@@ -1,10 +1,6 @@
-﻿## visual studio
-.vs/
-x64/
-Algorithms/.vs/
-Algorithms/x64/
-Algorithms/Debug/
+﻿## ide config files
 
-MyDataStructure/.vs/
-MyDataStructure/x64/
-MyDataStructure/Debug/
+## visual studio
+
+## clion
+
