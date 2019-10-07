@@ -1,8 +1,6 @@
-#include "CSubsetSum.h"
+#include "../include/CSubsetSum.h"
 
-using std::cout;
-using std::endl;
-using std::to_string;
+using std::cout, std::endl, std::to_string;
 
 CSet::CSet(int m_nSum, vector<int> m_gElements) : m_nSum(m_nSum), m_gElements(m_gElements) {}
 
@@ -20,7 +18,7 @@ int* CSubsetSum::pair_sum(vector<CSet> set1, vector<CSet> set2, int k)
 {
 	int ptr1 = 0;
 	int ptr2 = set2.size() - 1;
-	while (ptr1 < set1.size && ptr2 >= 0)
+	while (ptr1 < set1.size() && ptr2 >= 0)
 	{
 		int t = set1[ptr1].m_nSum + set2[ptr2].m_nSum;
 		if (t == k)

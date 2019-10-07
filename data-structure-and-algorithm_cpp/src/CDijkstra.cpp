@@ -1,7 +1,7 @@
 /*
 	Author: Bill Tong
 */
-#include"CDijkstra.h"
+#include"../include/CDijkstra.h"
 
 CDijkstra::CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex)
 {
@@ -15,7 +15,7 @@ CDijkstra::CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex)
 		if (i == nStartIndex)
 		{
 			gCandidate[i] = false;
-			gEstimate[i] = INT_MAX;
+			gEstimate[i] = INT8_MAX;
 			m_gReached[i] = true;
 			m_gCost[i] = 0;
 		}
@@ -24,19 +24,19 @@ CDijkstra::CDijkstra(CSquareMatrix cSquareMatrix, int nStartIndex)
 			gCandidate[i] = true;
 			gEstimate[i] = cSquareMatrix.m_gData[nStartIndex][i];
 			m_gReached[i] = false;
-			m_gCost[i] = INT_MAX;
+			m_gCost[i] = INT8_MAX;
 		}
 		else {
 			gCandidate[i] = false;
-			gEstimate[i] = INT_MAX;
+			gEstimate[i] = INT8_MAX;
 			m_gReached[i] = false;
-			m_gCost[i] = INT_MAX;
+			m_gCost[i] = INT8_MAX;
 		}
 	}
 	while (true)
 	{
 		int nBestCandidate = -1;
-		int nBestCandidateCost = INT_MAX;
+		int nBestCandidateCost = INT8_MAX;
 		for (int i = 0; i < m_nSize; i++)
 		{
 			if (gCandidate[i] && nBestCandidateCost > gEstimate[i])

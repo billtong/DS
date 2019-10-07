@@ -3,8 +3,7 @@
 #include<iostream>
 #include<string>
 
-using std::string;
-using std::vector;
+using std::string, std::vector;
 
 class CSet
 {
@@ -23,6 +22,5 @@ public:
 	static void bfi_subset_sum(const int s[], int size, int k);
 	static void hs_subset_sum(const int s[],int size, int k);
 	static vector<CSet> get_bfi_subset_sum_list(vector<int> s);
-
 };
 

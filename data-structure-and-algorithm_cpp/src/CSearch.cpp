@@ -1,8 +1,7 @@
 #include<time.h>
-#include "CSearch.h"
+#include "../include/CSearch.h"
 
-using std::cout;
-using std::endl;
+using std::cout, std::endl;
 
 int CSearch::binarySearch(int* a, int size, int x)
 {
