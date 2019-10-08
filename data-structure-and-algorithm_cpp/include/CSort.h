@@ -35,7 +35,7 @@ public:
         {
             int left = 0;
             int right = i;
-            int target = arr[i];
+            T target = arr[i];
             while (left < right)
             {
                 int mid = (left + right) / 2;
@@ -50,8 +50,8 @@ public:
     }
     static void MergeSort(vector<T> &arr)
     {
-        vector<int> temp(arr.size());
-        CSort::MergeSortRec(arr, 0, arr.size()-1, temp);
+        vector<T> temp(arr.size());
+        CSort<T>::MergeSortRec(arr, 0, arr.size()-1, temp);
     }
 
 private:
@@ -59,15 +59,15 @@ private:
     {
         if(end - start <= 8) {
             vector<T> v(&arr[start], &arr[end+1]);  //caution: [start, end+1)
-            CSort::BinaryInsertionSort(v);
+            CSort<T>::BinaryInsertionSort(v);
             for(int i = start; i <= end; i++)
                 arr[i] = v[i-start];
             return;
         }
         int middle = (start + end) / 2;
-        CSort::MergeSortRec(arr, start, middle, temp);
-        CSort::MergeSortRec(arr, middle + 1, end, temp);
-        CSort::Merge(arr, start, middle, end, temp);
+        CSort<T>::MergeSortRec(arr, start, middle, temp);
+        CSort<T>::MergeSortRec(arr, middle + 1, end, temp);
+        CSort<T>::Merge(arr, start, middle, end, temp);
     }
     static void Merge(vector<T> &arr, int start, int middle, int end, vector<T> temp)
     {

@@ -1,15 +1,16 @@
 /*
 	Author: Bill Tong
 */
+#include <random>
 #include"../include/CDijkstra.h"
-#include"../include/CSearch.h"
-#include"../include/CSubsetSum.h"
 #include "../include/CSort.h"
+#include "../include/CSearch.h"
+#include "../include/CSubsetSum.h"
 
 #define DIJKSTRA_TEST 0
 #define SEARCH_TEST 0
-#define SORT_TEST 1
-#define SUBSET_SUM 0
+#define SORT_TEST 0
+#define SUBSET_SUM 1
 
 int main(int argc, char *argv[])
 {
@@ -35,7 +36,16 @@ int main(int argc, char *argv[])
     cout << endl;
 #endif // SORT_TEST
 #if SUBSET_SUM
-	int s[8] = { 3, 5, 3, 9, 18, 4, 5, 6 };
-	CSubsetSum::bfi_subset_sum(s, 8, 6);
+    srand((unsigned)clock());
+	int arr[100];
+	int n = 40;
+	for(int i=0; i<n; i++)
+    {
+	    arr[i] = rand() % 100;
+    }
+	int k = rand() % 100;
+	vector<int> v(arr, arr+n);
+    CSubsetSum::hs_subset_sum(v, k);
+	CSubsetSum::bfi_subset_sum(v, k);
 #endif // SUBSET_SUM
 }
