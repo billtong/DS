@@ -29,6 +29,7 @@ public:
             swap(arr, i, select);
         }
     }
+
     static void BinaryInsertionSort(vector<T> &arr)
     {
         for(int i = 1; i < arr.size(); i++)
@@ -48,6 +49,7 @@ public:
                 swap(arr, j, j-1);
         }
     }
+
     static void MergeSort(vector<T> &arr)
     {
         vector<T> temp(arr.size());
@@ -55,6 +57,7 @@ public:
     }
 
 private:
+
     static void MergeSortRec(vector<T> &arr, int start, int end, vector<T> temp)
     {
         if(end - start <= 8) {
@@ -69,6 +72,8 @@ private:
         CSort<T>::MergeSortRec(arr, middle + 1, end, temp);
         CSort<T>::Merge(arr, start, middle, end, temp);
     }
+
+
     static void Merge(vector<T> &arr, int start, int middle, int end, vector<T> temp)
     {
         int i, j, k;

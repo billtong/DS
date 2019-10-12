@@ -28,6 +28,10 @@ private:
 public:
 	static void bfi_subset_sum(vector<int> s, int k);
 	static void hs_subset_sum(vector<int> s, int k);
-	static vector<CSet> get_bfi_subset_sum_list(vector<int> s);
+    static vector<CSet> get_bfi_subset_sum_list(vector<int> s);
+
+	static void bfi_subset_sum_opt(vector<int> s, int k, int &count);
+	static void hs_subset_sum_opt(vector<int> s, int k, int &count);
+    static vector<CSet> get_bfi_subset_sum_list_opt(vector<int> s, int &count);
 };
 
