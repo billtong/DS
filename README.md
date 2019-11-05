@@ -1,5 +1,5 @@
 # data-structure-and-algorithm
-basic data structure &amp; algorithm implementation in CPlusPlus/Java
+basic data structure &amp; algorithm implementation in C/CPP/Java
 ## data structure
 ## basic algorithm
 ### sort
@@ -16,3 +16,4 @@ basic data structure &amp; algorithm implementation in CPlusPlus/Java
 ### Divide and Conquer
 - merge sort
 - subset sum problem
+### Dynamic Programing

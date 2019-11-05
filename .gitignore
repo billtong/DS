@@ -2,6 +2,12 @@
 ## visual studio
 
 ## jetbrain
-.idea/*
-data-structure-and-algorithm_cpp/.idea/*
-data-structure-and-algorithm_cpp/cmake-build-debug/*
+algorithm/algorithm_java/target/*
+algorithm/algorithm_java/.idea/*
+*.iml
+
+## maven
+algorithm/algorithm_java/.settings/*
+*.classpath
+*.factorypath
+*.project
