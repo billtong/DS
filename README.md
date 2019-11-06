@@ -4,39 +4,40 @@ basic data structure &amp; algorithm implementation in C/CPP/Java
 ### ArrayList (primary)
 ### LinkedList (primary)
 ### Stack
-- linked stack
-- array stack
+- linked stack(c)
+- array stack(c)
 ### Queue
-- linked queue
-- array stack
+- linked queue(c)
+- array stack(c)
 ### Tree
-- Binary Tree
-- Binary Search Tree
-- AVL Binary Search Tree
-- Array Binary Heap
+- Binary Tree(c)
+- Binary Search Tree(c)
+- AVL Binary Search Tree(c)
+- Array Binary Heap(c)
 ### Hash Table
-- linked hash table
-- array hash table
+- linked hash table(c)
+- array hash table(c)
 ### Graph
-- directed weight graph
+- directed weight graph(c)
 ## basic algorithm
 ### sort
-- select
-- binary insertion
-- merge
+- select(c)
+- binary insertion(c)
+- merge(c)
 ### search
-- binary
-- trinary
+- binary(c++)
+- trinary(c++)
 ### shortest path
-- dijkstra (shortest path problem)
+- dijkstra(c++)
 ## more algorithm
 ### Greedy
+- huffman code(java)
 ### Divide and Conquer
-- merge sort
-- subset sum problem
+- merge sort(c++)
+- subset sum problem(c++)
 ### Dynamic Programing
-- 硬币找零（Make Change）
-- 最长公共子序列（Longest common subsequent）
+- 硬币找零 Make Change(java)
+- 最长公共子序列 Longest common subsequent(java)
 # 中文日志
 - 2019-09-08	使用array list实现了Dijkstra
 - 2019-09-09	根据教授提供的思路将时间复杂度优化，完成了sample数据的测试
