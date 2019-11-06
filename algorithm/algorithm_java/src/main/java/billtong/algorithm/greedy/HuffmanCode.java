@@ -34,8 +34,8 @@ public class HuffmanCode {
             InputStream in = new FileInputStream(file);
             Reader buffer = new BufferedReader(new InputStreamReader(in, Charset.defaultCharset()));
             int temp;
-            while ((temp = buffer.read()) != -1) {
-                frequencyArray[temp]++;
+            while ((temp = buffer.read()) != -1) {  // check if meets end of the file
+                if (frequencyArray[temp] != -1) frequencyArray[temp]++;
             }
             buffer.close();
             in.close();
@@ -70,11 +70,11 @@ public class HuffmanCode {
 
     public String encode(String str) {
         StringBuffer buffer = new StringBuffer();
-        for (int c : str.toCharArray()) {
-            if (c == 10)
+        for (int charLoc : str.toCharArray()) {
+            if (charLoc == 10)
                 buffer.append(printable.get(0).getHuffmanCode());
             else
-                buffer.append(printable.get(c - 31).getHuffmanCode());
+                buffer.append(printable.get(charLoc - 31).getHuffmanCode());
         }
         return String.valueOf(buffer);
     }

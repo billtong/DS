@@ -7,7 +7,7 @@ import org.junit.Test;
 public class GreedyTest {
     @Test
     public void HuffmanCodeTest() throws Exception {
-        String testString = "hello from huffman code test!!";
+        String testString = "hello this is the test file from huffman test!!";
         HuffmanCode huffmanCode = new HuffmanCode();
         Assert.assertEquals(testString, huffmanCode.decode(huffmanCode.encode(testString)));
     }
