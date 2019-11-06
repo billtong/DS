@@ -35,8 +35,11 @@ basic data structure &amp; algorithm implementation in C/CPP/Java
 - merge sort
 - subset sum problem
 ### Dynamic Programing
+- 硬币找零（Make Change）
+- 最长公共子序列（Longest common subsequent）
 # 中文日志
 - 2019-09-08	使用array list实现了Dijkstra
 - 2019-09-09	根据教授提供的思路将时间复杂度优化，完成了sample数据的测试
-- 2019-09-20  使用java和c++完成了飞机航线规划算法，都需要改善
-- 2019-11-05  使用java完成huffmancode和make change算法
+- 2019-09-20    使用java和c++完成了飞机航线规划算法，都需要改善
+- 2019-11-05    使用java完成huffman code和make change算法
+- 2019-11-06    使用java完成Longest common subsequent算法
