@@ -4,21 +4,21 @@
 
 typedef struct _ArrayQueue
 {
-	arraylist *al;
+	arraylist* al;
 	int count;
 } arrayqueue;
 
-int isArrayQueueEmpty(arrayqueue *aq);
+int isArrayQueueEmpty(arrayqueue* aq);
 
-arrayqueue *initArrayQueue();
+arrayqueue* initArrayQueue();
 
-void enqueue(arrayqueue *aq, int value);
+void enqueue(arrayqueue* aq, int value);
 
-int dequeue(arrayqueue *aq);
+int dequeue(arrayqueue* aq);
 
-void printArrayQueue(arrayqueue *aq);
+void printArrayQueue(arrayqueue* aq);
 
-void freeArrayQueue(arrayqueue *aq);
+void freeArrayQueue(arrayqueue* aq);
 
 #endif // !ARRAYQUEUE_H
 #pragma once

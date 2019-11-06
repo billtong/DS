@@ -3,13 +3,13 @@
 typedef struct _SquareMatrix
 {
 	int length;
-	int **matrix;		//存静态二维数组
+	int** matrix;		//存静态二维数组
 } SquareMatrix;
 
-SquareMatrix *initSquareMatrix(int length, int value);
+SquareMatrix* initSquareMatrix(int length, int value);
 
-SquareMatrix *initSquareMatrix(int length, int **matrix);
+SquareMatrix* initSquareMatrix(int length, int** matrix);
 
-void printSquareMatrix(SquareMatrix *squareMatrix);
+void printSquareMatrix(SquareMatrix* squareMatrix);
 
-void freeSquareMatrix(SquareMatrix *squareMatrix);
+void freeSquareMatrix(SquareMatrix* squareMatrix);

@@ -1,11 +1,9 @@
-
 #ifndef SORTS_H
 
 
 /*
 从数组中选出最小的数放在第一个
 再选出第二小的放在第二个
-。。。
 一直选到倒数第二个
 例子：每次从整个数组中选择（）内的正确元素
 start：10 24 5 32 1 84 19
@@ -16,7 +14,7 @@ start：10 24 5 32 1 84 19
 #5：1 5 10 19 (24) 84 32
 end：1 5 10 19 24 (32) 84
 */
-void selectionSorts(int *arr, int size);
+void selectionSorts(int* arr, int size);
 
 /*
 从第二个数开始将他正确的插在前面区间内的位置中
@@ -36,14 +34,15 @@ void linearInsertionSorts(int* arr, int size);
 原理和Linear的基本相同
 只是在选择位置时不再用线性搜索，而是binary search，O(ln（n）)
 */
-void binaryInsertionSorts(int *arr, int size);
+void binaryInsertionSorts(int* arr, int size);
 
 
-/*冒泡排序
+/*
+冒泡排序
 通过从第一项开始和下一项比较，保证更大的那个能够往后移动一位
 最后最大的哪一项就会浮出水面，成为正确的位置
 */
-void bubbleSorts(int *arr, int size);
+void bubbleSorts(int* arr, int size);
 
 /*
 [0]200<->[12]1
@@ -62,20 +61,21 @@ void bubbleSorts(int *arr, int size);
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 */
-void quickSorts(int *arr, int left, int right);
-int findPivot(int *arr, int left, int right);
+void quickSorts(int* arr, int left, int right);
+int findPivot(int* arr, int left, int right);
 
 /*
 该函式使用了merge的递归函数，用于简化使用，穿的参数少一点//被main里使用
 */
-void mergeSort(int *arr, int n);
+void mergeSort(int* arr, int n);
 
-/*merge递归
+/*
+merge递归
 获得middle
 然后将函数分为两部分分别进行排序，
 最后再整合到一起
 */
-void mergeSortRec(int *a, int start, int end, int* b);
+void mergeSortRec(int* a, int start, int end, int* b);
 /*这个merge时排序的核心
 	定义连个变量j和k
 	第一步
@@ -88,7 +88,7 @@ void mergeSortRec(int *a, int start, int end, int* b);
 	第三步
 	将排序好的b赋值给a
 */
-void merge(int *a, int start, int middle, int end, int *b);
+void merge(int* a, int start, int middle, int end, int* b);
 
 
 /*
@@ -96,7 +96,7 @@ bucketSize需要是数组的最大值
 按照从小到大的顺序，统计每种的元素数量，
 然后将他们统统取出来就时sorted了
 */
-void bucketSort(int *a, int size, int bucketSize);
+void bucketSort(int* a, int size, int bucketSize);
 
 /*基数排序是改良版的bucketsort
 bucketsize
@@ -113,7 +113,7 @@ bucketsize
 第四部：arr=temp
 
 */
-void radixSort(int *a, int size, int p);
+void radixSort(int* a, int size, int p);
 
 #endif // !SORTS_H
 

@@ -22,8 +22,12 @@ basic data structure &amp; algorithm implementation in C/CPP/Java
 ## basic algorithm
 ### sort
 - select(c)
-- binary insertion(c)
+- insertion(c)
+- bubble(c)
+- quick sort(c)
 - merge(c)
+- bucket sort(c)
+- radix sort(c)
 ### search
 - binary(c++)
 - trinary(c++)

@@ -1,15 +1,15 @@
 #include"ZHeader.h"
 
 
-arraystack * initArraystack()
+arraystack* initArraystack()
 {
-	arraystack *as = (arraystack *)malloc(sizeof(arraystack));
+	arraystack* as = (arraystack*)malloc(sizeof(arraystack));
 	as->al = initArrayList();
 	as->top = as->al->used;
 	return as;
 }
 
-void push(arraystack * as, int value)
+void push(arraystack* as, int value)
 {
 	if (as == NULL) {
 		printf("arraystack push error: arraystack pointer null\n");
@@ -20,7 +20,7 @@ void push(arraystack * as, int value)
 	}
 }
 
-int pop(arraystack * as)
+int pop(arraystack* as)
 {
 	if (as == NULL) {
 		printf("arraystack pop error: arraystack pointer null\n");
@@ -33,7 +33,7 @@ int pop(arraystack * as)
 	}
 }
 
-int tos(arraystack * as)
+int tos(arraystack* as)
 {
 	if (as == NULL) {
 		printf("arraystack tos error: arraystack pointer null\n");
@@ -44,17 +44,17 @@ int tos(arraystack * as)
 	}
 }
 
-void printArrayStack(arraystack * as)
+void printArrayStack(arraystack* as)
 {
-	if (as == NULL) 
+	if (as == NULL)
 		printf("arraystack print error: arraystack pointer null\n");
-	 else 
+	else
 		printArrayList(as->al);
 }
 
-void freeArrayStack(arraystack * as)
+void freeArrayStack(arraystack* as)
 {
-	if (as == NULL) 
+	if (as == NULL)
 		printf("arraystack freestack error: arraystack pointer null\n");
 	else {
 		freeArrayList(as->al);

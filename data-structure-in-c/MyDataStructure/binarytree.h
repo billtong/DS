@@ -32,30 +32,30 @@ typedef struct _BinaryTreeNode
 {
 	int value;
 	int key;
-	struct _BinaryTreeNode *left;
-	struct _BinaryTreeNode *right;
+	struct _BinaryTreeNode* left;
+	struct _BinaryTreeNode* right;
 	int height;
 } binarytreenode;
 
 typedef struct _MyBinaryTree
 {
-	binarytreenode *root;
+	binarytreenode* root;
 } binarytree;
 
-binarytreenode *initBinaryTreeNode(int value, int key);
+binarytreenode* initBinaryTreeNode(int value, int key);
 
-binarytree *initBinaryTree();
+binarytree* initBinaryTree();
 
 /*
 这里另外有一个递归函数封装在了cpp文件里
 */
-binarytree *getBinaryTree(int nodeNum);
+binarytree* getBinaryTree(int nodeNum);
 
 /*
 获取左右子节点高度的最大值，它加一就是高度
 空的话就返回-1
 */
-int getBinaryTreeHeight(binarytreenode *root);
+int getBinaryTreeHeight(binarytreenode* root);
 
 /*
 找节点用递归
@@ -63,34 +63,34 @@ int getBinaryTreeHeight(binarytreenode *root);
 注意的是：孩子们的情况一定要if判断，如果是非空的说明已经找到wanted的了一定要return到上一次递归中；
 这样保证如果找到值后就能不断被return到上一层，而不会被NULL覆盖
 */
-binarytreenode *findNodeByKey(binarytreenode *root, int key);
+binarytreenode* findNodeByKey(binarytreenode* root, int key);
 
 /*
 先打印根节点。看着最容易
 */
-void preoderPrintBinaryTree(binarytreenode *root);
+void preoderPrintBinaryTree(binarytreenode* root);
 
 
-void inorderPrintBinaryTree(binarytreenode *root);
+void inorderPrintBinaryTree(binarytreenode* root);
 
-void postorderPrintBinaryTree(binarytreenode *root);
+void postorderPrintBinaryTree(binarytreenode* root);
 
 /*
 一次循环中，根出队列，同时打印出该值；其孩子们就进入队列。
 为了能够找到这个离开队列的根节点的地址，需要写一个通过key找到根节点的方法， 即findNodeByKey
 */
-void breathfirstPrintBinaryTree(binarytree *bt);
+void breathfirstPrintBinaryTree(binarytree* bt);
 
 /*
 和findnode类似
 */
-binarytreenode *findParentNode(binarytreenode *root, int key);
+binarytreenode* findParentNode(binarytreenode* root, int key);
 
 /*
 为了方便，最好用postorder
 先free孩子再free根节点
 */
-void freeBinaryTree(binarytreenode *root);
+void freeBinaryTree(binarytreenode* root);
 
 #endif // !BINARYTREE_H
 #pragma once

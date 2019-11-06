@@ -1,7 +1,7 @@
 #include"ZHeader.h"
 
 
-int isLinkedQueueEmpty(linkedqueue * aq)
+int isLinkedQueueEmpty(linkedqueue* aq)
 {
 	if (aq == NULL || aq->count == 0) {
 		return 1;
@@ -11,17 +11,17 @@ int isLinkedQueueEmpty(linkedqueue * aq)
 	}
 }
 
-linkedqueue * initLinkedQueue()
+linkedqueue* initLinkedQueue()
 {
-	linkedqueue *lq = (linkedqueue *)malloc(sizeof(linkedqueue));
+	linkedqueue* lq = (linkedqueue*)malloc(sizeof(linkedqueue));
 	lq->ll = initSingleLinkedList();
 	lq->count = 0;
 	return lq;
 }
 
-void linkedEnqueue(linkedqueue * lq, int value)
+void linkedEnqueue(linkedqueue* lq, int value)
 {
-	if (lq ==NULL || lq->ll == NULL) {
+	if (lq == NULL || lq->ll == NULL) {
 		printf("linkedqueue linkedEnqueue error: queue null\n");
 	}
 	else
@@ -31,7 +31,7 @@ void linkedEnqueue(linkedqueue * lq, int value)
 	}
 }
 
-int linkedDequeue(linkedqueue *lq)
+int linkedDequeue(linkedqueue* lq)
 {
 	if (isLinkedQueueEmpty(lq)) {
 		printf("linkedqueue linkedDequeue error: queue empty\n");
@@ -44,7 +44,7 @@ int linkedDequeue(linkedqueue *lq)
 	}
 }
 
-void prinLinkedQueue(linkedqueue * lq)
+void prinLinkedQueue(linkedqueue* lq)
 {
 	if (isLinkedQueueEmpty(lq)) {
 		printf("this linked queue is empty\n");
@@ -54,7 +54,7 @@ void prinLinkedQueue(linkedqueue * lq)
 	}
 }
 
-void freeLinkedQueue(linkedqueue * lq)
+void freeLinkedQueue(linkedqueue* lq)
 {
 	if (isLinkedQueueEmpty) {
 		printf("linkedqueue free error: queue null\n");

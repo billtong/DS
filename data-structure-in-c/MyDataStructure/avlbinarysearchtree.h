@@ -5,28 +5,28 @@
 
 typedef struct _AVLBinarySearchTree
 {
-	binarytreenode *root;
+	binarytreenode* root;
 
 }avlbinarysearchtree;
 
-avlbinarysearchtree *initAVLBinaryTree();
+avlbinarysearchtree* initAVLBinaryTree();
 
-void calculateHeight(binarytreenode *root);
+void calculateHeight(binarytreenode* root);
 
 //左孩子的高度-右孩子的高度
-int getBalanceFactor(binarytreenode *root);
+int getBalanceFactor(binarytreenode* root);
 
-binarytreenode *rotateLeft(binarytreenode *root);
+binarytreenode* rotateLeft(binarytreenode* root);
 
-binarytreenode *rotateRight(binarytreenode *root);
+binarytreenode* rotateRight(binarytreenode* root);
 
 //need change to all rebanlance,this one only change the leafs
-binarytreenode * rebalance(binarytreenode * root, int key);
+binarytreenode* rebalance(binarytreenode* root, int key);
 
 //这里是如何使用到binarysearch tree的函数来完成呢？？
-binarytreenode * insertAVLBinaryTree(binarytreenode * root, int value, int key);
+binarytreenode* insertAVLBinaryTree(binarytreenode* root, int value, int key);
 
-binarytreenode *deleteAVLBinaryTree(binarytreenode *root, int key);
+binarytreenode* deleteAVLBinaryTree(binarytreenode* root, int key);
 
 #endif // !AVLBINARYSEARCHTREE_H
 #pragma once

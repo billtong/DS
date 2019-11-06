@@ -1,13 +1,13 @@
 #include"ZHeader.h"
 
-binarysearchtree * initBinarySearchTree()
+binarysearchtree* initBinarySearchTree()
 {
-	binarysearchtree *bt = (binarysearchtree *)malloc(sizeof(binarysearchtree));
+	binarysearchtree* bt = (binarysearchtree*)malloc(sizeof(binarysearchtree));
 	bt->root = NULL;
 	return bt;
 }
 
-binarytreenode * findMinBinarySearchTree(binarytreenode * root)
+binarytreenode* findMinBinarySearchTree(binarytreenode* root)
 {
 	if (root && root->left) {
 		return findMinBinarySearchTree(root->left);
@@ -15,7 +15,7 @@ binarytreenode * findMinBinarySearchTree(binarytreenode * root)
 	return root;
 }
 
-binarytreenode * findMaxBinarySearchTree(binarytreenode * root)
+binarytreenode* findMaxBinarySearchTree(binarytreenode* root)
 {
 	if (root && root->right) {
 		return findMaxBinarySearchTree(root->right);
@@ -23,24 +23,24 @@ binarytreenode * findMaxBinarySearchTree(binarytreenode * root)
 	return root;
 }
 
-binarytreenode * findBinarySearchTree(binarytreenode * root, int key)
+binarytreenode* findBinarySearchTree(binarytreenode* root, int key)
 {
 
 	if (root == NULL)
 		return NULL;
 
-	if (root->key > key) 
+	if (root->key > key)
 		return findBinarySearchTree(root->left, key);
-	
-	else if (root->key < key) 
+
+	else if (root->key < key)
 		return findBinarySearchTree(root->right, key);
-	else 
+	else
 		return root;
-	
+
 }
 
 
-binarytreenode * insertBinarySearchTree(binarytreenode * root, int value, int key)
+binarytreenode* insertBinarySearchTree(binarytreenode* root, int value, int key)
 {
 	if (root == NULL) {
 		return initBinaryTreeNode(value, key);
@@ -48,17 +48,18 @@ binarytreenode * insertBinarySearchTree(binarytreenode * root, int value, int ke
 
 	if (root->key > key) {
 		root->left = insertBinarySearchTree(root->left, value, key);
-	}	else if ( root->key < key) 
+	}
+	else if (root->key < key)
 	{
 		root->right = insertBinarySearchTree(root->right, value, key);
 	}
 	return root;
 }
 
-binarysearchtree *getSampleBinarySearchTree()
+binarysearchtree* getSampleBinarySearchTree()
 {
 	int arr[] = { 30, 32, 20, 103, 34, 31, 23, 4, 13, 33, };
-	binarysearchtree *bt = initBinarySearchTree();
+	binarysearchtree* bt = initBinarySearchTree();
 	//bt->root = initBinaryTreeNode(1, 30);
 	for (int i = 0; i < 10; i++) {
 		//insertBinarySearchTree(bt->root, i, arr[i]);
@@ -67,7 +68,7 @@ binarysearchtree *getSampleBinarySearchTree()
 	return bt;
 }
 
-binarytreenode * deleteBinarySearchTree(binarytreenode *root, int key)
+binarytreenode* deleteBinarySearchTree(binarytreenode* root, int key)
 {
 	if (root == NULL) {
 		return NULL;
@@ -77,20 +78,20 @@ binarytreenode * deleteBinarySearchTree(binarytreenode *root, int key)
 	}
 	else if (root->key < key) {
 		root->right = deleteBinarySearchTree(root->right, key);
-	} 
+	}
 	else if (root->key == key) {
 		if (root->left == NULL)
 			root = root->right;
 		else if (root->right == NULL)
 			root = root->left;
 		else if (root->left && root->right) {
-			binarytreenode *leftMax = findMaxBinarySearchTree(root->left);
-			binarytreenode *rightMin = findMinBinarySearchTree(root->right);
+			binarytreenode* leftMax = findMaxBinarySearchTree(root->left);
+			binarytreenode* rightMin = findMinBinarySearchTree(root->right);
 			if ((root->key - leftMax->key) <= (rightMin->key - root->key)) {
 				root->key = leftMax->key;
 				root->left = deleteBinarySearchTree(root->left, leftMax->key);
 			}
-			else if((root->key - leftMax->key) > (rightMin->key - root->key)) {
+			else if ((root->key - leftMax->key) > (rightMin->key - root->key)) {
 				root->key = rightMin->key;
 				root->right = deleteBinarySearchTree(root->right, rightMin->key);
 			}

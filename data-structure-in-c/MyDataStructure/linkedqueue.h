@@ -5,21 +5,21 @@
 
 typedef struct _LinkedQueue
 {
-	singlelinkedlist *ll;
+	singlelinkedlist* ll;
 	int count;
 }linkedqueue;
 
-int isLinkedQueueEmpty(linkedqueue *aq);
+int isLinkedQueueEmpty(linkedqueue* aq);
 
-linkedqueue *initLinkedQueue();
+linkedqueue* initLinkedQueue();
 
-void linkedEnqueue(linkedqueue *aq, int value);
+void linkedEnqueue(linkedqueue* aq, int value);
 
-int linkedDequeue(linkedqueue *lq);
+int linkedDequeue(linkedqueue* lq);
 
-void prinLinkedQueue(linkedqueue *aq);
+void prinLinkedQueue(linkedqueue* aq);
 
-void freeLinkedQueue(linkedqueue *lq);
+void freeLinkedQueue(linkedqueue* lq);
 
 #endif // !LINKEDQUEUE_H
 #pragma once

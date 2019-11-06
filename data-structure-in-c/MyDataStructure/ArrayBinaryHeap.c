@@ -1,15 +1,15 @@
 #include"ZHeader.h"
 
-arraybinaryheap * initArrayBinaryHeap(int maxSize)
+arraybinaryheap* initArrayBinaryHeap(int maxSize)
 {
-	arraybinaryheap *bh = (arraybinaryheap *)malloc(sizeof(arraybinaryheap));
-	bh->a = (int *)malloc(sizeof(int) * maxSize);
+	arraybinaryheap* bh = (arraybinaryheap*)malloc(sizeof(arraybinaryheap));
+	bh->a = (int*)malloc(sizeof(int) * maxSize);
 	bh->last = -1;
 	bh->maxSize = maxSize;
 	return bh;
 }
 
-void minReheapUp(arraybinaryheap * heap, int index)
+void minReheapUp(arraybinaryheap* heap, int index)
 {
 	if (index <= 0)
 		return;
@@ -25,7 +25,7 @@ void minReheapUp(arraybinaryheap * heap, int index)
 	}
 }
 
-void minReheapDown(arraybinaryheap * heap, int index)
+void minReheapDown(arraybinaryheap* heap, int index)
 {
 	int leftChildIndex = LeftChild(index);
 	int rightChildIndex = RightChild(index);
@@ -52,7 +52,7 @@ void minReheapDown(arraybinaryheap * heap, int index)
 
 
 
-int withdrawMinHeap(arraybinaryheap *heap)
+int withdrawMinHeap(arraybinaryheap* heap)
 {
 	if (heap == NULL || heap->a == NULL) {
 		printf("the min heap is empty\n");
@@ -67,9 +67,9 @@ int withdrawMinHeap(arraybinaryheap *heap)
 
 
 
-arraybinaryheap * arrayMinHeapify(int a[], int size)
+arraybinaryheap* arrayMinHeapify(int a[], int size)
 {
-	arraybinaryheap *heap = initArrayBinaryHeap(size);
+	arraybinaryheap* heap = initArrayBinaryHeap(size);
 	heap->last = 0;
 	heap->maxSize = size;
 	heap->a = a;
@@ -81,9 +81,9 @@ arraybinaryheap * arrayMinHeapify(int a[], int size)
 	return heap;
 }
 
-void printArrayBinaryHeap(arraybinaryheap * heap)
+void printArrayBinaryHeap(arraybinaryheap* heap)
 {
-	if (heap == NULL || heap->a ==NULL) {
+	if (heap == NULL || heap->a == NULL) {
 		printf("empty heap\n");
 	}
 	else {
@@ -97,17 +97,17 @@ void printArrayBinaryHeap(arraybinaryheap * heap)
 
 
 
-void swapArray(int *arr, int a, int b)
+void swapArray(int* arr, int a, int b)
 {
 	int t = arr[a];
 	arr[a] = arr[b];
 	arr[b] = t;
 }
 
-int *heapSort(int * arr, int size)
+int* heapSort(int* arr, int size)
 {
-	arraybinaryheap *heap = arrayMinHeapify(arr, size);
-	int *b = (int *)malloc(sizeof(int)*size);
+	arraybinaryheap* heap = arrayMinHeapify(arr, size);
+	int* b = (int*)malloc(sizeof(int) * size);
 	for (int i = 0; i < size; i++) {
 		b[i] = withdrawMinHeap(heap);
 	}

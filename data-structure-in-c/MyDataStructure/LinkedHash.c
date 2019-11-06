@@ -1,18 +1,18 @@
 #include"ZHeader.h"
 
-linkedhashtable * initLinkedHashTable(int size)
+linkedhashtable* initLinkedHashTable(int size)
 {
-	linkedhashtable *lht = (linkedhashtable *)malloc(sizeof(linkedhashtable));
+	linkedhashtable* lht = (linkedhashtable*)malloc(sizeof(linkedhashtable));
 	lht->collision = 0;
 	lht->size = size;
-	lht->hashlist = (singlelinkedlist **)malloc(sizeof(singlelinkedlist)*size);
+	lht->hashlist = (singlelinkedlist**)malloc(sizeof(singlelinkedlist) * size);
 	for (int i = 0; i < size; i++) {
 		(lht->hashlist)[i] = initSingleLinkedList();
 	}
 	return lht;
 }
 
-long hashString(char * ch)
+long hashString(char* ch)
 {
 	long sum = 0;
 	int i = 0;
@@ -24,12 +24,12 @@ long hashString(char * ch)
 	return sum;
 }
 
-int divisionHash(linkedhashtable * ht, char * ch)
+int divisionHash(linkedhashtable* ht, char* ch)
 {
 	return hashString(ch) % ht->size;
 }
 
-linkedhashtable *insertLinkedHash(linkedhashtable * ht, char * ch)
+linkedhashtable* insertLinkedHash(linkedhashtable* ht, char* ch)
 {
 
 	int key = divisionHash(ht, ch);
@@ -44,13 +44,13 @@ linkedhashtable *insertLinkedHash(linkedhashtable * ht, char * ch)
 	return ht;
 }
 
-int findInLinkedHash(linkedhashtable * ht, char * ch)
+int findInLinkedHash(linkedhashtable* ht, char* ch)
 {
 	if (ht == NULL) {
 		printf("string %s is not exist in linked hash\n", ch);
 		return 0;
 	}
-	
+
 	int key = divisionHash(ht, ch);
 	if (isSingleLinkedListEmpty((ht->hashlist)[key])) {
 		printf("string %s is not exist in linked hash\n", ch);
@@ -65,7 +65,7 @@ int findInLinkedHash(linkedhashtable * ht, char * ch)
 	return 0;
 }
 
-double calcLoadFactor(linkedhashtable * ht)
+double calcLoadFactor(linkedhashtable* ht)
 {
 	double n = 0;
 	for (int i = 0; i < ht->size; i++) {
@@ -74,22 +74,22 @@ double calcLoadFactor(linkedhashtable * ht)
 		}
 	}
 
-	return (n/ht->size)*100;
+	return (n / ht->size) * 100;
 }
 
-void rehashLinkedHashTable(linkedhashtable ** ht)
+void rehashLinkedHashTable(linkedhashtable** ht)
 {
 
 	if (*ht == NULL) {
 		return;
 	}
 
-	linkedhashtable *oldht = *ht;
+	linkedhashtable* oldht = *ht;
 	*ht = initLinkedHashTable(oldht->size * 2);
-	
+
 	for (int i = 0; i < oldht->size; i++) {
 		if (isSingleLinkedListEmpty((oldht->hashlist)[i]) == 0) {
-			llnode *ptr = (oldht->hashlist)[i]->head;
+			llnode* ptr = (oldht->hashlist)[i]->head;
 			while (ptr) {
 				*ht = insertLinkedHash(*ht, ptr->ch);
 				ptr = ptr->next;
@@ -98,7 +98,7 @@ void rehashLinkedHashTable(linkedhashtable ** ht)
 	}
 }
 
-void printLinkedHash(linkedhashtable * ht)
+void printLinkedHash(linkedhashtable* ht)
 {
 	for (int i = 0; i < ht->size; i++) {
 		printf("%d -->", i);

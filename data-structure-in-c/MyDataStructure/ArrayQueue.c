@@ -1,20 +1,20 @@
 #include"ZHeader.h"
 
-int isArrayQueueEmpty(arrayqueue * aq)
+int isArrayQueueEmpty(arrayqueue* aq)
 {
-	if (aq== NULL || aq->count==0) return 1;
+	if (aq == NULL || aq->count == 0) return 1;
 	else return 0;
 }
 
-arrayqueue * initArrayQueue()
+arrayqueue* initArrayQueue()
 {
-	arrayqueue *aq = (arrayqueue *)malloc(sizeof(arrayqueue));
+	arrayqueue* aq = (arrayqueue*)malloc(sizeof(arrayqueue));
 	aq->al = initArrayList();
 	aq->count = 0;
 	return aq;
 }
 
-void enqueue(arrayqueue * aq, int value)
+void enqueue(arrayqueue* aq, int value)
 {
 	if (aq == NULL) {
 		printf("arrayqueue enqueue error: the arraylist is not exist\n");
@@ -25,7 +25,7 @@ void enqueue(arrayqueue * aq, int value)
 	}
 }
 
-int dequeue(arrayqueue * aq)
+int dequeue(arrayqueue* aq)
 {
 	if (isArrayQueueEmpty(aq)) {
 		printf("arrayqueue dequeue error: the arrayqueue is empty, cannot dequeue.\n");
@@ -38,7 +38,7 @@ int dequeue(arrayqueue * aq)
 	}
 }
 
-void printArrayQueue(arrayqueue * aq)
+void printArrayQueue(arrayqueue* aq)
 {
 	if (isArrayQueueEmpty(aq)) {
 		printf("this queue is empty\n");
@@ -48,9 +48,9 @@ void printArrayQueue(arrayqueue * aq)
 	}
 }
 
-void freeArrayQueue(arrayqueue * aq)
+void freeArrayQueue(arrayqueue* aq)
 {
-	if(!isArrayQueueEmpty(aq)) freeArrayList(aq->al);
+	if (!isArrayQueueEmpty(aq)) freeArrayList(aq->al);
 	free(aq);
 	printf("cleaned arrayqueue\n");
 }

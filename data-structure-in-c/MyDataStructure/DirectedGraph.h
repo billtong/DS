@@ -9,12 +9,12 @@
 
 typedef struct Node {
 	int index;
-	struct Node **next;
+	struct Node** next;
 }graphnode;
 
 typedef struct Graph {
 	int num;										//the number of vertices
-	graphnode *graphnodes;    //an array of vertices
+	graphnode* graphnodes;    //an array of vertices
 }graph;
 
 // first is orign index, the next is desin index
@@ -24,36 +24,36 @@ typedef struct Edge {
 	int dest;
 }edge;
 
-graph *createGraph(edge edges[], int edgesNum, int verticesNum);
+graph* createGraph(edge edges[], int edgesNum, int verticesNum);
 
-void printDirectedGraph(graph *myGraph);
+void printDirectedGraph(graph* myGraph);
 
 //prime算法
 //https://blog.csdn.net/zwz2011303359/article/details/63254575
 //广度优先遍历（queue）
-void BreadthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
+void BreadthFirstTraversalDirectedGraph(graph* myGraph, int startIndex);
 
 //深度有限 遍历递归就行了
-void DepthFirstTraversalDirectedGraph(graph *myGraph, int startIndex);
+void DepthFirstTraversalDirectedGraph(graph* myGraph, int startIndex);
 
-void dft(graph * myGraph, int currIndex, int *state);
+void dft(graph* myGraph, int currIndex, int* state);
 
 //here is implemented a queue for graph
 struct QueueNode {
 	graphnode value;
-	struct QueueNode *next;
+	struct QueueNode* next;
 };
 
 typedef struct GraphQueue {
-	struct QueueNode *head;
+	struct QueueNode* head;
 	int count;
 }graphQueue;
 
-graphQueue *initGraphQueue();
+graphQueue* initGraphQueue();
 
-void enqueueGraph(graphQueue *myGraphQueue, graphnode value);
+void enqueueGraph(graphQueue* myGraphQueue, graphnode value);
 
-graphnode *dequeueGraph(graphQueue *myGraphQueue);
+graphnode* dequeueGraph(graphQueue* myGraphQueue);
 
 #endif // !DIRECTEDGRAPH_H
 #pragma once

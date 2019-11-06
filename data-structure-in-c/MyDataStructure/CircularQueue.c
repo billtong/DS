@@ -1,9 +1,9 @@
 #include"ZHeader.h"
 
-circularqueue * initCircularQueue(int size)
+circularqueue* initCircularQueue(int size)
 {
-	circularqueue *cq = (circularqueue *)malloc(sizeof(circularqueue));
-	cq->arr = (int *)malloc(sizeof(int)*size);
+	circularqueue* cq = (circularqueue*)malloc(sizeof(circularqueue));
+	cq->arr = (int*)malloc(sizeof(int) * size);
 	for (int i = 0; i < size; i++) {
 		cq->arr[i] = 0;
 	}
@@ -13,17 +13,17 @@ circularqueue * initCircularQueue(int size)
 	return cq;
 }
 
-int isFull(circularqueue * cq)
+int isFull(circularqueue* cq)
 {
 	return (cq->count == cq->size);
 }
 
-int isCircularQueueEmpty(circularqueue * cq)
+int isCircularQueueEmpty(circularqueue* cq)
 {
 	return cq->count == 0;
 }
 
-void enCircularQueue(circularqueue * cq, int value)
+void enCircularQueue(circularqueue* cq, int value)
 {
 	if (isFull(cq)) {
 		printf("the queue is full, cannot enqueue anymore.\n");
@@ -38,7 +38,7 @@ void enCircularQueue(circularqueue * cq, int value)
 	}
 }
 
-int deCircularQueue(circularqueue * cq)
+int deCircularQueue(circularqueue* cq)
 {
 	if (isCircularQueueEmpty(cq)) {
 		printf("the queue is empty, cannot dequeue anymore.\n");
@@ -53,7 +53,7 @@ int deCircularQueue(circularqueue * cq)
 	return data;
 }
 
-void printCircularQueue(circularqueue * cq)
+void printCircularQueue(circularqueue* cq)
 {
 	if (isCircularQueueEmpty(cq)) {
 		printf("the circular queue is empty\n");

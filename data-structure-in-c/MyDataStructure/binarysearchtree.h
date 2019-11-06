@@ -5,14 +5,14 @@
 
 typedef struct _BinarySearchTree
 {
-	binarytreenode *root;
+	binarytreenode* root;
 } binarysearchtree;
 
-binarysearchtree *initBinarySearchTree();
+binarysearchtree* initBinarySearchTree();
 
-binarytreenode *findMinBinarySearchTree(binarytreenode *root);
+binarytreenode* findMinBinarySearchTree(binarytreenode* root);
 
-binarytreenode *findMaxBinarySearchTree(binarytreenode *root);
+binarytreenode* findMaxBinarySearchTree(binarytreenode* root);
 
 /*find node
 条件1: 如果root是空就return null
@@ -22,7 +22,7 @@ binarytreenode *findMaxBinarySearchTree(binarytreenode *root);
 
 其他：即是相等就返回root
 */
-binarytreenode *findBinarySearchTree(binarytreenode *root, int key);
+binarytreenode* findBinarySearchTree(binarytreenode* root, int key);
 
 /*向binary search tree插入值
 条件1: 如果root是空就创建root
@@ -33,12 +33,12 @@ binarytreenode *findBinarySearchTree(binarytreenode *root, int key);
 
 条件3: 最后将root返回
 */
-binarytreenode * insertBinarySearchTree(binarytreenode * root, int value, int key);
+binarytreenode* insertBinarySearchTree(binarytreenode* root, int value, int key);
 
 /*获取一个searching tree
 {30{20{4{}{13{}{}}}{23{}{}}}{32{31{}{}}{103{34{33{}{}}{}}{}}}}
 */
-binarysearchtree *getSampleBinarySearchTree();
+binarysearchtree* getSampleBinarySearchTree();
 
 
 /* delete node
@@ -61,7 +61,7 @@ condition5
 以上所有情况如果没有返回东西
 就返回root
 */
-binarytreenode *deleteBinarySearchTree(binarytreenode *root, int key);
+binarytreenode* deleteBinarySearchTree(binarytreenode* root, int key);
 
 
 
