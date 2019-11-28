@@ -15,8 +15,6 @@
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 
-#include "header.h"
-
 /**
  * Sliding Window
  * A sliding window is an abstract concept commonly used in array/string problems. 

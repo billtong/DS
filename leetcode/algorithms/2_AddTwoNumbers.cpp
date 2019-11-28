@@ -9,8 +9,6 @@
  * Explanation: 342 + 465 = 807.
  */
 
-#include "header.h"
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {

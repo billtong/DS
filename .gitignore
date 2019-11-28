@@ -1,5 +1,6 @@
 ## ide config files
 ## visual studio
+.vscode/*
 
 ## jetbrain
 algorithm/algorithm_java/target/*
