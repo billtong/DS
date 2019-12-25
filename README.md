@@ -1,11 +1,13 @@
 # data-structure-and-algorithm
-basic data structure &amp; algorithm implementation in C/CPP/Java
+- basic data structure &amp; algorithm implementation in C/CPP
+- it is recommanded to read and test this repository in Visual Studio 2019
 ## data structure
 ### ArrayList (primary)
 ### LinkedList (primary)
 ### Stack
 - linked stack(c)
 - array stack(c)
+- circular stack(c)
 ### Queue
 - linked queue(c)
 - array stack(c)
@@ -48,3 +50,4 @@ basic data structure &amp; algorithm implementation in C/CPP/Java
 - 2019-09-20    使用java和c++完成了飞机航线规划算法，都需要改善
 - 2019-11-05    使用java完成huffman code和make change算法
 - 2019-11-06    使用java完成Longest common subsequent算法
+- 2019-12-25	重构数据结构c语言代码，删除java和c++算法代码，将来全部使用c++重写，并入同一个项目中

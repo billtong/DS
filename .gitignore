@@ -1,14 +1,9 @@
 ## ide config files
 ## visual studio
 .vscode/*
-
-## jetbrain
-algorithm/algorithm_java/target/*
-algorithm/algorithm_java/.idea/*
-*.iml
-
-## maven
-algorithm/algorithm_java/.settings/*
-*.classpath
-*.factorypath
-*.project
+.vs/*
+Debug/*
+leetcode-algorithm-practise/Debug/*
+simple-algorithm/Debug/*
+simple-data-structure/Debug/*
+x64/*
