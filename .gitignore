@@ -1,5 +1,6 @@
 ## ide config files
 ## visual studio
+.obj
 .vscode/*
 .vs/*
 Debug/*
@@ -7,3 +8,8 @@ leetcode-algorithm-practise/Debug/*
 simple-algorithm/Debug/*
 simple-data-structure/Debug/*
 x64/*
+*.log
+*.tlog
+*.obj
+*.pdb
+*.idb

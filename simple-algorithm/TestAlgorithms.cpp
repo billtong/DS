@@ -34,8 +34,12 @@ int main()
 	selectionSorts(a, n);
 	printArray(a, n);
 	initArray(a);
-	printf("linear insertion sort result:\n");
+	printf("linear insertion1 sort result:\n");
 	linearInsertionSorts(a, n);
+	printArray(a, n);
+	initArray(a);
+	printf("linear insertion2 sort result:\n");
+	linearInsertionSorts2(a, n);
 	printArray(a, n);
 	initArray(a);
 	printf("binary insertion sort result:\n");
@@ -45,10 +49,15 @@ int main()
 	printf("bubble sort result:\n");
 	bubbleSorts(a, n);
 	printArray(a, n);
+
 	int test[] = { 200, 50, 212, 23, 43, 7, 1200, 50, 60, 2, 5, 3, 1 };//s13
 	printf("quick sort result:\n");
 	quickSorts(test, 0, 12);
 	printArray(test, 13);
+	int test1[] = { 200, 50, 212, 23, 43, 7, 1200, 50, 60, 2, 5, 3, 1 };//s13
+	printf("quick sort2 result:\n");
+	quickSorts2(test1, 0, 12);
+	printArray(test1, 13);
 	int test2[] = { 200, 50, 212, 23, 43, 7, 1200, 50, 60, 2, 5, 3, 1 };//s13
 	printf("merge sort result:\n");
 	mergeSort(test2, 13);
