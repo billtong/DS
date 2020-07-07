@@ -51,3 +51,4 @@
 - 2019-11-05    使用java完成huffman code和make change算法
 - 2019-11-06    使用java完成Longest common subsequent算法
 - 2019-12-25	重构数据结构c语言代码，删除java和c++算法代码，将来全部使用c++重写，并入同一个项目中
+- 2020-07-07    使用strategy design重构了排序的c++代码
