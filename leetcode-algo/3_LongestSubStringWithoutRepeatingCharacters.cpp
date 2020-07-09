@@ -29,9 +29,9 @@
  * At this point, we found the maximum size of substrings without duplicate characters start with index ii. 
  * If we do this for all ii, we get our answer.
  */
-class Solution {
+class Solution3 {
 public:
-    int lengthOfLongestSubstring(string s) {
+    int length_of_longest_substring(string s) {
         int ans = 0, i = 0, j = 0;
         bool hashMap[128] = {};
         while(i < s.length() && j < s.length())

@@ -17,10 +17,10 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution2 {
 public:
     //my solution
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
 		ListNode* iter1 = l1, * iter2 = l2;
 		while (iter1 && iter2) {
 			if (!iter1->next)
@@ -64,7 +64,7 @@ public:
 	}
 
     //solution with short lines
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
         ListNode header(0), *iter = &header;
 	    int curry = 0;
 		while (l1 || l2 || curry)

@@ -16,14 +16,14 @@
  * already exists in the table. If it exists, we have found a 
  * solution and return immediately
  */
-class Solution {
+class Solution1 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> two_sum(vector<int>& nums, int target) {
         map<int, int> hashMap;
         for (int i = 0; i < nums.size(); i++)
         {
             int complement = target - nums[i];
-            if (hashMap.count(complement) > 0)
+            if (hashMap.count(complement) > 0) // check if the complement exists
                 return vector<int> {i, hashMap.at(complement)};
             hashMap[nums[i]] = i;
         }
