@@ -19,8 +19,24 @@
  */
 class Solution2 {
 public:
+
+	//solution with short lines
+	ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
+		ListNode header(0), * iter = &header;
+		int curry = 0;
+		while (l1 || l2 || curry)
+		{
+			if (l1) curry += l1->val, l1 = l1->next;
+			if (l2) curry += l2->val, l2 = l2->next;
+			iter->next = new ListNode(curry % 10);
+			curry /= 10;
+			iter = iter->next;
+		}
+		return header.next;
+	}
+
     //my solution
-    ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
+    ListNode* add_two_numbers2(ListNode* l1, ListNode* l2) {
 		ListNode* iter1 = l1, * iter2 = l2;
 		while (iter1 && iter2) {
 			if (!iter1->next)
@@ -62,20 +78,4 @@ public:
 			temp->next = new ListNode(1);
 		}
 	}
-
-    //solution with short lines
-    ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
-        ListNode header(0), *iter = &header;
-	    int curry = 0;
-		while (l1 || l2 || curry)
-		{
-			if (l1) curry += l1->val, l1 = l1->next;
-			if (l2) curry += l2->val, l2 = l2->next;
-			iter->next = new ListNode(curry % 10);
-			curry /= 10;
-			iter = iter->next;
-		}
-		return header.next;
-    }
-
 };

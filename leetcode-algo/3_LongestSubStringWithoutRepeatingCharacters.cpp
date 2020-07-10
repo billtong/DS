@@ -19,25 +19,28 @@
  * Sliding Window
  * A sliding window is an abstract concept commonly used in array/string problems. 
  * A window is a range of elements in the array/string which usually defined by the start and end indices, 
- * i.e. [i, j)[i,j) (left-closed, right-open). 
+ * i.e. [i, j) (left-closed, right-open). 
  * A sliding window is a window "slides" its two boundaries to the certain direction. 
- * For example, if we slide [i, j)[i,j) to the right by 11 element, 
- * then it becomes [i+1, j+1)[i+1,j+1) (left-closed, right-open).
- * Back to our problem. We use HashSet to store the characters in current window [i, j)[i,j) (j = ij=i initially). 
- * Then we slide the index jj to the right. If it is not in the HashSet, we slide jj further. 
+ * For example, if we slide [i, j) to the right by 1 element, 
+ * then it becomes [i+1, j+1) (left-closed, right-open).
+ * Back to our problem. We use HashSet to store the characters in current window [i, j) (j = i initially). 
+ * Then we slide the index j to the right. If it is not in the HashSet, we slide j further. 
  * Doing so until s[j] is already in the HashSet. 
- * At this point, we found the maximum size of substrings without duplicate characters start with index ii. 
- * If we do this for all ii, we get our answer.
+ * At this point, we found the maximum size of substrings without duplicate characters start with index i. 
+ * If we do this for all i, we get our answer.
  */
 class Solution3 {
 public:
     int length_of_longest_substring(string s) {
         int ans = 0, i = 0, j = 0;
+        //bool[26] for Letters 'a' - 'z' or 'A' - 'Z'
+        //bool[128] for ASCII
+        //bool[256] for Extended ASCII
         bool hashMap[128] = {};
         while(i < s.length() && j < s.length())
         {
-            if(!hashMap[s[j]]) {
-                hashMap[s[j++]] = true;
+            if(!hashMap[s[j]]) {  //find if char at index 'j' is not in the hashmap
+                hashMap[s[j++]] = true;  //put char at index 'j' into the hashmap
                 ans = j - i > ans ? j - i : ans;
             } else {
                 hashMap[s[i++]] = false;
