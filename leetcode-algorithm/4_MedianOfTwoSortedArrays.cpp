@@ -56,7 +56,7 @@ public:
                     left_max = nums1[i - 1];
                 else
                     left_max = find_max(nums1[i - 1], nums2[j - 1]);
-                if ((m + n) % 2 == 1)   // odd condition only return left_max value
+                if ((m + n) % 2 == 1)   // add condition only return left_max value
                     return left_max;
                 int right_min = 0;
                 if (i == m)

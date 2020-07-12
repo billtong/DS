@@ -5,10 +5,10 @@
 ## visual studio
 x64/*
 Debug/*
-simple-algorithm/Debug/*
-simple-data-structure/Debug/*
-simple-algorithm/x64/*
-simple-data-structure/x64/*
-leetcode-algo/.vs/*
-leetcode-algo/x64/*
-leetcode-algo/Debug/*
+data-structure/Debug/*
+data-structure/Debug/*
+leetcode-algorithm/x64/*
+leetcode-algorithm/x64/*
+sort-algorithm/.vs/*
+sort-algorithm/x64/*
+sort-algorithm/Debug/*
