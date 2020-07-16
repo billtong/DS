@@ -37,21 +37,25 @@ double calcLoadFactor(LinkedHashTable* pHash)
 	return (n / pHash->size) * 100;
 }
 
+/*
+error, here use int(4bytes) to store char*(8 bytes)
+*/
 void rehashLinkedHashTable(LinkedHashTable** ht)
 {
 	if (ht && *ht)
 	{
 		LinkedHashTable* pOldHash = *ht;
-		*ht = createLinkedHashTable(pOldHash->size * 2);
+		LinkedHashTable* pNewHash = createLinkedHashTable(pOldHash->size * 2);
 		for (int i = 0; i < pOldHash->size; i++) {
 			if (pOldHash->hashList[i] > 0) {
 				pSLNode iter = pOldHash->hashList[i]->head;
 				while (iter) {
-					insertLinkedHashTable(*ht, iter->value);
+					insertLinkedHashTable(pNewHash, (char*)iter->value);
 					iter = iter->next;
 				}
 			}
 		}
+		*ht = pNewHash;
 	}
 }
 
