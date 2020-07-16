@@ -6,9 +6,10 @@
 x64/*
 Debug/*
 data-structure/Debug/*
-data-structure/Debug/*
+data-structure/x64/*
 leetcode-algorithm/x64/*
 leetcode-algorithm/x64/*
 sort-algorithm/.vs/*
 sort-algorithm/x64/*
 sort-algorithm/Debug/*
+
