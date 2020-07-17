@@ -2,12 +2,6 @@
 
 namespace my_util 
 {
-    inline void swap(int& a, int& b)
-    {
-        int temp = a;
-        a = b;
-        b = temp;
-    }
 
     inline int find_max(int num1, int num2)
     {
@@ -19,4 +13,6 @@ namespace my_util
     {
         return num1 < num2 ? num1 : num2;
     }
+
+    void swap(int& a, int& b);
 }

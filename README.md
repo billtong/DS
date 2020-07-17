@@ -53,3 +53,4 @@
 - 2019-12-25	重构数据结构c语言代码，删除java和c++算法代码，将来全部使用c++重写，并入同一个项目中
 - 2020-07-07    使用strategy design重构了排序的c++代码
 - 2020-07-10	添加findMedianSortedArrays算法(c++)
+- 2020-07-17	添加longestPalindrome算法(c++). 发现data-structure方案里bug: char指针转型成int时溢出, 需要重写linked node。
