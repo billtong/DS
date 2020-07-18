@@ -149,6 +149,7 @@
     <ClCompile Include="4_MedianOfTwoSortedArrays.cpp" />
     <ClCompile Include="5_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="6_ZigZagConversion.cpp" />
+    <ClCompile Include="7_ReverseInteger.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>

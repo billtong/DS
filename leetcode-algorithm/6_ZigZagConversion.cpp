@@ -28,7 +28,7 @@ class Solution6 {
 public:
 
 	/*
-	matcch solution
+	match solution
 
 	0*cyc+0					1*cyc+0					...
 	0*cyc+1	0*cyc+(cyc-1)	1*cyc+1 1*cyc+(cyc-1)	...
@@ -37,7 +37,7 @@ public:
 	0*cyc+(num_rows-1)		1*cyc+(num_rows-1) ...
 
 	outer loop through the remains i ~ [0, num_rows)
-	innter loop through the values j ~ 0*cyc to j + i < string size
+	inner loop through the values j ~ 0*cyc to j + i < string size
 	
 	in the inner loop there are two cases
 		1. i == 0 or i == num_rows-1 or the others but out of the bounds
