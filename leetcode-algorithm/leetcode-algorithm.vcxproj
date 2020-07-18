@@ -150,7 +150,9 @@
     <ClCompile Include="5_LongestPalindromicSubstring.cpp" />
     <ClCompile Include="6_ZigZagConversion.cpp" />
     <ClCompile Include="7_ReverseInteger.cpp" />
+    <ClCompile Include="8_StringToInteger.cpp" />
     <ClCompile Include="MyUtil.cpp" />
+    <ClCompile Include="9_PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
