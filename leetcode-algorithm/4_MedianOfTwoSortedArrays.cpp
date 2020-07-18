@@ -72,10 +72,10 @@ public:
     }
 };
 
-void main() 
-{
-    vector<int> a { 1, 3 };
-    vector<int> b{ 2 };
-    Solution4 s;
-    cout << s.findMedianSortedArrays(a, b) << endl;
-}
+//void main() 
+//{
+//    vector<int> a { 1, 3 };
+//    vector<int> b{ 2 };
+//    Solution4 s;
+//    cout << s.findMedianSortedArrays(a, b) << endl;
+//}

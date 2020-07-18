@@ -15,4 +15,6 @@ namespace my_util
     }
 
     void swap(int& a, int& b);
+
+    void print_2d_array(char** ptr, int m, int n);
 }

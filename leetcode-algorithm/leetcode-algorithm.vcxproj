@@ -148,6 +148,7 @@
     <ClCompile Include="3_LongestSubStringWithoutRepeatingCharacters.cpp" />
     <ClCompile Include="4_MedianOfTwoSortedArrays.cpp" />
     <ClCompile Include="5_LongestPalindromicSubstring.cpp" />
+    <ClCompile Include="6_ZigZagConversion.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
