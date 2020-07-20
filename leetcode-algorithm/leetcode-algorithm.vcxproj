@@ -143,6 +143,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="10_RegularExpressionMatching.cpp" />
     <ClCompile Include="1_TwoSum.cpp" />
     <ClCompile Include="2_AddTwoNumbers.cpp" />
     <ClCompile Include="3_LongestSubStringWithoutRepeatingCharacters.cpp" />

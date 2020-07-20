@@ -51,8 +51,8 @@ public:
     }
 };
 
-void main()
-{
-    Solution9 s;
-    s.isPalindrome(121);
-}
+//void main()
+//{
+//    Solution9 s;
+//    s.isPalindrome(121);
+//}
