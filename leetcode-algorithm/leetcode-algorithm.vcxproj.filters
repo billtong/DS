@@ -23,40 +23,40 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1_TwoSum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="2_AddTwoNumbers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="3_LongestSubStringWithoutRepeatingCharacters.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="4_MedianOfTwoSortedArrays.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MyUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="5_LongestPalindromicSubstring.cpp">
+    <ClCompile Include="0001_TwoSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="6_ZigZagConversion.cpp">
+    <ClCompile Include="0002_AddTwoNumbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="7_ReverseInteger.cpp">
+    <ClCompile Include="0003_LongestSubStringWithoutRepeatingCharacters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="8_StringToInteger.cpp">
+    <ClCompile Include="0004_MedianOfTwoSortedArrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="9_PalindromicNumber.cpp">
+    <ClCompile Include="0005_LongestPalindromicSubstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="10_RegularExpressionMatching.cpp">
+    <ClCompile Include="0006_ZigZagConversion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0007_ReverseInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0008_StringToInteger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0009_PalindromicNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0010_RegularExpressionMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

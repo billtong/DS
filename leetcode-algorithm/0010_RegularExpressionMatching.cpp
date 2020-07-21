@@ -34,7 +34,7 @@ public:
 		{
 			for (int j = n-1; j >= 0; j--) // here -1 becase the pattern needs 2 char to match each iteration
 			{
-				bool first_match = i < s.length() && (s.at(i) == p.at(j) || p.at(j) == '.');
+				bool first_match = i < s.length() && (s.at(i) == p.at(j) || p.at(j) == '.');	// here check if i is small then length, becase i starts from m which is out of bound
 				if (j + 1 < p.length() && p.at(j + 1) == '*')
 					t[i][j] = t[i][j + 2] || (first_match && t[i + 1][j]);
 				else
@@ -43,6 +43,43 @@ public:
 		}
 		return t[0][0];
 	}
+
+	/*
+	ERROR on leetcode testing: Heep-Buffer-Overflow
+	Dynamic Programming Method (Top-Down)
+	t value 0: false; 1 true; -1 not exist
+	*/
+	bool isMatch2(string s, string p)
+	{
+		int** t = new int* [s.length()];
+		for (int i = 0; i < s.length(); i++)
+		{
+			t[i] = new int[p.length()];
+			memset(t[i], -1, p.length());
+		}
+		return dp(0, 0, s, p, t);
+	}
+	bool dp(int i, int j, string s, string p, int**& t)
+	{
+		if (t[i][j] != -1)
+		{
+			bool ans;
+			if (p.length() == j)
+				ans = s.length() == i;
+			else
+			{
+				bool first_match = i < s.length() && (s.at(i) == p.at(j) || p.at(j) == '.');
+				if (j + 1 < p.length() && p.at(j + 1) == '*')
+					ans = dp(i, j + 2, s, p, t) || (first_match && dp(i + 1, j, s, p, t));
+				else
+					ans = first_match && dp(i + 1, j + 1, s, p ,t);
+			}
+
+			t[i][j] = ans;
+		}
+		return t[i][j];
+	}
+
 
 
 	/*
@@ -67,7 +104,7 @@ public:
 void main()
 {
 	Solution10 s;
-	cout << s.isMatch("aa", "a") << endl;	//false
+	cout << s.isMatch2("aa", "a") << endl;	//false
 	cout << s.isMatch("aa", "a*") << endl;	//true
 	cout << s.isMatch("ab", ".*") << endl;	//true
 	cout << s.isMatch("aab", "c*a*b") << endl;	//true
