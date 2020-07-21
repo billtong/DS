@@ -8,16 +8,18 @@ void my_util::swap(int& a, int& b)
     b = temp;
 }
 
-void my_util::print_2d_array(char** ptr, int m, int n)
-{
-    std::cout << "2d array:" << std::endl;
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            std::cout << ptr[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << "2d array ends" << std::endl;
-}
+//void main()
+//{
+//    int** a = new int*[10];
+//    for (int i = 0; i < 10; i++)
+//    {
+//        a[i] = new int[10];
+//        memset(a[i], 0, 10);
+//    }
+//    for (int i = 0; i < 10; i++)
+//    {
+//        for (int j = 0; j < 10; j++)
+//            a[i][j] = i * j;
+//    }
+//    PRINT_2D_ARRAY(a, 10, 10);
+//}

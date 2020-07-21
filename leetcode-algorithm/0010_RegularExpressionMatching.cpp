@@ -55,13 +55,13 @@ public:
 		for (int i = 0; i < s.length(); i++)
 		{
 			t[i] = new int[p.length()];
-			memset(t[i], -1, p.length());
+			memset(t[i], -1, p.length() * sizeof(int));
 		}
 		return dp(0, 0, s, p, t);
 	}
 	bool dp(int i, int j, string s, string p, int**& t)
 	{
-		if (t[i][j] != -1)
+		if (t[i][j] == -1)
 		{
 			bool ans;
 			if (p.length() == j)
@@ -101,12 +101,12 @@ public:
 	}
 };
 
-void main()
-{
-	Solution10 s;
-	cout << s.isMatch2("aa", "a") << endl;	//false
-	cout << s.isMatch("aa", "a*") << endl;	//true
-	cout << s.isMatch("ab", ".*") << endl;	//true
-	cout << s.isMatch("aab", "c*a*b") << endl;	//true
-	cout << s.isMatch("mississippi", "mis*is*p*.") << endl; //false
-}
+//void main()
+//{
+//	Solution10 s;
+//	cout << s.isMatch2("aa", "a") << endl;	//false
+//	cout << s.isMatch("aa", "a*") << endl;	//true
+//	cout << s.isMatch("ab", ".*") << endl;	//true
+//	cout << s.isMatch("aab", "c*a*b") << endl;	//true
+//	cout << s.isMatch("mississippi", "mis*is*p*.") << endl; //false
+//}

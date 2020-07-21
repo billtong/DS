@@ -152,6 +152,7 @@
     <ClCompile Include="0006_ZigZagConversion.cpp" />
     <ClCompile Include="0007_ReverseInteger.cpp" />
     <ClCompile Include="0008_StringToInteger.cpp" />
+    <ClCompile Include="0011_Container_With_Most_Water.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="0009_PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
