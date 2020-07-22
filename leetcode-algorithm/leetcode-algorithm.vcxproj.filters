@@ -62,5 +62,11 @@
     <ClCompile Include="0011_Container_With_Most_Water.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0012_Integer_To_Roman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0013_Roman_To_Integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

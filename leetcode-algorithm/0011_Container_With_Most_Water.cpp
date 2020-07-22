@@ -26,7 +26,6 @@ public:
 			max_area = max(max_area, h * (j - i));
 			while (height[i] <= h && i < j) i++; // condition that there are constantly shorter ones
 			while (height[j] <= h && i < j) j--;
-
 		}
 		return max_area;
 	}
@@ -40,7 +39,6 @@ public:
 		int n = height.size();
 		int* a = new int[n];
 		memset(a, 0, n * sizeof(int));
-		PRINT_1D_ARRAY(a, n);
 		a[1] = area(height, 0, 1);
 		for (int i = 2; i < n; i++)
 		{
@@ -51,27 +49,27 @@ public:
 			}
 			a[i] = rslt;
 		}
-		PRINT_1D_ARRAY(a, n);
 		return a[height.size()-1];
 	}
 
-	int area(vector<int> height, int i, int j)
+	inline int area(vector<int> height, int i, int j)
 	{
 		return min(height[i], height[j]) * (j - i);
 	}
-	int max(int a, int b)
+	inline int max(int a, int b)
 	{
 		return a > b ? a : b;
 	}
-	int min(int a, int b)
+
+	inline int min(int a, int b)
 	{
 		return a < b ? a : b;
 	}
 };
 
-void main()
-{
-	vector<int> h = { 1, 2, 1 };
-	Solution11 s;
-	cout << s.maxArea(h);
-}
+//void main()
+//{
+//	vector<int> h = { 1, 2, 1 };
+//	Solution11 s;
+//	cout << s.maxArea(h);
+//}

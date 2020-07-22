@@ -153,6 +153,8 @@
     <ClCompile Include="0007_ReverseInteger.cpp" />
     <ClCompile Include="0008_StringToInteger.cpp" />
     <ClCompile Include="0011_Container_With_Most_Water.cpp" />
+    <ClCompile Include="0012_Integer_To_Roman.cpp" />
+    <ClCompile Include="0013_Roman_To_Integer.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="0009_PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
