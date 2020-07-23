@@ -21,7 +21,7 @@ class Solution2 {
 public:
 
 	//solution with short lines
-	ListNode* add_two_numbers(ListNode* l1, ListNode* l2) {
+	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 		ListNode header(0), * iter = &header;
 		int curry = 0;
 		while (l1 || l2 || curry)
