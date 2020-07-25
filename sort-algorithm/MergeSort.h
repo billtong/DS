@@ -1,5 +1,6 @@
 #pragma once
 #include "SortStrategy.h"
+
 class MergeSort :
     public SortStrategy
 {

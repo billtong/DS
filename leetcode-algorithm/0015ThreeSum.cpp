@@ -87,9 +87,9 @@ public:
     }
 };
 
-void main()
-{
-    Solution15 s;
-    vector<int> a = { 0, 0, 0 };
-    s.threeSum(a);
-}
+//void main()
+//{
+//    Solution15 s;
+//    vector<int> a = { 0, 0, 0 };
+//    s.threeSum(a);
+//}
