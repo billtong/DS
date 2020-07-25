@@ -71,5 +71,8 @@
     <ClCompile Include="0014LongestCommonPrefix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0015ThreeSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
