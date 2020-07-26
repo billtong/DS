@@ -157,6 +157,7 @@
     <ClCompile Include="0013RomanToInteger.cpp" />
     <ClCompile Include="0014LongestCommonPrefix.cpp" />
     <ClCompile Include="0015ThreeSum.cpp" />
+    <ClCompile Include="0016ThreeSumClosest.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="0009PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
