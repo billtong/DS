@@ -77,5 +77,11 @@
     <ClCompile Include="0016ThreeSumClosest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0017LetterCombinationsOfQPhoneNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0018FourSum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

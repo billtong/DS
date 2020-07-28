@@ -1,7 +1,5 @@
 #include "stdafx.h"
 
-#include "stdafx.h"
-
 /*
 Given an array nums of n integers and an integer target, 
 find three integers in nums such that the sum is closest to target. 
@@ -23,7 +21,7 @@ public:
 	int threeSUmCloset(vector<int>& nums, int target) {
 		int n = nums.size();
 		int diff = INT_MAX;
-		sort(nums.begin(), nums.end(), nums);
+		quick_sort_rec(nums, 0, n - 1);
 		for (int i = 0; i < n - 2 && diff != 0; i++) {
 			int l = i + 1, r = n - 1;
 			while (l < r) {
@@ -40,19 +38,22 @@ public:
 	}
 
 	void quick_sort_rec(vector<int>& arr, int left, int right) {
-		int l = left, r = right, p = arr[left];
-		while (l < r) {
-			while (arr[r] >= p && l < r)
-				r--;
-			if (l < r)
-				arr[l++] = arr[r];
-			while (arr[l] <= p && l < r)
-				l++;
-			if (l < r)
-				arr[r--] = arr[l];
+		if (left < right) {
+			int lo = left, hi = right;
+			int p = arr[left];
+			while (lo < hi) {
+				while (lo < hi && arr[hi] >= p)
+					hi--;
+				if (lo < hi)
+					arr[lo++] = arr[hi];
+				while (lo < hi && arr[lo] <= p)
+					lo++;
+				if (lo < hi)
+					arr[hi--] = arr[lo];
+			}
+			arr[lo] = p; //at this time lo and hi should be the same
+			quick_sort_rec(arr, left, lo - 1);
+			quick_sort_rec(arr, lo + 1, right);
 		}
-		arr[l] = p;
-		quick_sort_rec(arr, l, l - 1);
-		quick_sort_rec(arr, r, l + 1);
 	}
 };

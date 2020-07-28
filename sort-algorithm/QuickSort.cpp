@@ -82,7 +82,7 @@ No Pivot Finding version, choose left as default pivot
 */
 void QuickSort2::quick_sort_rec(int* arr, int left, int right)
 {
-	if (left < right)
+	if (left < right) // get out of infinity loop when finished
 	{
 		int i = left;
 		int j = right;
