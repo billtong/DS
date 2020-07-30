@@ -160,6 +160,7 @@
     <ClCompile Include="0016ThreeSumClosest.cpp" />
     <ClCompile Include="0017LetterCombinationsOfQPhoneNumber.cpp" />
     <ClCompile Include="0018FourSum.cpp" />
+    <ClCompile Include="0019RemoveNthNodeFromEndOfList.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="0009PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
