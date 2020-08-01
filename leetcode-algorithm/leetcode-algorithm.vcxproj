@@ -164,6 +164,7 @@
     <ClCompile Include="0020ValidParentheses.cpp" />
     <ClCompile Include="0021MergeTwoSortedLists.cpp" />
     <ClCompile Include="0022GenerateParentheses.cpp" />
+    <ClCompile Include="0023MergeKSortedLists.cpp" />
     <ClCompile Include="MyUtil.cpp" />
     <ClCompile Include="0009PalindromicNumber.cpp" />
     <ClCompile Include="stdafx.cpp" />
