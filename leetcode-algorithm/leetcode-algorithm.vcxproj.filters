@@ -98,5 +98,8 @@
     <ClCompile Include="0023MergeKSortedLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="0024SwapNodesInPairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
