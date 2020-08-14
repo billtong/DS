@@ -1,6 +1,7 @@
 ## vscode settings
 .vscode/*
 .vs/*
+*.vcxproj.user
 
 ## visual studio
 x64/*
