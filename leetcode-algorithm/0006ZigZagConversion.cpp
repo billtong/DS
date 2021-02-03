@@ -36,6 +36,9 @@ public:
 	...		...				...	
 	0*cyc+(num_rows-1)		1*cyc+(num_rows-1) ...
 
+	j is col * cycle_len
+	i is row
+
 	outer loop through the remains i ~ [0, num_rows)
 	inner loop through the values j ~ 0*cyc to j + i < string size
 	
@@ -63,7 +66,6 @@ public:
 		}
 		return ns;
 	}
-
 
 	/*
 	 to record my stupidness by keep this stupid solution

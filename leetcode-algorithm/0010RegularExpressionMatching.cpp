@@ -19,6 +19,17 @@ public:
 	/*
 	Dynamic Programming Method (Bottom-Up)
 	dp(i, j): does text[i:] and pattern[j:] match
+	i is the index location of text, j is the index location of j
+	dp(i,j), is text[i:] and pattern[j:] match
+
+	first_match = (text[i] == pattern[j] || p[j] == '.')
+
+	if the j+1, the next pattern char is *
+		dp(i, j) = dp(i, j+2) || (first_match && dp(i+1, j))
+	else
+		dp(i, j) = first_match && dp(i+1, j+1)
+
+
 	*/
 	bool isMatch(string s, string p)
 	{
