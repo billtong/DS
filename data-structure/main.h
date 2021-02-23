@@ -30,4 +30,4 @@
 #define AVL_BINARY_TREE_TEST_ENABLE 0	//error
 #define BINARY_HEAP_TEST_ENABLE 0
 
-#define LINKED_HASH_TEST_ENABLE 1	//error
+#define LINKED_HASH_TEST_ENABLE 0	//error
