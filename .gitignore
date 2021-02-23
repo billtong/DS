@@ -1,16 +1,1 @@
-## vscode settings
-.vscode/*
-.vs/*
-*.vcxproj.user
-
-## visual studio
-x64/*
-Debug/*
-data-structure/Debug/*
-data-structure/x64/*
-leetcode-algorithm/x64/*
-leetcode-algorithm/x64/*
-sort-algorithm/.vs/*
-sort-algorithm/x64/*
-sort-algorithm/Debug/*
-
+.vs/
