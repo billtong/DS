@@ -12,47 +12,47 @@
 class Solution {
 public:
 
-		// use bfs
+	// use bfs
     string findLexSmallestString(string s, int a, int b) {
         unordered_set<string> seq;	//Keep track of already generated sequences so they are not processed again.
-				queue<string> q;
-				q.push(s);
-				seq.insert(s);
-				string ans = s;
-				string temp;
-				while(!q.empty()) {
-					temp = add(q.front(), a);
-					if (seq.find(temp) == seq.end()) {
-						seq.insert(temp);
-						q.push(temp);
-					}
-					temp = rotateRight(q.front(), b);
-					if (seq.find(temp) == seq.end()) {
-						seq.insert(temp);
-						q.push(temp);
-					}
-					temp = q.front();
-					ans = min(temp, ans); //generate all possible sequences and take their minimum.
-					q.pop();
-					
-				}
-				return ans;
+		queue<string> q;
+		q.push(s);
+		seq.insert(s);
+		string ans = s;
+		string temp;
+		while(!q.empty()) {
+			temp = add(q.front(), a);
+			if (seq.find(temp) == seq.end()) {
+				seq.insert(temp);
+				q.push(temp);
+			}
+			temp = rotateRight(q.front(), b);
+			if (seq.find(temp) == seq.end()) {
+				seq.insert(temp);
+				q.push(temp);
+			}
+			temp = q.front();
+			ans = min(temp, ans); //generate all possible sequences and take their minimum.
+			q.pop();
+			
+		}
+		return ans;
     }
 
- 		string add(string s, int a) {
+ 	string add(string s, int a) {
         for (int i = 1; i < s.length(); i +=2 ) {
             s[i] = (s[i] -'0' + a) % 10 + '0';
         }
-				return s;
+		return s;
     }
 
-		string rotateRight(string s, int b) {
-			int n = s.length();
-        string temp = s;
-        for (int i = 0; i < n; i++) {
-            s[i] = temp[(i + b) % n];
-        }
-				return s;
+	string rotateRight(string s, int b) {
+		int n = s.length();
+		string temp = s;
+		for (int i = 0; i < n; i++) {
+			s[i] = temp[(i + b) % n];
 		}
+		return s;
+	}
 
 };
