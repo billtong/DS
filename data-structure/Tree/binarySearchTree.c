@@ -56,7 +56,7 @@ pBTNode removeValueOfBinarySearchTree(pBTNode pRoot, int elem)
 			pBTNode pLeftMax = findMaxBinarySearchTree(pRoot->left);
 			pBTNode pRightMin = findMinBinarySearchTree(pRoot->right);
 			int dist = 2 * pRoot->key - pLeftMax->key - pRightMin->key;
-			if (dist <= 0)	// closer to the left max nodes
+			if (dist <= 0) // closer to the left max nodes
 			{
 				pRoot->key = pLeftMax->key;
 				pRoot->left = removeValueOfBinarySearchTree(pRoot->left, pLeftMax->key);

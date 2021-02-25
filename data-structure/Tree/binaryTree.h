@@ -32,8 +32,8 @@
 typedef struct sBinaryTreeNode
 {
 	int key;
-	struct sBinaryTreeNode* left;
-	struct sBinaryTreeNode* right;
+	struct sBinaryTreeNode *left;
+	struct sBinaryTreeNode *right;
 } BTNode, *pBTNode;
 
 pBTNode createBinaryTreeNode(int);
@@ -54,4 +54,4 @@ get sample tree
 	 /        /
 	80       90
 */
-void getSampleBinaryTree(pBTNode*);
+void getSampleBinaryTree(pBTNode *);

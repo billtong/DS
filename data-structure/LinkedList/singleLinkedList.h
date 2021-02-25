@@ -20,29 +20,29 @@ typedef struct
 	pSLNode head;
 } SingleLinkedList, *pSLList;
 
-SingleLinkedList* createSingleLinkedList();
+SingleLinkedList *createSingleLinkedList();
 
 /*
 insert an element at the index
 */
-void insertSingleLinkedList(SingleLinkedList*, int, int);
+void insertSingleLinkedList(SingleLinkedList *, int, int);
 
 /*
 delete the element by the index
 */
-void removeIndexOfSingleLinkedList(SingleLinkedList*, int);
+void removeIndexOfSingleLinkedList(SingleLinkedList *, int);
 
 /*
 search the element by the index
 */
-pSLNode findIndexOfSingleLinkedList(SingleLinkedList*, int);
+pSLNode findIndexOfSingleLinkedList(SingleLinkedList *, int);
 
 /*
 search the first element with the value
 */
-pSLNode findValueOfSingleLinkedList(SingleLinkedList*, int);
+pSLNode findValueOfSingleLinkedList(SingleLinkedList *, int);
 
 /*
 free the memory allocation to the linked list
 */
-void destroySingleLinkedList(SingleLinkedList*);
+void destroySingleLinkedList(SingleLinkedList *);

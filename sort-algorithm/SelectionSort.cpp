@@ -15,7 +15,7 @@ start：10 24 5 32 1 84 19
 #5: 1 5 10 19 (24) 84 32
 end: 1 5 10 19 24 (32) 84
 */
-void SelectionSort::exec(int* arr, const int size)
+void SelectionSort::exec(int *arr, const int size)
 {
 	for (int i = 0; i < size - 1; i++)
 	{

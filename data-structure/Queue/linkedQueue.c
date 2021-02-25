@@ -1,8 +1,8 @@
 #include "linkedQueue.h"
 
-LinkedQueue* createLinkedQueue()
+LinkedQueue *createLinkedQueue()
 {
-	LinkedQueue* pQueue = malloc(sizeof(LinkedQueue));
+	LinkedQueue *pQueue = malloc(sizeof(LinkedQueue));
 	if (pQueue == NULL)
 		return NULL;
 	pQueue->size = 0;
@@ -11,12 +11,12 @@ LinkedQueue* createLinkedQueue()
 	return pQueue;
 }
 
-int isLinkedQueueEmpty(LinkedQueue* pQueue)
+int isLinkedQueueEmpty(LinkedQueue *pQueue)
 {
 	return pQueue->size == 0;
 }
 
-void enLinkedQueue(LinkedQueue* pQueue, int elem)
+void enLinkedQueue(LinkedQueue *pQueue, int elem)
 {
 	pSLNode pNode = createSingleLinkedNode(elem);
 	if (pQueue->size == 0)
@@ -32,7 +32,7 @@ void enLinkedQueue(LinkedQueue* pQueue, int elem)
 	pQueue->size++;
 }
 
-int deLinkedQueue(LinkedQueue* pQueue)
+int deLinkedQueue(LinkedQueue *pQueue)
 {
 	if (!isLinkedQueueEmpty(pQueue))
 	{
@@ -40,18 +40,18 @@ int deLinkedQueue(LinkedQueue* pQueue)
 		int data = temp->value;
 		pQueue->front = pQueue->front->next;
 		pQueue->size--;
-		free(temp);		//prevent memory leak
+		free(temp); //prevent memory leak
 		return data;
 	}
 	return INT_MIN;
 }
 
-void traverseLinkedQueue(LinkedQueue* pQueue)
+void traverseLinkedQueue(LinkedQueue *pQueue)
 {
 	printLinkedNodes(pQueue->front);
 }
 
-void destroyLinkedQueue(LinkedQueue* pQueue)
+void destroyLinkedQueue(LinkedQueue *pQueue)
 {
 	while (!isLinkedQueueEmpty(pQueue))
 		deLinkedQueue(pQueue);

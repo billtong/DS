@@ -4,15 +4,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <limits.h> 
+#include <limits.h>
 #include <string.h>
 
 //
 typedef struct sSingleLinkedNode
 {
 	int value;
-	struct sSingleLinkedNode* next;
-} SLNode, * pSLNode;
+	struct sSingleLinkedNode *next;
+} SLNode, *pSLNode;
 
 /*
 first params: value to be saved in the node
@@ -25,6 +25,6 @@ Traverse the array list and print each node's value
 */
 void printLinkedNodes(pSLNode);
 
-void printArray(int*, int);
+void printArray(int *, int);
 
-void swapElementsInArray(int* arr, int a, int b);
+void swapElementsInArray(int *arr, int a, int b);

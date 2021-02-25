@@ -1,35 +1,35 @@
-# data-structure-and-algorithm
-- basic data structure &amp; algorithm implementation in C/CPP
-- it is recommanded to read and test this repository in Visual Studio 2019
-## data structure
-### ArrayList
-### LinkedList
-### Stack
-- linked stack(c)
-- array stack(c)
-- circular stack(c)
-### Queue
-- linked queue(c)
-- array stack(c)
-### Tree
-- Binary Tree(c)
-- Binary Search Tree(c)
-- AVL Binary Search Tree(c)
-- Array Binary Heap(c)
-### Hash Table
-- linked hash table(c)
-- array hash table(c)
-### Graph
-- directed weight graph(c)
-## basic algorithm
-### sort
-- select(c)
-- insertion(c)
-- bubble(c)
-- quick sort(c)
-- merge(c)
-- bucket sort(c)
-- radix sort(c)
-### Greedy
-### Divide and Conquer
-### Dynamic Programing
+# Data Structure and Algorithm
+- data structure &amp; algorithm implementation in C/C++
+## Subprojects
+### [1. leetcode problems](./leetcode)
+> update 3 questions daily in random sequence from 02/22/2021
+### [2. data structure](./data-structure)
+- ArrayList
+- LinkedList
+- Stack
+	- linked stack
+	- array stack
+	- circular stack
+- Queue
+	- linked queue
+	- array stack
+- Tree
+	- Binary Tree
+	- Binary Search Tree
+	- AVL Binary Search Tree
+	- Array Binary Heap
+- Hash Table
+	- linked hash table
+	- array hash table
+- Graph
+	- directed weight graph
+### [3. sort](./sort-algorithm)
+- select
+- insertion
+- bubble
+- quick sort
+- merge
+- bucket sort
+- radix sort
+## Support Software
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)

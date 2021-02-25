@@ -2,7 +2,7 @@
 
 #include "../ArrayList/arrayList.h"
 
-typedef ArrayList* pArrayQueue;
+typedef ArrayList *pArrayQueue;
 
 pArrayQueue createArrayQueue();
 
@@ -15,4 +15,3 @@ int deArrayQueue(pArrayQueue pQueue);
 void traverseArrayQueue(pArrayQueue);
 
 void destroyArrayQueue(pArrayQueue);
-

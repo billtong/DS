@@ -6,9 +6,9 @@ Merge Sort
 This function uses the "mergeSortRec()"
 for simplify purpose, wear a little less parameters
 */
-void MergeSort::exec(int* arr, const int size)
+void MergeSort::exec(int *arr, const int size)
 {
-	int* b = (int*)malloc(sizeof(int) * size);
+	int *b = (int *)malloc(sizeof(int) * size);
 	merge_sort_rec(arr, 0, size - 1, b);
 }
 
@@ -18,7 +18,7 @@ Get middle
 Then divide the function into two parts and sort them separately,
 Finally integrate them together
 */
-void MergeSort::merge_sort_rec(int* a, int start, int end, int* b)
+void MergeSort::merge_sort_rec(int *a, int start, int end, int *b)
 {
 	if (start < end)
 	{
@@ -39,13 +39,15 @@ Wait for one of j or k to go to the entire interval
 All are assigned to b in order
 4. Assign sorted b to a
 */
-void MergeSort::merge(int* a, int start, int middle, int end, int* b)
+void MergeSort::merge(int *a, int start, int middle, int end, int *b)
 {
 	int i, j, k;
 	for (i = start, j = start, k = middle + 1; j <= middle && k <= end; i++)
 		b[i] = a[j] < a[k] ? a[j++] : a[k++];
-	while (j <= middle) b[i++] = a[j++];
-	while (k <= end) b[i++] = a[k++];
+	while (j <= middle)
+		b[i++] = a[j++];
+	while (k <= end)
+		b[i++] = a[k++];
 	for (i = start; i <= end; i++)
 		a[i] = b[i];
 }

@@ -17,7 +17,7 @@ insertion and deletion of elements can be costly
 
 typedef struct
 {
-	int* arr;
+	int *arr;
 	int size;
 	int used;
 } ArrayList;
@@ -26,7 +26,7 @@ typedef struct
 no param
 return value: an 10 sized empty(0) filled arraylist structure instance pointer
 */
-ArrayList* createArrayList();
+ArrayList *createArrayList();
 
 /*
 first param: a pointer to the arraylist
@@ -34,29 +34,29 @@ second param: value to be inserted into the array list
 third param: the index at which the value will be inserted, start from 0
 return value: 0 is error, others are success.
 */
-void insertArrayList(ArrayList*, int, int);
+void insertArrayList(ArrayList *, int, int);
 
 /*
 first param: a pointer to the array list sturcture instance
 second param: the index at the array to be removed, start from 0
 */
-void removeIndexOfArrayList(ArrayList*, int);
+void removeIndexOfArrayList(ArrayList *, int);
 
 /*
 first param: a pointer to the array list structure instance
 second param: the value to find within the array list
 */
-int findValueOfArrayList(ArrayList*, int);
+int findValueOfArrayList(ArrayList *, int);
 
 /*
 first param: a pointer to the array list structure instance
 second param: the index to find within the array list
 */
-int findIndexOfArrayList(ArrayList*, int);
+int findIndexOfArrayList(ArrayList *, int);
 
 /*
 first param: pointer to an structure instance to be free
 */
-void destroyArrayList(ArrayList*);
+void destroyArrayList(ArrayList *);
 
-void traverseArrayList(ArrayList*);
+void traverseArrayList(ArrayList *);

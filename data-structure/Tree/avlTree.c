@@ -57,7 +57,8 @@ int getBalanceFactor(pAVLNODE pRoot)
 
 pAVLNODE rotateLeft(pAVLNODE pRoot)
 {
-	if (pRoot) {
+	if (pRoot)
+	{
 		pAVLNODE rc = pRoot->right;
 		pRoot->right = rc->left;
 		rc->left = pRoot;
@@ -70,7 +71,8 @@ pAVLNODE rotateLeft(pAVLNODE pRoot)
 
 pAVLNODE rotateRight(pAVLNODE pRoot)
 {
-	if (pRoot) {
+	if (pRoot)
+	{
 		pAVLNODE rc = pRoot->left;
 		pRoot->left = rc->right;
 		rc->right = pRoot;
@@ -84,11 +86,13 @@ pAVLNODE rotateRight(pAVLNODE pRoot)
 pAVLNODE rebalance(pAVLNODE root, int key)
 {
 	int balanceFactor = getBalanceFactor(root);
-	if (balanceFactor > 1) {
+	if (balanceFactor > 1)
+	{
 		pAVLNODE rc = root->left;
-		if (rc->key > key)			//Left of Left
+		if (rc->key > key) //Left of Left
 			return rotateRight(root);
-		else if (rc->key < key) {	//left of right
+		else if (rc->key < key)
+		{ //left of right
 			root->left = rotateLeft(root->left);
 			return rotateRight(root);
 		}
@@ -96,11 +100,12 @@ pAVLNODE rebalance(pAVLNODE root, int key)
 	else if (balanceFactor < -1)
 	{
 		pAVLNODE rc = root->right;
-		if (rc->key > key) {	//right of left
+		if (rc->key > key)
+		{ //right of left
 			root->right = rotateRight(root->right);
 			return rotateLeft(root);
 		}
-		if (rc->key < key)		// right of right
+		if (rc->key < key) // right of right
 			return rotateLeft(root);
 	}
 	return root;
@@ -115,7 +120,7 @@ pAVLNODE insertValueOfAVLTree(pAVLNODE root, int key)
 	else if (root->key < key)
 		root->right = insertValueOfAVLTree(root->right, key);
 	root->height = getAVLTreeNodeHeight(root);
-	return  rebalance(root, key);
+	return rebalance(root, key);
 }
 
 pAVLNODE removeValueOfAVLTree(pAVLNODE pRoot, int key)
@@ -126,12 +131,14 @@ pAVLNODE removeValueOfAVLTree(pAVLNODE pRoot, int key)
 		pRoot->left = removeValueOfAVLTree(pRoot->left, key);
 	else if (pRoot->key < key)
 		pRoot->right = removeValueOfAVLTree(pRoot->right, key);
-	else if (pRoot->key == key) {
+	else if (pRoot->key == key)
+	{
 		if (pRoot->left == NULL)
 			pRoot = pRoot->right;
 		else if (pRoot->right == NULL)
 			pRoot = pRoot->left;
-		else if (pRoot->left && pRoot->right) {
+		else if (pRoot->left && pRoot->right)
+		{
 			pAVLNODE pLeftMax = getMaxValueOfAVLTree(pRoot->left);
 			pAVLNODE pRightMin = getMinValueOfAVLTree(pRoot->right);
 			int dist = 2 * pRoot->key - pLeftMax->key - pRightMin->key;
@@ -140,7 +147,8 @@ pAVLNODE removeValueOfAVLTree(pAVLNODE pRoot, int key)
 				pRoot->key = pLeftMax->key;
 				pRoot->left = removeValueOfAVLTree(pRoot->left, pLeftMax->key);
 			}
-			else {
+			else
+			{
 				pRoot->key = pRightMin->key;
 				pRoot->right = removeValueOfAVLTree(pRoot->right, pRightMin->key);
 			}

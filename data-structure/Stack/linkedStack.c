@@ -1,27 +1,27 @@
 #include "linkedStack.h"
 
-LinkedStack* createLinkedStack()
+LinkedStack *createLinkedStack()
 {
-	LinkedStack* pStack = (LinkedStack*)malloc(sizeof(LinkedStack));
+	LinkedStack *pStack = (LinkedStack *)malloc(sizeof(LinkedStack));
 	if (pStack == NULL)
 		return NULL;
 	pStack->root = NULL;
 	return pStack;
 }
 
-int isLinkedStackEmpty(LinkedStack* pStack)
+int isLinkedStackEmpty(LinkedStack *pStack)
 {
 	return !pStack->root;
 }
 
-void pushLinkedStack(LinkedStack* pStack, int value)
+void pushLinkedStack(LinkedStack *pStack, int value)
 {
 	pSLNode pNode = createSingleLinkedNode(value);
 	pNode->next = pStack->root;
 	pStack->root = pNode;
 }
 
-int popLinkedStack(LinkedStack* pStack)
+int popLinkedStack(LinkedStack *pStack)
 {
 	if (isLinkedStackEmpty(pStack))
 		return INT_MIN;
@@ -32,14 +32,14 @@ int popLinkedStack(LinkedStack* pStack)
 	return value;
 }
 
-int peekLinkedStack(LinkedStack* pStack)
+int peekLinkedStack(LinkedStack *pStack)
 {
 	if (isLinkedStackEmpty(pStack))
 		return INT_MIN;
 	return pStack->root->value;
 }
 
-void destroyLinkedStack(LinkedStack* pStack)
+void destroyLinkedStack(LinkedStack *pStack)
 {
 	while (!isLinkedStackEmpty(pStack))
 		popLinkedStack(pStack);

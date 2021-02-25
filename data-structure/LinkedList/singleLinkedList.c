@@ -1,8 +1,8 @@
 #include "singleLinkedList.h"
 
-SingleLinkedList* createSingleLinkedList()
+SingleLinkedList *createSingleLinkedList()
 {
-	SingleLinkedList* pList = (SingleLinkedList*)malloc(sizeof(SingleLinkedList));
+	SingleLinkedList *pList = (SingleLinkedList *)malloc(sizeof(SingleLinkedList));
 	if (pList == NULL)
 		return NULL;
 	pList->head = NULL;
@@ -10,7 +10,7 @@ SingleLinkedList* createSingleLinkedList()
 	return pList;
 }
 
-void insertSingleLinkedList(SingleLinkedList* pList, int value, int index)
+void insertSingleLinkedList(SingleLinkedList *pList, int value, int index)
 {
 	pSLNode pNode = createSingleLinkedNode(value);
 	pSLNode temp;
@@ -19,7 +19,7 @@ void insertSingleLinkedList(SingleLinkedList* pList, int value, int index)
 		temp = pList->head;
 		pList->head = pNode;
 	}
-	else 
+	else
 	{
 		pSLNode pFrontNode = findIndexOfSingleLinkedList(pList, index - 1);
 		temp = pFrontNode->next;
@@ -29,11 +29,11 @@ void insertSingleLinkedList(SingleLinkedList* pList, int value, int index)
 	pList->size++;
 }
 
-void removeIndexOfSingleLinkedList(SingleLinkedList* pList, int index)
+void removeIndexOfSingleLinkedList(SingleLinkedList *pList, int index)
 {
-	if (index == 0) 
+	if (index == 0)
 		pList->head = pList->head->next;
-	else 
+	else
 	{
 		pSLNode pFrontNode = findIndexOfSingleLinkedList(pList, index - 1);
 		pFrontNode->next = pFrontNode->next->next;
@@ -41,7 +41,7 @@ void removeIndexOfSingleLinkedList(SingleLinkedList* pList, int index)
 	pList->size--;
 }
 
-pSLNode findIndexOfSingleLinkedList(SingleLinkedList* pList, int index)
+pSLNode findIndexOfSingleLinkedList(SingleLinkedList *pList, int index)
 {
 	pSLNode iter = pList->head;
 	for (int i = 0; i < index; i++)
@@ -49,7 +49,7 @@ pSLNode findIndexOfSingleLinkedList(SingleLinkedList* pList, int index)
 	return iter;
 }
 
-pSLNode findValueOfSingleLinkedList(SingleLinkedList* pList, int value)
+pSLNode findValueOfSingleLinkedList(SingleLinkedList *pList, int value)
 {
 	pSLNode iter = pList->head;
 	while (iter != NULL)
@@ -61,7 +61,7 @@ pSLNode findValueOfSingleLinkedList(SingleLinkedList* pList, int value)
 	return NULL;
 }
 
-void destroySingleLinkedList(SingleLinkedList* pList)
+void destroySingleLinkedList(SingleLinkedList *pList)
 {
 	pSLNode iter = pList->head, temp;
 	while (iter != NULL)

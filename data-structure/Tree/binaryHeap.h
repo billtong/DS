@@ -12,24 +12,23 @@ is a waste of time to code
 
 typedef struct
 {
-	int* arr;
-	int last;		//this in the last index of the array, starts from 0
+	int *arr;
+	int last; //this in the last index of the array, starts from 0
 	int capacity;
 } BinaryHeap;
 
-BinaryHeap* createBinaryHeap(int);
-BinaryHeap* createBinaryHeapFromArray(int* a, int size);
+BinaryHeap *createBinaryHeap(int);
+BinaryHeap *createBinaryHeapFromArray(int *a, int size);
 
-void minReheapUp(BinaryHeap* heap, int index);
+void minReheapUp(BinaryHeap *heap, int index);
 
-void minReheapDown(BinaryHeap* heap, int index);
+void minReheapDown(BinaryHeap *heap, int index);
 
 /*
 withdraw the root element of the heap structure
 */
-int withdrawMinHeap(BinaryHeap* heap);
+int withdrawMinHeap(BinaryHeap *heap);
 
-int* heapSort(int* arr, int size);
+int *heapSort(int *arr, int size);
 
-void printArrayBinaryHeap(BinaryHeap* heap);
-
+void printArrayBinaryHeap(BinaryHeap *heap);

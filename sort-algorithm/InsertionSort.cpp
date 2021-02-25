@@ -14,7 +14,7 @@ start:10 24 5 32 1 84 19
 #5:(1 5 10 24 32 84) 19
 end:(1 5 10 19 24 32 84
 */
-void LinearInsertionSort::exec(int* arr, const int size)
+void LinearInsertionSort::exec(int *arr, const int size)
 {
 	for (int i = 1; i < size; i++)
 	{
@@ -26,7 +26,7 @@ void LinearInsertionSort::exec(int* arr, const int size)
 /*
 Linear Insertion Sort(Intro to Algo.)
 */
-void LinearInsertionSort2::exec(int* arr, const int size)
+void LinearInsertionSort2::exec(int *arr, const int size)
 {
 	for (int i = 1; i < size; i++)
 	{
@@ -45,7 +45,7 @@ void LinearInsertionSort2::exec(int* arr, const int size)
 the same method as Linear Insertion,
 only using binary search when find the position O(ln(n))
 */
-void BinaryInsertionSort::exec(int* arr, const int size)
+void BinaryInsertionSort::exec(int *arr, const int size)
 {
 	for (int i = 1; i < size; i++)
 	{
@@ -62,6 +62,5 @@ void BinaryInsertionSort::exec(int* arr, const int size)
 		}
 		for (int j = i; j > right; j--)
 			Tools::swap(arr[j], arr[j - 1]);
-
 	}
 }

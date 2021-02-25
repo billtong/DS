@@ -9,12 +9,12 @@ typedef struct
 	pSLNode rear;
 } LinkedQueue;
 
-LinkedQueue* createLinkedQueue();
+LinkedQueue *createLinkedQueue();
 
-int isLinkedQueueEmpty(LinkedQueue*);
+int isLinkedQueueEmpty(LinkedQueue *);
 
-void enLinkedQueue(LinkedQueue*, int);
-int deLinkedQueue(LinkedQueue*);
+void enLinkedQueue(LinkedQueue *, int);
+int deLinkedQueue(LinkedQueue *);
 
-void traverseLinkedQueue(LinkedQueue*);
-void destroyLinkedQueue(LinkedQueue*);
+void traverseLinkedQueue(LinkedQueue *);
+void destroyLinkedQueue(LinkedQueue *);

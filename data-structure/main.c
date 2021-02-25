@@ -3,7 +3,7 @@
 int main()
 {
 #if ARRAY_LIST_TEST_ENABLE
-	ArrayList* pAL = createArrayList();
+	ArrayList *pAL = createArrayList();
 	for (int i = 0; i <= 11; i++)
 	{
 		insertArrayList(pAL, i, 0);
@@ -19,7 +19,7 @@ int main()
 	destroyArrayList(pAL);
 #endif // ARRAY_LIST_TEST_ENABLE
 #if SINGLE_LINKED_LIST_TEST_ENABLE
-	SingleLinkedList* pSLL = createSingleLinkedList();
+	SingleLinkedList *pSLL = createSingleLinkedList();
 	for (int i = 0; i < 10; i++)
 	{
 		insertSingleLinkedList(pSLL, i, 0);
@@ -35,7 +35,7 @@ int main()
 	destroySingleLinkedList(pSLL);
 #endif // SINGLE_LINKED_LIST_TEST_ENABLE
 #if ARRAY_STACK_TEST_ENABLE
-	ArrayStack* pAS = createArrayStack(20);
+	ArrayStack *pAS = createArrayStack(20);
 	for (int i = 0; i < 10; i++)
 	{
 		pushArrayStack(pAS, i);
@@ -44,7 +44,7 @@ int main()
 	destroyArrayStack(pAS);
 #endif // ARRAY_STACK_TEST_ENABLE
 #if LINKED_STACK_TEST_ENABLE
-	LinkedStack* pLS = createLinkedStack();
+	LinkedStack *pLS = createLinkedStack();
 	for (int i = 0; i < 10; i++)
 	{
 		pushLinkedStack(pLS, i);
@@ -65,7 +65,7 @@ int main()
 	destroyArrayQueue(pAQ);
 #endif // ARRAY_QUEUE_TEST_ENABLE
 #if LINKED_QUEUE_TEST_ENABLE
-	LinkedQueue* pLQ = createLinkedQueue();
+	LinkedQueue *pLQ = createLinkedQueue();
 	for (int i = 0; i < 10; i++)
 	{
 		enLinkedQueue(pLQ, i);
@@ -77,7 +77,7 @@ int main()
 	destroyLinkedQueue(pLQ);
 #endif // LINKED_QUEUE_TEST_ENABLE
 #if CIRCULAR_QUEUE_TEST_ENABLE
-	CircularQueue* pCQ = createCircularQueue(10);
+	CircularQueue *pCQ = createCircularQueue(10);
 	traverseCircularQueue(pCQ);
 	for (int i = 0; i < 10; i++)
 	{
@@ -135,21 +135,23 @@ int main()
 #endif // AVL_BINARY_TREE_TEST_ENABLE
 #if BINARY_HEAP_TEST_ENABLE
 	int size = 15;
-	int* arr = (int*)malloc(sizeof(int) * size);
+	int *arr = (int *)malloc(sizeof(int) * size);
 	for (int i = 0; i < size; i++)
 		arr[i] = rand() % 90;
 	printArray(arr, size);
-	BinaryHeap* pBH = createBinaryHeapFromArray(arr, size);
+	BinaryHeap *pBH = createBinaryHeapFromArray(arr, size);
 	arr = heapSort(pBH->arr, size);
 	printArray(arr, size);
 #endif // BINARY_HEAP_TEST_ENABLE
 #if LINKED_HASH_TEST_ENABLE
 	int lht_size = 5;
-	LinkedHashTable* ht = createLinkedHashTable(lht_size);
-	for (int i = 0; i < 20; i++) {
+	LinkedHashTable *ht = createLinkedHashTable(lht_size);
+	for (int i = 0; i < 20; i++)
+	{
 		int x = rand() % 5 + 1;
-		char* ch = (char*)malloc(sizeof(char) * x);
-		for (int j = 0; j < x; j++) {
+		char *ch = (char *)malloc(sizeof(char) * x);
+		for (int j = 0; j < x; j++)
+		{
 			ch[j] = rand() % 26 + 97;
 		}
 		ch[x] = '\0';

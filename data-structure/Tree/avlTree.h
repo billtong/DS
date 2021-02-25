@@ -5,8 +5,8 @@
 typedef struct sAVLTreeNode
 {
 	int key;
-	struct sAVLTreeNode* left;
-	struct sAVLTreeNode* right;
+	struct sAVLTreeNode *left;
+	struct sAVLTreeNode *right;
 	int height;
 } AVLNode, *pAVLNODE;
 

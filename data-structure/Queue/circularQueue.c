@@ -1,27 +1,27 @@
 #include "circularQueue.h"
 
-CircularQueue* createCircularQueue(int cap)
+CircularQueue *createCircularQueue(int cap)
 {
-	CircularQueue* pQueue = (CircularQueue*)malloc(sizeof(CircularQueue));
+	CircularQueue *pQueue = (CircularQueue *)malloc(sizeof(CircularQueue));
 	if (pQueue == NULL)
 		return NULL;
-	pQueue->arr = (int*)malloc(sizeof(int) * cap);
+	pQueue->arr = (int *)malloc(sizeof(int) * cap);
 	pQueue->front = pQueue->rear = -1;
 	pQueue->size = 0;
 	pQueue->capacity = cap;
 }
 
-int isCircularQueueEmpty(CircularQueue* pQueue)
+int isCircularQueueEmpty(CircularQueue *pQueue)
 {
 	return pQueue->size == 0;
 }
 
-int isCircularQueueFull(CircularQueue* pQueue)
+int isCircularQueueFull(CircularQueue *pQueue)
 {
 	return pQueue->capacity == pQueue->size;
 }
 
-void enCircularQueue(CircularQueue* pQueue, int elem)
+void enCircularQueue(CircularQueue *pQueue, int elem)
 {
 	if (!isCircularQueueFull(pQueue))
 	{
@@ -33,7 +33,7 @@ void enCircularQueue(CircularQueue* pQueue, int elem)
 	}
 }
 
-int deCircularQueue(CircularQueue* pQueue)
+int deCircularQueue(CircularQueue *pQueue)
 {
 	if (!isCircularQueueEmpty(pQueue))
 	{
@@ -46,7 +46,7 @@ int deCircularQueue(CircularQueue* pQueue)
 	}
 }
 
-void traverseCircularQueue(CircularQueue* pQueue)
+void traverseCircularQueue(CircularQueue *pQueue)
 {
 	printf("circular queue:\t");
 	if (isCircularQueueEmpty(pQueue))
@@ -65,7 +65,7 @@ void traverseCircularQueue(CircularQueue* pQueue)
 	}
 }
 
-void destroyCircularQueue(CircularQueue* pQueue)
+void destroyCircularQueue(CircularQueue *pQueue)
 {
 	free(pQueue->arr);
 	free(pQueue);

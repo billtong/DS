@@ -19,7 +19,7 @@ int getBinaryTreeNodeHeight(pBTNode pNode)
 	return (nLeftHeight > nRightHeight ? nLeftHeight : nRightHeight) + 1;
 }
 
-void getSampleBinaryTree(pBTNode* ppRoot)
+void getSampleBinaryTree(pBTNode *ppRoot)
 {
 	pBTNode pNode1 = createBinaryTreeNode(10);
 	pBTNode pNode2 = createBinaryTreeNode(20);
@@ -78,7 +78,7 @@ void breathFirstTraverseBinaryTree(pBTNode pTree)
 	printf("breath first traverse:\t");
 	if (pTree)
 	{
-		LinkedQueue* pQueue = createLinkedQueue();
+		LinkedQueue *pQueue = createLinkedQueue();
 		enLinkedQueue(pQueue, pTree);
 		while (!isLinkedQueueEmpty(pQueue))
 		{

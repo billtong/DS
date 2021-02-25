@@ -1,7 +1,7 @@
 #include "QuickSort.h"
 #include "Tools.h"
 
-void QuickSort::exec(int* arr, const int size)
+void QuickSort::exec(int *arr, const int size)
 {
 	this->quick_sort_rec(arr, 0, size - 1);
 }
@@ -28,7 +28,7 @@ Example
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 1 2 3 5 7 23 43 50 50 60 200 212 1200
 */
-void QuickSort::quick_sort_rec(int* arr, int left, int right)
+void QuickSort::quick_sort_rec(int *arr, int left, int right)
 {
 	if (left < right)
 	{
@@ -44,8 +44,10 @@ void QuickSort::quick_sort_rec(int* arr, int left, int right)
 			if (i < j)
 				Tools::swap(arr[i++], arr[j--]);
 			*/
-			while (arr[i] < pivot) i++;
-			while (arr[j] > pivot) j--;
+			while (arr[i] < pivot)
+				i++;
+			while (arr[j] > pivot)
+				j--;
 			if (i <= j)
 				Tools::swap(arr[i++], arr[j--]);
 		}
@@ -58,7 +60,7 @@ void QuickSort::quick_sort_rec(int* arr, int left, int right)
 /*
 get the most middle element in the left. right and middle element.
 */
-int QuickSort::find_pivot(int* arr, int left, int right)
+int QuickSort::find_pivot(int *arr, int left, int right)
 {
 	int a = arr[left];
 	int b = arr[(left + right) / 2];
@@ -71,7 +73,7 @@ int QuickSort::find_pivot(int* arr, int left, int right)
 		return right;
 }
 
-void QuickSort2::exec(int* arr, const int size)
+void QuickSort2::exec(int *arr, const int size)
 {
 	this->quick_sort_rec(arr, 0, size - 1);
 }
@@ -80,7 +82,7 @@ void QuickSort2::exec(int* arr, const int size)
 Quick Sort 2 from XingHua's data structure(JAVA)
 No Pivot Finding version, choose left as default pivot
 */
-void QuickSort2::quick_sort_rec(int* arr, int left, int right)
+void QuickSort2::quick_sort_rec(int *arr, int left, int right)
 {
 	if (left < right) // get out of infinity loop when finished
 	{

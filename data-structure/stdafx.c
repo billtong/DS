@@ -21,8 +21,7 @@ void printLinkedNodes(pSLNode pNode)
 	printf("\n");
 }
 
-
-void printArray(int* arr, int size)
+void printArray(int *arr, int size)
 {
 	printf("array list:\t");
 	for (int i = 0; i < size; i++)
@@ -30,7 +29,7 @@ void printArray(int* arr, int size)
 	printf("\n");
 }
 
-void swapElementsInArray(int* arr, int a, int b)
+void swapElementsInArray(int *arr, int a, int b)
 {
 	int t = arr[a];
 	arr[a] = arr[b];

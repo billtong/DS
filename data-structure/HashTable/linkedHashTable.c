@@ -1,36 +1,37 @@
 #include "linkedHashTable.h"
 
-LinkedHashTable* createLinkedHashTable(int size)
+LinkedHashTable *createLinkedHashTable(int size)
 {
-	LinkedHashTable* pHash = (LinkedHashTable*)malloc(sizeof(LinkedHashTable));
+	LinkedHashTable *pHash = (LinkedHashTable *)malloc(sizeof(LinkedHashTable));
 	if (pHash == NULL)
 		return NULL;
 	pHash->size = size;
 	pHash->collision = 0;
-	pHash->hashList = (pSLList*)malloc(sizeof(SingleLinkedList) * size);
+	pHash->hashList = (pSLList *)malloc(sizeof(SingleLinkedList) * size);
 	for (int i = 0; i < size; i++)
 		pHash->hashList[i] = createSingleLinkedList();
 	return pHash;
 }
 
-long hashString(char* pString)
+long hashString(char *pString)
 {
 	long sum = 0;
 	int l = strlen(pString);
-	for (int i=0; pString[i] != '\0'; i++)
+	for (int i = 0; pString[i] != '\0'; i++)
 		sum += (pString[i] * (long)pow(31.0, l - i - 1));
 	return sum;
 }
 
-int divisionHash(LinkedHashTable* pHash, char* pString)
+int divisionHash(LinkedHashTable *pHash, char *pString)
 {
 	return hashString(pString) % pHash->size;
 }
 
-double calcLoadFactor(LinkedHashTable* pHash)
+double calcLoadFactor(LinkedHashTable *pHash)
 {
 	double n = 0;
-	for (int i = 0; i < pHash->size; i++) {
+	for (int i = 0; i < pHash->size; i++)
+	{
 		if (pHash->hashList[i]->size > 0)
 			n++;
 	}
@@ -40,17 +41,20 @@ double calcLoadFactor(LinkedHashTable* pHash)
 /*
 error, here use int(4bytes) to store char*(8 bytes)
 */
-void rehashLinkedHashTable(LinkedHashTable** ht)
+void rehashLinkedHashTable(LinkedHashTable **ht)
 {
 	if (ht && *ht)
 	{
-		LinkedHashTable* pOldHash = *ht;
-		LinkedHashTable* pNewHash = createLinkedHashTable(pOldHash->size * 2);
-		for (int i = 0; i < pOldHash->size; i++) {
-			if (pOldHash->hashList[i] > 0) {
+		LinkedHashTable *pOldHash = *ht;
+		LinkedHashTable *pNewHash = createLinkedHashTable(pOldHash->size * 2);
+		for (int i = 0; i < pOldHash->size; i++)
+		{
+			if (pOldHash->hashList[i] > 0)
+			{
 				pSLNode iter = pOldHash->hashList[i]->head;
-				while (iter) {
-					insertLinkedHashTable(pNewHash, (char*)iter->value);
+				while (iter)
+				{
+					insertLinkedHashTable(pNewHash, (char *)iter->value);
 					iter = iter->next;
 				}
 			}
@@ -59,7 +63,7 @@ void rehashLinkedHashTable(LinkedHashTable** ht)
 	}
 }
 
-LinkedHashTable* insertLinkedHashTable(LinkedHashTable* pHash, char* pString)
+LinkedHashTable *insertLinkedHashTable(LinkedHashTable *pHash, char *pString)
 {
 	int key = divisionHash(pHash, pString);
 	pSLList temp = pHash->hashList[key];
@@ -68,10 +72,10 @@ LinkedHashTable* insertLinkedHashTable(LinkedHashTable* pHash, char* pString)
 	insertSingleLinkedList(temp, pString, 0);
 	if (calcLoadFactor(pHash) > 75)
 		rehashLinkedHashTable(&pHash);
-	return pHash;	//address needs to return back, because it might be changed by rehash function
+	return pHash; //address needs to return back, because it might be changed by rehash function
 }
 
-void traverseLinkedHashTable(LinkedHashTable* pHash)
+void traverseLinkedHashTable(LinkedHashTable *pHash)
 {
 	for (int i = 0; i < pHash->size; i++)
 	{
@@ -79,7 +83,7 @@ void traverseLinkedHashTable(LinkedHashTable* pHash)
 		pSLNode pNode = pHash->hashList[i]->head;
 		while (pNode != NULL)
 		{
-			printf("%s ", (char*)pNode->value);
+			printf("%s ", (char *)pNode->value);
 			pNode = pNode->next;
 		}
 		printf("\n");
