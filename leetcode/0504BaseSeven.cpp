@@ -16,8 +16,9 @@ public:
 			isNeg = true;
 			num = -num;
 		}
-		while(num>0) {
-			int x = num%y;
+		while (num > 0)
+		{
+			int x = num % y;
 			num /= 7;
 			res = to_string(x) + res;
 		}
