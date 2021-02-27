@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <functional>
+#include <sstream>
 
 // data structure
 #include <vector>
@@ -33,10 +34,22 @@ struct ListNode
 };
 
 // question 0430 doubly linked list
-class Node {
+class Node
+{
 public:
-    int val;
-    Node* prev;
-    Node* next;
-    Node* child;
+	int val;
+	Node *prev;
+	Node *next;
+	Node *child;
+};
+
+//Definition for a binary tree node. q0938
+struct TreeNode
+{
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode() : val(0), left(nullptr), right(nullptr) {}
+	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
