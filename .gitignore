@@ -18,3 +18,5 @@
 *.tlog
 *.FileListAbsolute.txt
 *.idb
+leetcode/main.h
+leetcode/main.cpp

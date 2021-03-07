@@ -13,22 +13,22 @@ header store the first node data
 class Solution
 {
 public:
-    /*
-    Maintain two pointers and update one with a delay of n steps.
-    */
-    ListNode *removeNthFromEnd(ListNode *head, int n)
-    {
-        ListNode *fast = head, *slow = fast;
-        for (int j = 0; j < n; j++)
-            fast = fast->next;
-        if (fast == NULL) //n is equal to the length of the list, remove header
-            return head->next;
-        while (fast->next)
-        { //make sure the final position is one node a head of the target
-            fast = fast->next;
-            slow = slow->next;
-        }
-        slow->next = slow->next->next;
-        return head;
-    }
+	/*
+	Maintain two pointers and update one with a delay of n steps.
+	*/
+	ListNode* removeNthFromEnd(ListNode* head, int n)
+	{
+		ListNode* fast = head, * slow = fast;
+		for (int j = 0; j < n; j++)
+			fast = fast->next;
+		if (fast == NULL) //n is equal to the length of the list, remove header
+			return head->next;
+		while (fast->next)
+		{ //make sure the final position is one node a head of the target
+			fast = fast->next;
+			slow = slow->next;
+		}
+		slow->next = slow->next->next;
+		return head;
+	}
 };

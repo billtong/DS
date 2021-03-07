@@ -25,7 +25,7 @@ public:
 	...
 	if meet "" return ""
 	*/
-	string longestCommonPrefix(vector<string> &strs)
+	string longestCommonPrefix(vector<string>& strs)
 	{
 		int n = strs.size();
 		if (n == 0)

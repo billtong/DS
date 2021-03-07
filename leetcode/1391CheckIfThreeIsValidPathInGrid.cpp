@@ -8,28 +8,28 @@
  * 	4 which means a street connecting the right cell and the lower cell.
  * 	5 which means a street connecting the left cell and the upper cell.
  * 	6 which means a street connecting the right cell and the upper cell.
- * You will initially start at the street of the upper-left cell (0,0). 
- * A valid path in the grid is a path which starts from the upper left cell (0,0) and ends at the bottom-right cell (m - 1, n - 1). 
+ * You will initially start at the street of the upper-left cell (0,0).
+ * A valid path in the grid is a path which starts from the upper left cell (0,0) and ends at the bottom-right cell (m - 1, n - 1).
  * The path should only follow the streets.
  * Notice that you are not allowed to change any street.
  * Return true if there is a valid path in the grid or false otherwise.
  */
 
-//dfs search tree
+ //dfs search tree
 class Solution
 {
 private:
 	// row is direction; col is street type
-	const vector<vector<bool>> rule = {{1, 0, 1, 0, 1, 0},	//left
+	const vector<vector<bool>> rule = { {1, 0, 1, 0, 1, 0},	//left
 																		 {0, 1, 0, 0, 1, 1},	//up
 																		 {1, 0, 0, 1, 0, 1},	//right
-																		 {0, 1, 1, 1, 0, 0}}; //down
+																		 {0, 1, 1, 1, 0, 0} }; //down
 	vector<vector<int>> grid;
 	vector<vector<bool>> visited;
 	bool ans = false;
 
 public:
-	bool hasValidPath(vector<vector<int>> &grid)
+	bool hasValidPath(vector<vector<int>>& grid)
 	{
 		this->grid = grid;
 		visited = vector<vector<bool>>(grid.size(), vector<bool>(grid[0].size(), false));

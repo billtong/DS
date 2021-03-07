@@ -11,32 +11,32 @@ It is guaranteed that the insertion operations will be valid.
 it would be too easy to implemented by vector::insert in cpp, so i use c
 */
 
-int *createTargetArray(int *nums, int numsSize, int *index, int indexSize, int *returnSize)
+int* createTargetArray(int* nums, int numsSize, int* index, int indexSize, int* returnSize)
 {
-    *returnSize = numsSize; //place size value int the returnSize pointer
-    int *target = (int *)malloc(sizeof(int) * numsSize);
-    int i, j;
-    for (i = 0; i < numsSize; i++)
-    {
-        for (j = i; j > index[i]; j--)
-            target[j] = target[j - 1];
-        target[index[i]] = nums[i];
-    }
-    return target;
+	*returnSize = numsSize; //place size value int the returnSize pointer
+	int* target = (int*)malloc(sizeof(int) * numsSize);
+	int i, j;
+	for (i = 0; i < numsSize; i++)
+	{
+		for (j = i; j > index[i]; j--)
+			target[j] = target[j - 1];
+		target[index[i]] = nums[i];
+	}
+	return target;
 }
 
 // move memory
-int *createTargetArray2(int *nums, int numsSize, int *index, int indexSize, int *returnSize)
+int* createTargetArray2(int* nums, int numsSize, int* index, int indexSize, int* returnSize)
 {
-    int *target = (int *)malloc(sizeof(int) * numsSize);
-    memset(target, -1, sizeof(int) * numsSize);
-    for (int i = 0; i < indexSize; i++)
-    {
-        int j = index[i];
-        if (target[j] != -1)
-            memmove(&target[j + 1], &target[j], sizeof(int) * (indexSize - j - 1));
-        target[j] = nums[i];
-    }
-    *returnSize = numsSize;
-    return target;
+	int* target = (int*)malloc(sizeof(int) * numsSize);
+	memset(target, -1, sizeof(int) * numsSize);
+	for (int i = 0; i < indexSize; i++)
+	{
+		int j = index[i];
+		if (target[j] != -1)
+			memmove(&target[j + 1], &target[j], sizeof(int) * (indexSize - j - 1));
+		target[j] = nums[i];
+	}
+	*returnSize = numsSize;
+	return target;
 }

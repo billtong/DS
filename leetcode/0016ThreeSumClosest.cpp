@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
 /*
-Given an array nums of n integers and an integer target, 
-find three integers in nums such that the sum is closest to target. 
-Return the sum of the three integers. 
+Given an array nums of n integers and an integer target,
+find three integers in nums such that the sum is closest to target.
+Return the sum of the three integers.
 You may assume that each input would have exactly one solution.
 
 Example 1:
@@ -19,7 +19,7 @@ Constraints:
 class Solution16
 {
 public:
-	int threeSUmCloset(vector<int> &nums, int target)
+	int threeSUmCloset(vector<int>& nums, int target)
 	{
 		int n = nums.size();
 		int diff = INT_MAX;
@@ -41,7 +41,7 @@ public:
 		return target - diff;
 	}
 
-	void quick_sort_rec(vector<int> &arr, int left, int right)
+	void quick_sort_rec(vector<int>& arr, int left, int right)
 	{
 		if (left < right)
 		{

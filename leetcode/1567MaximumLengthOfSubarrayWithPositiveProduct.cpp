@@ -12,7 +12,7 @@ class Solution
 	 * divide the array into sections by 0s, and try to find maax subarray length of each section
 	 */
 public:
-	int getMaxLen(vector<int> &nums)
+	int getMaxLen(vector<int>& nums)
 	{
 		int res = 0;
 		for (int i = 0; i < nums.size();) // i is the start index of the section divided by 0s

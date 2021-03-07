@@ -33,7 +33,7 @@ public:
 	bool isMatch(string s, string p)
 	{
 		int m = s.length(), n = p.length();
-		bool **t = new bool *[m + 1];
+		bool** t = new bool* [m + 1];
 		for (int i = 0; i < m + 1; i++)
 		{
 			t[i] = new bool[n + 1];
@@ -61,7 +61,7 @@ public:
 	*/
 	bool isMatch2(string s, string p)
 	{
-		int **t = new int *[s.length()];
+		int** t = new int* [s.length()];
 		for (int i = 0; i < s.length(); i++)
 		{
 			t[i] = new int[p.length()];
@@ -69,7 +69,7 @@ public:
 		}
 		return dp(0, 0, s, p, t);
 	}
-	bool dp(int i, int j, string s, string p, int **&t)
+	bool dp(int i, int j, string s, string p, int**& t)
 	{
 		if (t[i][j] == -1)
 		{
@@ -105,7 +105,7 @@ public:
 		if (p.length() >= 2 && p.at(1) == '*') // Kleene star condition
 			return isMatch(s, p.substr(2, n - 2)) || (first_match && isMatch(s.substr(1, m - 1), p));
 		else
-			return first_match and isMatch(s.substr(1, m - 1), p.substr(1, n - 1));
+			return first_match && isMatch(s.substr(1, m - 1), p.substr(1, n - 1));
 	}
 };
 

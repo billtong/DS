@@ -31,7 +31,7 @@ public:
 			return s;
 		int start = 0, max_len = 1;
 		int n = s.length();
-		bool **table = new bool *[n];
+		bool** table = new bool* [n];
 		for (int i = 0; i < n; i++)
 			table[i] = new bool[n];
 		for (int i = n - 1; i >= 0; i--)

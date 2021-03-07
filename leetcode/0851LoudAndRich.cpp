@@ -5,7 +5,7 @@
  * For convenience, we'll call the person with label x, simply "person x".
  * We'll say that richer[i] = [x, y] if person x definitely has more money than person y.  Note that richer may only be a subset of valid observations.
  * Also, we'll say quiet[x] = q if person x has quietness q.
- * Now, return answer, where answer[x] = y if y is the least quiet person (that is, the person y with the smallest value of quiet[y]), 
+ * Now, return answer, where answer[x] = y if y is the least quiet person (that is, the person y with the smallest value of quiet[y]),
  * among all people who definitely have equal to or more money than person x.
 */
 
@@ -17,7 +17,7 @@ public:
 	vector<vector<int>> adjust;
 
 	//O(N^2)
-	vector<int> loudAndRich(vector<vector<int>> &richer, vector<int> &quiet)
+	vector<int> loudAndRich(vector<vector<int>>& richer, vector<int>& quiet)
 	{
 		vector<int> ans(quiet.size(), -1);
 		this->ans = ans;
@@ -32,7 +32,7 @@ public:
 		return this->ans;
 	}
 
-	int dfs(int &x)
+	int dfs(int& x)
 	{ // the quietness of person y
 		if (ans[x] == -1)
 		{

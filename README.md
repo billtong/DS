@@ -6,7 +6,7 @@
 
 ### [1. leetcode problems](./leetcode)
 
-> update 3 questions daily in random sequence from 02/22/2021
+> updating
 
 ### [2. data structure](./data-structure)
 
@@ -41,5 +41,5 @@
 - radix sort
 
 ## Support Software
-
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+* [FormatAllFiles](https://github.com/munyabe/FormatAllFiles)
+* [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)

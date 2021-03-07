@@ -1,6 +1,6 @@
 /**
- * You are given two non-empty linked lists representing two non-negative integers. 
- * The digits are stored in reverse order and each of their nodes contain a single digit. 
+ * You are given two non-empty linked lists representing two non-negative integers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
  * Add the two numbers and return it as a linked list.
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
  * Example:
@@ -9,21 +9,21 @@
  * Explanation: 342 + 465 = 807.
  */
 #include "stdafx.h"
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
+ /**
+  * Definition for singly-linked list.
+  * struct ListNode {
+  *     int val;
+  *     ListNode *next;
+  *     ListNode(int x) : val(x), next(NULL) {}
+  * };
+  */
 class Solution2
 {
 public:
 	//solution with short lines
-	ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 	{
-		ListNode header(0), *iter = &header;
+		ListNode header(0), * iter = &header;
 		int curry = 0;
 		while (l1 || l2 || curry)
 		{
@@ -39,9 +39,9 @@ public:
 	}
 
 	//my solution
-	ListNode *add_two_numbers2(ListNode *l1, ListNode *l2)
+	ListNode* add_two_numbers2(ListNode* l1, ListNode* l2)
 	{
-		ListNode *iter1 = l1, *iter2 = l2;
+		ListNode* iter1 = l1, * iter2 = l2;
 		while (iter1 && iter2)
 		{
 			if (!iter1->next)
@@ -64,9 +64,9 @@ public:
 		}
 		return new ListNode(-1); //should never reach here
 	}
-	inline void sum(ListNode *&target, ListNode *&iter)
+	inline void sum(ListNode*& target, ListNode*& iter)
 	{
-		ListNode *temp;
+		ListNode* temp;
 		int adder = 0;
 		while (iter || target)
 		{

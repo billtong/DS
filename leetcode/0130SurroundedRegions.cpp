@@ -9,7 +9,7 @@ A region is captured by flipping all 'O's into 'X's in that surrounded region.
 class Solution
 {
 public:
-	void solve(vector<vector<char>> &board)
+	void solve(vector<vector<char>>& board)
 	{
 		int rowSize = board.size();
 		if (rowSize == 0)
@@ -40,7 +40,7 @@ public:
 	}
 
 	// make depth first search from boundary.
-	void dfs(vector<vector<char>> &board, int x, int y, vector<vector<bool>> &isOSurvive)
+	void dfs(vector<vector<char>>& board, int x, int y, vector<vector<bool>>& isOSurvive)
 	{
 		if (x < 0 || x >= board.size() || y < 0 || y >= board[0].size() || board[x][y] == 'X' || isOSurvive[x][y])
 			return;								 // search out of border || not char 'o' || already survive

@@ -8,7 +8,7 @@ private:
 	int sum = 0;
 
 public:
-	int rangeSumBST(TreeNode *root, int low, int high)
+	int rangeSumBST(TreeNode* root, int low, int high)
 	{
 		if (!root)
 			return sum;

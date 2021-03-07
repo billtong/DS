@@ -1,16 +1,16 @@
 #include "stdafx.h"
 
 /**
- * Given a non-empty string s, you may delete at most one character. 
+ * Given a non-empty string s, you may delete at most one character.
  * Judge whether you can make it a palindrome.
  */
 
-/*
-first check s[i] == s[j]
-then check s[i+1] == s[j] || s[i] == s[j+1],
-be careful about special case s[i+1] == s[j] && s[i] == s[j+1], need to judge remove which element
-example: ...ucup...upuc..., need to delete left not right here. 
-*/
+ /*
+ first check s[i] == s[j]
+ then check s[i+1] == s[j] || s[i] == s[j+1],
+ be careful about special case s[i+1] == s[j] && s[i] == s[j+1], need to judge remove which element
+ example: ...ucup...upuc..., need to delete left not right here.
+ */
 class Solution
 {
 public:

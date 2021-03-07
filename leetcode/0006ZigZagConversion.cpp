@@ -4,7 +4,7 @@
 using namespace my_util;
 
 /*
-The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: 
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
 (you may want to display this pattern in a fixed font for better legibility)
 P   A   H   N
 A P L S I I G
@@ -33,7 +33,7 @@ public:
 	0*cyc+0					1*cyc+0					...
 	0*cyc+1	0*cyc+(cyc-1)	1*cyc+1 1*cyc+(cyc-1)	...
 	0*cyc+2	0*cyc+(cyc-2)	1*cyc+2 1*cyc+(cyc-2)	...
-	...		...				...	
+	...		...				...
 	0*cyc+(num_rows-1)		1*cyc+(num_rows-1) ...
 
 	j is col * cycle_len
@@ -41,7 +41,7 @@ public:
 
 	outer loop through the remains i ~ [0, num_rows)
 	inner loop through the values j ~ 0*cyc to j + i < string size
-	
+
 	in the inner loop there are two cases
 		1. i == 0 or i == num_rows-1 or the others but out of the bounds
 			there is only one element needs to be taken
@@ -79,10 +79,10 @@ public:
 		int cycle_len = numRows * 2 - 2;
 		int b = (str_len - 1) / cycle_len + 1;
 		char wildcard = '*';
-		char **t1 = this->init_table(cycle_len, b, wildcard);
+		char** t1 = this->init_table(cycle_len, b, wildcard);
 		for (int i = 0; i < str_len; i++)
 			t1[i % cycle_len][i / cycle_len] = s.at(i);
-		char **t2 = this->init_table(numRows - 2, 2 * b, wildcard);
+		char** t2 = this->init_table(numRows - 2, 2 * b, wildcard);
 		for (int i = 1; i < cycle_len / 2; i++)
 		{
 			for (int j = 0; j < b; j++)
@@ -116,9 +116,9 @@ public:
 	}
 
 	// initialize a 2d character array
-	char **init_table(int m, int n, char default_char)
+	char** init_table(int m, int n, char default_char)
 	{
-		char **t = new char *[m];
+		char** t = new char* [m];
 		for (int i = 0; i < m; i++)
 		{
 			t[i] = new char[n];

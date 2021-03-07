@@ -3,12 +3,12 @@
 /**
  * Given an array nums and two types of queries where you should update the value of an index in the array,
  * and retrieve the sum of a range in the array
- * 
+ *
  * NumArray(int[] nums) Initializes the object with the integer array nums.
  * void update(int index, int val) Updates the value of nums[index] to be val.
- * int sumRange(int left, int right) Returns the sum of the subarray nums[left, right] 
+ * int sumRange(int left, int right) Returns the sum of the subarray nums[left, right]
  * (i.e., nums[left] + nums[left + 1], ..., nums[right]).
- * 
+ *
  */
 
 class NumArray
@@ -24,7 +24,7 @@ private:
 	vector<int> b; // the size of b also the witdth of the block
 
 public:
-	NumArray(vector<int> &nums)
+	NumArray(vector<int>& nums)
 	{
 		this->nums = nums;
 		int len = (int)ceil(sqrt(nums.size()));

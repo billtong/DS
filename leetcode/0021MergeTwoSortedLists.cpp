@@ -12,9 +12,9 @@ class Solution
 public:
 	// the head is for storing the result address;
 	// the linked can be light copied, no need to deep copy
-	ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
 	{
-		ListNode *res = new ListNode(0), *head = res;
+		ListNode* res = new ListNode(0), * head = res;
 		while (l1 && l2)
 		{
 			if (l1->val < l2->val)

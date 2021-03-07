@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 /*
-Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). 
-n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). 
+Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).
+n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
 Find two lines, which together with x-axis forms a container, such that the container contains the most water.
 Note: You may not slant the container and n is at least 2.
 */
@@ -15,7 +15,7 @@ public:
 		so we only need to compare there height and move the shorter one toward the middle.
 		as moving the shorter one also has shorter distance, so it must be taller to beat the other half.
 	*/
-	int maxArea(vector<int> &height)
+	int maxArea(vector<int>& height)
 	{
 		int i = 0, j = height.size() - 1;
 		int max_area = 0;
@@ -35,10 +35,10 @@ public:
 	a dynamic programming implementation
 	O(n^2) too long  poor performance
 	*/
-	int maxArea_my_garbage_one(vector<int> &height)
+	int maxArea_my_garbage_one(vector<int>& height)
 	{
 		int n = height.size();
-		int *a = new int[n];
+		int* a = new int[n];
 		memset(a, 0, n * sizeof(int));
 		a[1] = area(height, 0, 1);
 		for (int i = 2; i < n; i++)

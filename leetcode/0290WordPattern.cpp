@@ -19,7 +19,7 @@ public:
 		{
 			if (i == n || p2i[pattern[i]] != w2i[word])
 				return false;
-			 // 1-based indexing since map assigns 0 as a default value for keys not found.
+			// 1-based indexing since map assigns 0 as a default value for keys not found.
 			p2i[pattern[i]] = w2i[word] = i + 1;
 		}
 		return i == n;

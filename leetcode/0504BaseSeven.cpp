@@ -18,7 +18,7 @@ public:
 		}
 		while (num > 0)
 		{
-			int x = num % y;
+			int x = num % 7;
 			num /= 7;
 			res = to_string(x) + res;
 		}

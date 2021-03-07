@@ -9,11 +9,11 @@
  * Please note that if course a is a prerequisite of course b and course b is a prerequisite of course c, then, course a is a prerequisite of course c.
  */
 
-//graph bfs
+ //graph bfs
 class Solution
 {
 public:
-	vector<bool> checkIfPrerequisite(int n, vector<vector<int>> &prerequisites, vector<vector<int>> &queries)
+	vector<bool> checkIfPrerequisite(int n, vector<vector<int>>& prerequisites, vector<vector<int>>& queries)
 	{
 		vector<vector<bool>> graph(n, vector<bool>(n, false));
 		vector<bool> ans;

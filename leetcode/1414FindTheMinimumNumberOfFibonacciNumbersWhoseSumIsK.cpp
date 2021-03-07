@@ -1,11 +1,11 @@
 #include "stdafx.h"
 
 /**
- * Given an integer k, return the minimum number of Fibonacci numbers whose sum is equal to k. 
+ * Given an integer k, return the minimum number of Fibonacci numbers whose sum is equal to k.
  * The same Fibonacci number can be used multiple times.
  */
 
-// greedy algorithm
+ // greedy algorithm
 class Solution
 {
 private:
