@@ -8,6 +8,16 @@
  * You are given the head of the first level of the list.
  */
 
+class Node
+{
+public:
+	int val;
+	Node* prev;
+	Node* next;
+	Node* child;
+};
+
+
 class Solution
 {
 private:
