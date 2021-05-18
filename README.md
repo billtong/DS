@@ -6,7 +6,9 @@
 
 ### [1. leetcode problems](./leetcode)
 
-> updating
+> archived
+
+It's stupid to choose cpp for solving leetcode questions. I'll work on this repo [leetcode-java](https://github.com/billtong/leetcode-java) in the future.
 
 ### [2. data structure](./data-structure)
 
